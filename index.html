@@ -29,6 +29,35 @@
             margin-bottom: 40px;
             padding: 40px 0;
             border-bottom: 2px solid #e0e0e0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3498db;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .header-text {
+            flex: 1;
+            min-width: 300px;
         }
 
         h1 {
@@ -229,6 +258,16 @@
             h1 {
                 font-size: 2.2em;
             }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
             
             .item-header {
                 flex-direction: column;
@@ -245,16 +284,21 @@
 <body>
     <div class="container">
         <header>
-            <h1>Tanay Panja</h1>
-            <div class="contact-info">
-                2956 Leslie Park Circle, Ann Arbor, MI 48105
-            </div>
-            <div class="contact-info">
-                <a href="mailto:tpanja2017@gmail.com">tpanja2017@gmail.com</a> • 
-                <a href="https://linkedin.com/in/tanaypanja" target="_blank">LinkedIn</a>
-            </div>
-            <div class="contact-info">
-                High School Student | Researcher | Musician
+            <div class="header-content">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAC0ALQDAQAIAAMAAB/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMEAQMDAgQGBwYECAwBAgMRBAUhMQYSQVETYXEHBxQigfCRobHRCSMzweFTY3IWPlANZ3dFIzJ1o+G/2QEGJFJjY3YEFWLCQyKxwdNzc5PBpqEJG/2gAMAwEAAhEDEQA/APhmiiihr4jgJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKoHC2QfxbPt/1w4/vvXHaO10lKyPK3R3Kj5dqn/q6Kw/R7fOCdHzz6Z9pD8s2g3RqgryXr3Xe+O1J+z2+cE6Pnn0z6RtzZPULAhL/7O1tO/wD6j09vnBOj559M+0+fZYyXM9rrnRSn/wAW9S3sNv5d/en2+cE6Pnn0z6R3Py3Yx+JrnV59IovD/rjte0+w2/l396fb5wTo+efSI7n5YySz2pTz9D3YyYnYbfy7+9Pt84J0fPPpE7n5YyGl6LJ/7u5X8X71VGw2/l396fb5wTo+efSJ3PyxkdqPR4Z/Y/0v5x6D8rj+vt84J0fPPpE7n5YbD4XpE4+/ur4uLN5hOD1PJDfOCdHzz6RO5+WMjj6M1wjzKPV8X9X5l59vnBOj559In0fPPo6JJJ4JJJO5JOSScknvOyW6rSqKyJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqiVRKolUSqJVEqgf//Z" alt="Tanay Panja Profile Picture" class="profile-image">
+                <div class="header-text">
+                    <h1>Tanay Panja</h1>
+                    <div class="contact-info">
+                        2956 Leslie Park Circle, Ann Arbor, MI 48105
+                    </div>
+                    <div class="contact-info">
+                        <a href="mailto:tpanja2017@gmail.com">tpanja2017@gmail.com</a> • 
+                        <a href="https://linkedin.com/in/tanaypanja" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-info">
+                        High School Student | Researcher | Musician
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -277,7 +321,7 @@
             <div class="education-item">
                 <div class="item-header">
                     <div class="item-title">Huron High School (Title I)</div>
-                    <div class="item-date">2022–2026</div>
+                    <div class="item-date">2022—2026</div>
                 </div>
                 <div class="item-subtitle">Ann Arbor, MI • Class of 2026</div>
                 <div class="highlight">
@@ -291,12 +335,11 @@
             <div class="education-item">
                 <div class="item-header">
                     <div class="item-title">University of Michigan (Dual Enrollment)</div>
-                    <div class="item-date">2023–Present</div>
+                    <div class="item-date">2023—Present</div>
                 </div>
-                <div class="item-subtitle"
-                    GPA: 4.0/4.0</div>
+                <div class="item-subtitle">Ann Arbor, MI • GPA: 4.0/4.0</div>
                 <p><strong>Completed Courses:</strong> Multivariable Calculus, Differential Equations with Linear Algebra, Applied Linear Algebra</p>
-                <p><strong>Upcoming:</strong> Fall 2025 – EAS 549: Analysis and Modeling of Environmental Data; Winter 2026 – Organic Chemistry, Discrete Mathematics</p>
+                <p><strong>Upcoming:</strong> Fall 2025 — EAS 549: Analysis and Modeling of Environmental Data; Winter 2026 — Organic Chemistry, Discrete Mathematics</p>
             </div>
 
             <div class="education-item">
@@ -324,12 +367,9 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Research Intern - Secure Netcom LLC</div>
-                    <div class="item-date">2021–2023</div>
+                    <div class="item-date">2021—2023</div>
                 </div>
                 <div class="item-subtitle">Ann Arbor, MI</div>
-                <div class="highlight">
-                   
-                </div>
                 <ul>
                     <li>Conducted comprehensive data analysis</li>
                     <li>Created technical documentation</li>
@@ -344,7 +384,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Independent Researcher - Environmental Engineering</div>
-                    <div class="item-date">2021–2025</div>
+                    <div class="item-date">2021—2025</div>
                 </div>
                 <div class="item-subtitle">Mentors: Mrs. Martha Hale & Mr. David Caine, Huron High School</div>
                 <p>Conducted interdisciplinary research projects combining IoT, AI, and environmental systems. Developed an intelligent aeration system for microbial fuel cells in wastewater treatment using machine learning optimization.</p>
@@ -361,7 +401,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Independent Researcher - Climate Dynamics</div>
-                    <div class="item-date">2024–2025</div>
+                    <div class="item-date">2024—2025</div>
                 </div>
                 <div class="item-subtitle">Advisor: Eojin Kim, Harvard University Department of Earth and Planetary Sciences</div>
                 <p>Conducted Hadley Cell climate modeling research focusing on atmospheric circulation dynamics, analyzing turbulent fluxes and diabatic heating patterns using computational fluid dynamics models with Julia programming.</p>
@@ -378,7 +418,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Independent Researcher - University of Michigan</div>
-                    <div class="item-date">2022–2025</div>
+                    <div class="item-date">2022—2025</div>
                 </div>
                 <div class="item-subtitle">Advisor: Dr. Inhan Lee</div>
                 <p>Conducted bioinformatics analysis to identify proteins differentially expressed in major health conditions, investigating molecular mechanisms underlying COVID-19, opioid addiction, and mental health disorders.</p>
@@ -392,7 +432,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Independent Researcher - Biomedical AI</div>
-                    <div class="item-date">2022–2024</div>
+                    <div class="item-date">2022—2024</div>
                 </div>
                 <div class="item-subtitle">Mentor: Dr. Adi Tarca, Wayne State University</div>
                 <p>Participated in the DREAM Challenge on biomedical data analysis:</p>
@@ -427,11 +467,12 @@
 
             <div class="experience-item">
                 <div class="item-header">
-                    <div class="item-title">Research Intern - Dartmouth Geisel School of Medicine</div>
-                    <div class="item-date">2023–2025</div>
+                    <div class="item-title">Mentor & Research Intern - Dartmouth Geisel School of Medicine</div>
+                    <div class="item-date">2023—2025</div>
                 </div>
                 <div class="item-subtitle">Advisors: Dr. Joshua Levy and Dr. Vaickus - EDIT Machine Learning Program</div>
-                <p>Developed AI technologies to improve clinical efficiency and patient outcomes. Assessed diverse data modalities using Python, R, and high-performance computing platforms.</p>
+                <p><strong>Mentor (2025):</strong> Advanced Research Track - Mentored incoming students in AI/ML methodologies and research practices.</p>
+                <p><strong>Research Intern (2023-2024):</strong> Advanced Research Track - Developed AI technologies to improve clinical efficiency and patient outcomes. Assessed diverse data modalities using Python, R, and high-performance computing platforms.</p>
                 <h4>EDIT Conference Presentations:</h4>
                 <ul>
                     <li>Dynamically ranking urothelial cells by malignancy using multiple instance learning and attention (2024)</li>
@@ -450,7 +491,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Interlochen Arts Camp Orchestra & Composition with Huron Symphony Orchestra</div>
-                    <div class="item-date">Summer 2022–2025</div>
+                    <div class="item-date">Summer 2022—2025</div>
                 </div>
                 <p>Performed with camp orchestra in weekly concerts, received intensive double bass instruction, and participated in composition workshops.</p>
             </div>
@@ -462,7 +503,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">GIDAS Research Club-miRcore</div>
-                    <div class="item-date">2023–Present</div>
+                    <div class="item-date">2023—Present</div>
                 </div>
                 <div class="item-subtitle">Chair 2025-2026, Vice chair 2024-2025</div>
                 <p>Led a global network of 100+ chapters across 4 countries, organized annual GIDAS research conference with 400+ projects, facilitated 6+ summer camps, and raised $10,000+ for research initiatives.</p>
@@ -472,7 +513,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Founder & President - SteamFun4Kids, 501(c)(3)</div>
-                    <div class="item-date">2019–Present</div>
+                    <div class="item-date">2019—Present</div>
                 </div>
                 <p>Hosted 200+ STEM/Robotics workshops, raised $3,100+ for Title I schools, led 2 robotics teams to regional wins, and earned 3× President's Volunteer Service Gold Awards.</p>
             </div>
@@ -480,7 +521,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Student Council Member - National STEM Festival</div>
-                    <div class="item-date">2024–2025</div>
+                    <div class="item-date">2024—2025</div>
                 </div>
                 <p>Presented at National Expo (2,300+ attendees) and selected for National STEM Festival Student Council, shaping festival programming and bridging student voices with federal officials.</p>
                 <p><a href="https://www.nationalstemfestival.com/advisory-committee" target="_blank" class="doi-link">www.nationalstemfestival.com/advisory-committee</a></p>
@@ -489,7 +530,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">US AI Olympiad Ambassador</div>
-                    <div class="item-date">2022–Present</div>
+                    <div class="item-date">2022—Present</div>
                 </div>
                 <p>Conduct specialized training programs covering AI fundamentals, machine learning, and competition preparation to develop K-12 students for international AI Olympiads.</p>
                 <p><a href="https://www.usaaio.org/ambassadors" target="_blank" class="doi-link">www.usaaio.org/ambassadors</a></p>
@@ -498,7 +539,7 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">National Science Bowl Team</div>
-                    <div class="item-date">2023–2026</div>
+                    <div class="item-date">2023—2026</div>
                 </div>
                 <div class="item-subtitle">Captain 2025, 2026</div>
                 <p>Member of 4-person team: back-to-back Michigan Regional champions; national competitors (Top 32 US '23, Regional Rank 2 '25).</p>
@@ -514,7 +555,7 @@
                     <li><strong>Mentorship Coordinator & Section Leader</strong> - Huron Symphony Orchestra (2025)</li>
                     <li><strong>Principal Double Bass</strong> - Huron Symphony Orchestra (2024-2025)</li>
                     <li><strong>Captain</strong> - JV Tennis Team (2024, 2025)</li>
-                    <li><strong>Council Member</strong> - The Adolescent Young Adult Mott Advisory Council, University of Michigan Medicine (2022–Present)</li>
+                    <li><strong>Council Member</strong> - The Adolescent Young Adult Mott Advisory Council, University of Michigan Medicine (2022—Present)</li>
                 </ul>
             </div>
         </section>
@@ -526,7 +567,7 @@
                 <div class="award-category">
                     <h4>International Awards</h4>
                     <ul>
-                        <li>2025 Gold Medal – US Artificial Intelligence Olympiad (USAAIO), MIT Round 2, Team USA Pathway; Top 19 Nationally (Top 5%)</li>
+                        <li>2025 Gold Medal — US Artificial Intelligence Olympiad (USAAIO), MIT Round 2, Team USA Pathway; Top 19 Nationally (Top 5%)</li>
                         <li>2025 Silver Award, British Biology Olympiad: Top 10% out of 13,000+ participants</li>
                         <li>2024 Climate Science Olympiad Semifinalist (12,400 participants from 149 countries)</li>
                     </ul>
@@ -537,7 +578,7 @@
                     <ul>
                         <li>2025 Cancer Pathway Awards Contest Winner, $1000 Scholarship (1 out of 10 selected nationally)</li>
                         <li>2023, 2024 Science Bowl: 1st Place in Michigan; National Qualifier</li>
-                        <li>2025 National Merit Scholar Semifinalist – Perfect PSAT Scorer</li>
+                        <li>2025 National Merit Scholar Semifinalist — Perfect PSAT Scorer</li>
                         <li>2025 National Honor Society Member</li>
                         <li>2025 AP Scholar with Distinction</li>
                         <li>2023 USA Computing Olympiad (USACO): Silver Level</li>
@@ -562,7 +603,7 @@
                         <li>2024, 2025 AIME Qualifier</li>
                         <li>USA Chemistry Olympiad National Finalist</li>
                         <li>2× USA Biology Olympiad National Semifinalist (Top 250 out of 9,700)</li>
-                        <li>American Computer Science League Senior Division: 48/48 (2024–2025, ranked 1st nationally)</li>
+                        <li>American Computer Science League Senior Division: 48/48 (2024—2025, ranked 1st nationally)</li>
                     </ul>
                 </div>
             </div>
@@ -628,9 +669,9 @@
             <div class="experience-item">
                 <div class="item-header">
                     <div class="item-title">Huron Symphony Orchestra</div>
-                    <div class="item-date">2022–Present</div>
+                    <div class="item-date">2022—Present</div>
                 </div>
-                <div class="item-subtitle">Principal Double Bass & Section Leader (2024–Present)</div>
+                <div class="item-subtitle">Principal Double Bass & Section Leader (2024—Present)</div>
                 <p><strong>Notable Performance Venues:</strong></p>
                 <ul>
                     <li>Hill Auditorium (University of Michigan)</li>
@@ -644,4 +685,7 @@
         <footer>
             <p>&copy; 2025 Tanay Panja. All rights reserved.</p>
             <p>Last updated: September 2025</p>
-        
+        </footer>
+    </div>
+</body>
+</html>
