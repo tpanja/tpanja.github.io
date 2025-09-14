@@ -1,1 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanay Panja - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 5px 15px;
+        }
+
+        nav a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #e9ecef;
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding: 30px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+            color: #34495e;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .item-date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .item-subtitle {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .award-category {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #e9ecef;
+        }
+
+        .award-category h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+
+        .publication {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 3px solid #28a745;
+        }
+
+        .doi-link {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .doi-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 2px solid #e0e0e0;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tanay Panja</h1>
+            <div class="contact-info">
+                2956 Leslie Park Circle, Ann Arbor, MI 48105
+            </div>
+            <div class="contact-info">
+                <a href="mailto:tpanja2017@gmail.com">tpanja2017@gmail.com</a> • 
+                <a href="https://linkedin.com/in/tanaypanja" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-info">
+                High School Student | Researcher | Musician
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#employment">Employment</a></li>
+                <li><a href="#summer">Summer Programs</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#music">Music</a></li>
+            </ul>
+        </nav>
+
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Huron High School (Title I)</div>
+                    <div class="item-date">2022–2026</div>
+                </div>
+                <div class="item-subtitle">Ann Arbor, MI • Class of 2026</div>
+                <div class="highlight">
+                    <strong>Academic Performance:</strong> GPA: 4.0/4.0 (Unweighted) • ACT: 36 (Superscore) • SAT: 1560
+                </div>
+                <p><strong>AP Courses Completed (13):</strong> Calculus BC(5), Statistics(5), Computer Science A(5), Chemistry(5), Biology(5), Environmental Science(5), Physics E&M(5), Government(5), Macroeconomics(5), Microeconomics(5), AP Physics Mechanics(4), English Language(4), Spanish(4)</p>
+                <p><strong>In Progress:</strong> AP English Literature, AP Psychology, AP Human Geography, AP Physics Mechanics, Engineering Capstone</p>
+                <p><strong>IB Courses:</strong> World History & Geography, Spanish III, Physics HL</p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">University of Michigan (Dual Enrollment)</div>
+                    <div class="item-date">2023–Present</div>
+                </div>
+                <div class="item-subtitle">Dearborn & Ann Arbor Campus • GPA: 4.0/4.0</div>
+                <p><strong>Completed Courses:</strong> Multivariable Calculus, Differential Equations with Linear Algebra, Applied Linear Algebra</p>
+                <p><strong>Upcoming:</strong> Fall 2025 – EAS 549: Analysis and Modeling of Environmental Data; Winter 2026 – Organic Chemistry, Discrete Mathematics</p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Eastern Michigan University (Summer Course)</div>
+                    <div class="item-date">Summer 2024</div>
+                </div>
+                <div class="item-subtitle">Ypsilanti, MI • Grade: A</div>
+                <p>Mechanical Engineering with Sustainability</p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Brigham Young University (Independent Study)</div>
+                    <div class="item-date">2023</div>
+                </div>
+                <div class="item-subtitle">Provo, UT • Grade: A</div>
+                <p>Introduction to Newtonian Mechanics</p>
+            </div>
+        </section>
+
+        <section id="employment">
+            <h2>Employment</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Research Intern - Secure Netcom LLC</div>
+                    <div class="item-date">2021–2023</div>
+                </div>
+                <div class="item-subtitle">Ann Arbor, MI</div>
+                <div class="highlight">
+                    <strong>Total Hours:</strong> 633 hours across three years (2021: 240 hours, 2022: 275 hours, 2023: 118 hours)
+                </div>
+                <ul>
+                    <li>Conducted comprehensive data analysis</li>
+                    <li>Created technical documentation</li>
+                    <li>Provided training support</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Experience</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Independent Researcher - Environmental Engineering</div>
+                    <div class="item-date">2021–2025</div>
+                </div>
+                <div class="item-subtitle">Mentors: Mrs. Martha Hale & Mr. David Caine, Huron High School</div>
+                <p>Conducted interdisciplinary research projects combining IoT, AI, and environmental systems. Developed an intelligent aeration system for microbial fuel cells in wastewater treatment using machine learning optimization.</p>
+                <h4>Notable Awards:</h4>
+                <ul>
+                    <li>2025 Gold Medal Genius Olympiad International Environmental Research Science Fair: Energy (5% acceptance rate)</li>
+                    <li>2024, 2025 National STEM Challenge Champion for Environmental Stewardship - U.S. Department of Education (5% acceptance rate)</li>
+                    <li>2025 Congressional Innovation Award for sustainability app development</li>
+                    <li>2024 STEM Innovator Award by the Michigan Governor</li>
+                    <li>Multiple Detroit and Michigan Science Fair awards including $1,000 scholarship</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Independent Researcher - Climate Dynamics</div>
+                    <div class="item-date">2024–2025</div>
+                </div>
+                <div class="item-subtitle">Advisor: Eojin Kim, Harvard University Department of Earth and Planetary Sciences</div>
+                <p>Conducted Hadley Cell climate modeling research focusing on atmospheric circulation dynamics, analyzing turbulent fluxes and diabatic heating patterns using computational fluid dynamics models with Julia programming.</p>
+                <h4>Professional Awards:</h4>
+                <ul>
+                    <li>2025 1st Place NASA Earth System Science Award</li>
+                    <li>2025 1st Place U.S. Navy ONR Medallion with Naval Science Award Certificate</li>
+                    <li>2025 1st Place Stockholm Junior Water Prize Regional Award and National Recommendation</li>
+                    <li>2025 1st Place Sigma Xi-Univ of Mich Chapter</li>
+                    <li>2025 NOAA "Taking the Pulse of the Planet" Award</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Independent Researcher - University of Michigan</div>
+                    <div class="item-date">2022–2025</div>
+                </div>
+                <div class="item-subtitle">Advisor: Dr. Inhan Lee</div>
+                <p>Conducted bioinformatics analysis to identify proteins differentially expressed in major health conditions, investigating molecular mechanisms underlying COVID-19, opioid addiction, and mental health disorders.</p>
+                <h4>Conference Presentations:</h4>
+                <ul>
+                    <li>Deducing the role of antigen presentation in autoimmune idiopathic Parkinson's disease (2024) - <a href="http://mircore.org/2024-conference" target="_blank" class="doi-link">mircore.org/2024-conference</a></li>
+                    <li>KEGG analysis of S. aureus on multiple sclerosis (2023) - 2nd Place Award - <a href="http://mircore.org/2023-conference" target="_blank" class="doi-link">mircore.org/2023-conference</a></li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Independent Researcher - Biomedical AI</div>
+                    <div class="item-date">2022–2024</div>
+                </div>
+                <div class="item-subtitle">Mentor: Dr. Adi Tarca, Wayne State University</div>
+                <p>Participated in the DREAM Challenge on biomedical data analysis:</p>
+                <ul>
+                    <li>2024 Placental Clock DREAM Challenge: Ranked in the Top 5 globally</li>
+                    <li>2024 Preterm Birth Prediction DREAM Challenge: Task 1 Rank 13, Task 2 Rank 7 out of 318 teams</li>
+                </ul>
+                <p><strong>Conference Presentation:</strong> Fetal sex influences the maternal plasma proteome in SARS-CoV-2. Society for Maternal-Fetal Medicine Annual Meeting, Washington, DC. <a href="https://doi.org/10.1002/pmf2.12028" target="_blank" class="doi-link">DOI: 10.1002/pmf2.12028</a></p>
+            </div>
+        </section>
+
+        <section id="summer">
+            <h2>Summer Research & Activities</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Research Intern - University of Michigan</div>
+                    <div class="item-date">Summer 2024, 2025</div>
+                </div>
+                <div class="item-subtitle">Advisor: Dr. Kai Zhu</div>
+                <p>Developed PhenoWatch App using Shiny R with machine learning for ecological pattern recognition, featuring automated species identification. Paper in progress.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Michigan Math & Science Scholars (MMSS)</div>
+                    <div class="item-date">Summer 2024</div>
+                </div>
+                <div class="item-subtitle">University of Michigan</div>
+                <p>Gained hands-on experience in ecological and micrometeorological instrumentation research, focusing on advanced sensors for energy and water exchange.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Research Intern - Dartmouth Geisel School of Medicine</div>
+                    <div class="item-date">2023–2025</div>
+                </div>
+                <div class="item-subtitle">Advisors: Dr. Joshua Levy and Dr. Vaickus - EDIT Machine Learning Program</div>
+                <p>Developed AI technologies to improve clinical efficiency and patient outcomes. Assessed diverse data modalities using Python, R, and high-performance computing platforms.</p>
+                <h4>EDIT Conference Presentations:</h4>
+                <ul>
+                    <li>Dynamically ranking urothelial cells by malignancy using multiple instance learning and attention (2024)</li>
+                    <li>Tumor immune microenvironment-centered multimodal deep learning approaches to colorectal cancer survival analysis (2023)</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">MIT Beaver Works - Medlytics Program</div>
+                    <div class="item-date">Summer 2023</div>
+                </div>
+                <p>Developed predictive models using Python and TensorFlow for early disease detection systems and created a machine learning pipeline for medical image analysis.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Interlochen Arts Camp Orchestra & Composition</div>
+                    <div class="item-date">Summer 2022–2025</div>
+                </div>
+                <p>Performed with camp orchestra in weekly concerts, received intensive double bass instruction, and participated in composition workshops.</p>
+            </div>
+        </section>
+
+        <section id="leadership">
+            <h2>Leadership & Volunteer Experience</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">GIDAS Research Club-miRcore</div>
+                    <div class="item-date">2023–Present</div>
+                </div>
+                <div class="item-subtitle">Chair 2025-2026, Vice chair 2024-2025</div>
+                <p>Led a global network of 100+ chapters across 4 countries, organized annual GIDAS research conference with 400+ projects, facilitated 6+ summer camps, and raised $10,000+ for research initiatives.</p>
+                <p><a href="https://www.mircore.org/gidas/" target="_blank" class="doi-link">www.mircore.org/gidas/</a></p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Founder & President - SteamFun4Kids, 501(c)(3)</div>
+                    <div class="item-date">2019–Present</div>
+                </div>
+                <p>Hosted 200+ STEM/Robotics workshops, raised $3,100+ for Title I schools, led 2 robotics teams to regional wins, and earned 3× President's Volunteer Service Gold Awards.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Student Council Member - National STEM Festival</div>
+                    <div class="item-date">2024–2025</div>
+                </div>
+                <p>Presented at National Expo (2,300+ attendees) and selected for National STEM Festival Student Council, shaping festival programming and bridging student voices with federal officials.</p>
+                <p><a href="https://www.nationalstemfestival.com/advisory-committee" target="_blank" class="doi-link">www.nationalstemfestival.com/advisory-committee</a></p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">US AI Olympiad Ambassador</div>
+                    <div class="item-date">2022–Present</div>
+                </div>
+                <p>Conduct specialized training programs covering AI fundamentals, machine learning, and competition preparation to develop K-12 students for international AI Olympiads.</p>
+                <p><a href="https://www.usaaio.org/ambassadors" target="_blank" class="doi-link">www.usaaio.org/ambassadors</a></p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">National Science Bowl Team</div>
+                    <div class="item-date">2023–2026</div>
+                </div>
+                <div class="item-subtitle">Captain 2025, 2026</div>
+                <p>Member of 4-person team: back-to-back Michigan Regional champions; national competitors (Top 32 US '23, Regional Rank 2 '25).</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Multiple Leadership Positions</div>
+                    <div class="item-date">Various</div>
+                </div>
+                <ul>
+                    <li><strong>President</strong> - Huron Biology and Huron GIDAS Research Club (2024-2025)</li>
+                    <li><strong>Mentorship Coordinator & Section Leader</strong> - Huron Symphony Orchestra (2025)</li>
+                    <li><strong>Principal Double Bass</strong> - Huron Symphony Orchestra (2024-2025)</li>
+                    <li><strong>Captain</strong> - JV Tennis Team (2024, 2025)</li>
+                    <li><strong>Council Member</strong> - The Adolescent Young Adult Mott Advisory Council, University of Michigan Medicine (2022–Present)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2>Awards & Recognition</h2>
+
+            <div class="awards-grid">
+                <div class="award-category">
+                    <h4>International Awards</h4>
+                    <ul>
+                        <li>2025 Gold Medal – US Artificial Intelligence Olympiad (USAAIO), MIT Round 2, Team USA Pathway; Top 19 Nationally (Top 5%)</li>
+                        <li>2025 Silver Award, British Biology Olympiad: Top 10% out of 13,000+ participants</li>
+                        <li>2024 Climate Science Olympiad Semifinalist (12,400 participants from 149 countries)</li>
+                    </ul>
+                </div>
+
+                <div class="award-category">
+                    <h4>National/State Academic</h4>
+                    <ul>
+                        <li>2025 Cancer Pathway Awards Contest Winner, $1000 Scholarship (1 out of 10 selected nationally)</li>
+                        <li>2023, 2024 Science Bowl: 1st Place in Michigan; National Qualifier</li>
+                        <li>2025 National Merit Scholar Semifinalist – Perfect PSAT Scorer</li>
+                        <li>2025 National Honor Society Member</li>
+                        <li>2025 AP Scholar with Distinction</li>
+                        <li>2023 USA Computing Olympiad (USACO): Silver Level</li>
+                    </ul>
+                </div>
+
+                <div class="award-category">
+                    <h4>Community Service & Leadership</h4>
+                    <ul>
+                        <li>2025 National Ambassador Award Community Service Excellence</li>
+                        <li>3× President's Volunteer Service Gold Award (PVSA): 600+ hours of volunteering</li>
+                        <li>2024-25 ZERO HERO Award-Green— Zero Waste Award</li>
+                        <li>Michigan Community Impact Award 2024-25 School Year Award</li>
+                        <li>Varsity Letter in Community Service, The United Way of Washtenaw</li>
+                    </ul>
+                </div>
+
+                <div class="award-category">
+                    <h4>Competition Achievements</h4>
+                    <ul>
+                        <li>American Mathematics Competitions (AMC) 10A: 127.5/150 (2023, Top 1%)</li>
+                        <li>2024, 2025 AIME Qualifier</li>
+                        <li>USA Chemistry Olympiad National Finalist</li>
+                        <li>2× USA Biology Olympiad National Semifinalist (Top 250 out of 9,700)</li>
+                        <li>American Computer Science League Senior Division: 48/48 (2024–2025, ranked 1st nationally)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications & Presentations</h2>
+
+            <h3>Journal Publications</h3>
+            <div class="publication">
+                <p><strong>Panja, T., et al.</strong> (2024). Enhancing microbial fuel cell performance prediction and IoT integration using machine learning and renewable energy. <em>Journal of Strategic Innovation and Sustainability, 19(1)</em>. <a href="https://doi.org/10.33423/jsis.v19i1.678" target="_blank" class="doi-link">DOI: 10.33423/jsis.v19i1.678</a></p>
+            </div>
+
+            <h3>Conference Presentations</h3>
+            <div class="publication">
+                <p><strong>Panja, T.</strong> (2025, October). Novel insights into the role of turbulent fluxes and diabatic heating in shaping the spatiotemporal structure of the Hadley Cell. <em>IEEE MIT Undergraduate Research Technology Conference (URTC)</em>. <a href="https://doi.org/10.1109/URTC65039.2024" target="_blank" class="doi-link">DOI: 10.1109/URTC65039.2024</a></p>
+            </div>
+
+            <div class="publication">
+                <p><strong>Panja, T.</strong> (2025, October). Dementia AI: A low-cost, privacy-preserving mobile application for automated dementia screening using multinomial logistic regression and computer vision. Paper to be presented at the <em>12th International Conference on Neurology and Brain Disorders</em>, Orlando, Florida, USA.</p>
+            </div>
+
+            <div class="publication">
+                <p><strong>Panja, T., et al.</strong> (2024, January). Deep learning in tumor microenvironment. Paper presented at the <em>Pacific Symposium on Biocomputing</em>, Kohala Coast, HI. <a href="https://doi.org/10.7490/f1000research.1119682.1" target="_blank" class="doi-link">DOI: 10.7490/f1000research.1119682.1</a></p>
+            </div>
+
+            <h3>Invited Speaking Events</h3>
+            <div class="publication">
+                <p><strong>National Panelist</strong> - MIT Beaver Works Summer Institute (BWSI) 2024. Selected as a National Panelist to present "You Belong in STEM" to all program participants.</p>
+            </div>
+            <div class="publication">
+                <p><strong>TEDx Youth, Ann Arbor, MI</strong> - 2023: "AI & dementia care" | 2024: "Microbial fuel cells"</p>
+            </div>
+        </section>
+
+        <section id="music">
+            <h2>Music: Double Bass</h2>
+
+            <h3>Awards & Recognition</h3>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">International Achievements</div>
+                </div>
+                <ul>
+                    <li>2025 International Society of Bassists (ISB) Double Bass Youth Solo Competition Semifinalist - Top 8 USA & Top 16 Worldwide</li>
+                    <li>2025 Third Prize, ENKOR International Music Competition, Strings Division</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">State & Regional Recognition</div>
+                </div>
+                <ul>
+                    <li>2021, 2022, 2024, 2025 Michigan All-State High School Orchestra (MSBOA) - 1st Chair recognition (2021, 2022)</li>
+                    <li>2025 MSBOA Outstanding Chamber Ensemble Award</li>
+                    <li>2025 MSBOA Strings Honors Ensemble</li>
+                    <li>Michigan State Solo & Ensemble Festival: Multiple Division 1 ratings with score of 98/100</li>
+                </ul>
+            </div>
+
+            <h3>Performance Experience</h3>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Huron Symphony Orchestra</div>
+                    <div class="item-date">2022–Present</div>
+                </div>
+                <div class="item-subtitle">Principal Double Bass & Section Leader (2024–Present)</div>
+                <p><strong>Notable Performance Venues:</strong></p>
+                <ul>
+                    <li>Hill Auditorium (University of Michigan)</li>
+                    <li>Spain Tour: Auditorio Nacional de Música (Madrid), L'Auditori Nacional de Barcelona, Valencia's UNESCO Creative City of Music venues</li>
+                    <li>Canada tour performances</li>
+                </ul>
+                <p>Leading sectionals and mentoring younger musicians in addition to performance responsibilities.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Tanay Panja. All rights reserved.</p>
+            <p>Last updated: September 2025</p>
+        
