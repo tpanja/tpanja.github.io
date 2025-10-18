@@ -235,6 +235,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .award-card {
@@ -333,13 +334,14 @@
         .research-item {
             margin-bottom: 25px;
             padding: 20px;
-            background: #f8f9fa;
+            background: #fff;
+            border: 1px solid #e0e0e0;
             border-radius: 10px;
             transition: background 0.3s;
         }
 
         .research-item:hover {
-            background: #e9ecef;
+            background: #f8f9fa;
         }
 
         .contact {
@@ -445,9 +447,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
                 <li><a href="#awards">Awards</a></li>
-                <li><a href="#news">News</a></li>
                 <li><a href="#music">Music</a></li>
                 <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -473,7 +473,7 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p class="section-subtitle">Environmental Engineer | AI & IoT Systems Developer | University of Michigan Dual Enrollment</p>
+        <p class="section-subtitle">Environmental Engineer | AI & IoT Systems Developer | University of Michigan</p>
         <div class="about-content">
             <div>
                 <img src="profile.jpg" alt="Tanay Panja" class="profile-photo">
@@ -483,8 +483,6 @@
                     <p>I'm a high school senior at Huron High School with a passion for environmental engineering and wastewater treatment innovation. My work focuses on using artificial intelligence and IoT systems to revolutionize how we approach water treatment, making existing systems more efficient, sustainable, and intelligent.</p>
                     
                     <p>Through dual enrollment at the University of Michigan, I pursue graduate-level coursework in environmental data analysis while conducting hands-on research. My signature project involves developing an intelligent aeration system for microbial fuel cells in wastewater treatment, using machine learning optimization to maximize energy efficiency and treatment effectiveness.</p>
-                    
-                    <p>I'm particularly interested in the intersection of AI, IoT, and environmental systems—building smart sensors, predictive models, and automated control systems that can transform wastewater treatment plants into data-driven, self-optimizing facilities. From pollen forecasting to climate modeling, I apply computational approaches to solve real-world environmental challenges.</p>
                     
                     <p>Beyond research, I'm an accomplished double bassist who has competed internationally and performed across the US and Europe. I also founded SteamFun4Kids, a 501(c)(3) nonprofit dedicated to making STEM education accessible to underserved communities.</p>
                 </div>
@@ -503,7 +501,7 @@
                     </div>
                     <div class="stat-box">
                         <span class="stat-number">13</span>
-                        <span class="stat-label">AP Courses Completed</span>
+                        <span class="stat-label">AP Courses</span>
                     </div>
                 </div>
             </div>
@@ -512,63 +510,172 @@
 
     <section id="research">
         <h2>Research Experience</h2>
-        <p class="section-subtitle">Environmental Engineering, AI, and IoT Systems Innovation</p>
+        <p class="section-subtitle">Environmental Engineering, AI, and IoT Systems</p>
         <div class="research-grid">
             <div class="research-card">
-                <div class="institution">Independent Research</div>
-                <div class="mentor">Mentors: Mrs. Martha Hale & Mr. David Caine, Huron High School</div>
-                <h3>Engineering AI-IoT System for Energy Forecasting & Environmental Monitoring</h3>
-                <p>Developed an AI-enabled aeration system for microbial fuel cells (MFCs) to optimize wastewater treatment and energy generation. Designed a self-powered microcontroller with integrated sensors and built a mobile application for real-time monitoring and AI-driven aeration control. The system uses machine learning algorithms to predict optimal aeration cycles, maximizing energy efficiency while improving treatment effectiveness. Won multiple awards including NASA Earth System Science Award, Navy ONR Medallion, and Stockholm Junior Water Prize Regional Award.</p>
+                <div class="institution">Huron High School</div>
+                <div class="mentor">Mentors: Mrs. Martha Hale & Mr. David Caine</div>
+                <h3>AI-IoT Wastewater Treatment System</h3>
+                <p>Developed an AI-enabled aeration system for microbial fuel cells to optimize wastewater treatment and energy generation. Designed self-powered microcontroller with sensors and mobile app for real-time monitoring. Won NASA, Navy ONR, and Stockholm Junior Water Prize awards.</p>
             </div>
 
             <div class="research-card">
                 <div class="institution">University of Michigan</div>
                 <div class="mentor">Mentor: Dr. Kai Zhu</div>
-                <h3>Environmental Data Science & Predictive Modeling</h3>
-                <p>Developing neural network models for environmental forecasting (F1 = 0.684). Built interactive web applications for data visualization and deployed educational tools using real-time environmental sensor data. Awarded MIDAS PODS grant for continued IoT and machine learning research in environmental systems.</p>
+                <h3>Environmental Data Science</h3>
+                <p>Developing neural network models for pollen forecasting (F1 = 0.684). Built interactive Streamlit app and awarded MIDAS PODS grant.</p>
             </div>
 
             <div class="research-card">
-                <div class="institution">Michigan Math & Science Scholars (MMSS)</div>
-                <div class="mentor">University of Michigan</div>
-                <h3>Ecological & Micrometeorological Instrumentation</h3>
-                <p>Gained hands-on experience with professional ecological and meteorological field instruments, recording chlorophyll levels, air temperature, precipitation, albedo, wind speed, soil moisture, and relative humidity. Conducted research on surface albedo effects on material temperatures using laser thermometer, BTMETER BT-100, and Apogee SN500. Proposed urban design strategies to increase albedo. Visited W.K. Kellogg Biological Station to explore Long-Term Ecological Research (LTER) and Long-Term Agroecosystem Research (LTAR) sites. Earned certificates in Field Instruments and Meteorology.</p>
-            </div>
-
-            <div class="research-card">
-                <div class="institution">Harvard University Collaboration</div>
+                <div class="institution">Harvard University</div>
                 <div class="mentor">Advisor: Eojin Kim</div>
-                <h3>Climate System Dynamics & Computational Modeling</h3>
-                <p>Conducting Hadley Cell climate research using computational fluid dynamics. Analyzing turbulent fluxes and diabatic heating patterns with Julia programming. Applying numerical methods to understand atmospheric circulation and improve climate prediction systems.</p>
+                <h3>Climate Dynamics Modeling</h3>
+                <p>Conducting Hadley Cell climate research using computational fluid dynamics and Julia programming.</p>
             </div>
 
             <div class="research-card">
-                <div class="institution">Wayne State University</div>
-                <div class="mentor">Mentor: Dr. Adi Tarca</div>
-                <h3>Biomedical AI & Machine Learning</h3>
-                <p>Achieved Top 5 globally in Placental Clock Challenge and Top 7 in Preterm Birth Prediction among 318 teams using advanced machine learning techniques. Developed predictive models for healthcare applications, demonstrating transferable AI skills across domains.</p>
+                <div class="institution">Dartmouth Geisel</div>
+                <div class="mentor">Dr. Joshua Levy & Dr. Louis Vaickus</div>
+                <h3>Computational Pathology</h3>
+                <p>AI-driven research in cancer diagnostics using deep learning. Transitioned from intern to mentor role.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2>Awards & Recognition</h2>
+        <p class="section-subtitle">International, National, and Regional Honors</p>
+        <div class="awards-content">
+            <div class="award-card">
+                <h4>🥇 US AI Olympiad - Gold Medal</h4>
+                <p>MIT Round 2, Top 19 nationally</p>
+                <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" target="_blank" class="award-link">View Certificate →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>🥇 Genius Olympiad - Gold Medal</h4>
+                <p>Environmental Science Fair (5% acceptance)</p>
+                <a href="certificates/genius certificate.jpg" target="_blank" class="award-link">View Certificate →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>💻 ACSL - 1st Nationally</h4>
+                <p>American Computer Science League</p>
+                <a href="certificates/acsl_awards_Page_1.jpg" target="_blank" class="award-link">2023-24 Senior 1st →</a>
+                <a href="certificates/acsl_awards_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Finals Bronze →</a>
+                <a href="certificates/acsl_awards_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2022-23 Intermediate 1st →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>📐 AMC/AIME</h4>
+                <p>3× AIME Qualifier, Honor Roll of Distinction</p>
+                <a href="certificates/all_amc_certificates_Page_1.jpg" target="_blank" class="award-link">2025 AIME →</a>
+                <a href="certificates/all_amc_certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2024 AIME →</a>
+                <a href="certificates/all_amc_certificates_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Honor Roll →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>🧪 USNCO National Finalist</h4>
+                <p>Chemistry Olympiad, 3× Local Medalist</p>
+                <a href="certificates/scanned_usnco_Page_1.jpg" target="_blank" class="award-link">2024 National Finalist →</a>
+                <a href="certificates/scanned_usnco_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2024 Local 2nd →</a>
+                <a href="certificates/scanned_usnco_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Local 3rd →</a>
+                <a href="certificates/usnco_page_4.jpeg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Local 3rd →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>🧬 USABO Semifinalist</h4>
+                <p>Biology Olympiad, Top 250 of 9,700</p>
+                <a href="certificates/usabo_certificate.jpg" target="_blank" class="award-link">2023 Semifinalist →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>🏆 Science Bowl Champion</h4>
+                <p>Michigan 1st Place, National Top 32</p>
+                <a href="certificates/science bowl_Page_1.jpg" target="_blank" class="award-link">2024 National Finals →</a>
+                <a href="certificates/science bowl_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 National Finals →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>🔬 Science Fair Awards</h4>
+                <p>NASA, Navy ONR, NOAA, Stockholm Water Prize</p>
+                <a href="certificates/science fair certificates_Page_1.jpg" target="_blank" class="award-link">View Certificates →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>🌍 National STEM Champion</h4>
+                <p>U.S. Dept of Education, Obama Letter</p>
+                <a href="certificates/Stem Champion Depart of Education.jpg" target="_blank" class="award-link">Certificate →</a>
+                <a href="certificates/Obama certificate.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">Obama Letter →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>🏅 Michigan STEM Innovator</h4>
+                <p>Awarded by Governor Whitmer</p>
+                <a href="certificates/michigan innovator award.jpg" target="_blank" class="award-link">View Certificate →</a>
+            </div>
+            
+            <div class="award-card">
+                <h4>⭐ Presidential Gold Awards</h4>
+                <p>3× Volunteer Service Recognition</p>
+                <a href="certificates/volunteer certificates_Page_1.jpg" target="_blank" class="award-link">2024 Gold →</a>
+                <a href="certificates/volunteer certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Gold →</a>
+                <a href="certificates/volunteer certificates_Page_4.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2022 Gold →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="music">
+        <h2>Music: Double Bass</h2>
+        <p class="section-subtitle">International Competitor & Orchestra Principal</p>
+        <div class="music-content">
+            <div class="music-highlights">
+                <h3>Performance</h3>
+                <ul>
+                    <li>Principal Double Bass<br>Huron Symphony Orchestra</li>
+                    <li>ISB Semifinalist<br>Top 16 Worldwide</li>
+                    <li>4× All-State Orchestra<br>1st Chair (2021, 2022)</li>
+                    <li>ENKOR Competition<br>Third Prize, Strings Division</li>
+                </ul>
+            </div>
+            <div class="music-highlights">
+                <h3>Notable Venues</h3>
+                <ul>
+                    <li>Hill Auditorium<br>University of Michigan</li>
+                    <li>Auditorio Nacional<br>Madrid, Spain</li>
+                    <li>L'Auditori Nacional<br>Barcelona, Spain</li>
+                    <li>Valencia UNESCO<br>Valencia, Spain</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2>Leadership & Service</h2>
+        <p class="section-subtitle">Empowering the Next Generation in STEM</p>
+        <div class="leadership-grid">
+            <div class="leadership-card">
+                <h3>GIDAS Research Club</h3>
+                <div class="role">Chair (2025–2026)</div>
+                <p>Led global network of 100+ chapters, organized conference with 400+ projects, raised $10,000+.</p>
             </div>
 
-            <div class="research-card">
-                <div class="institution">University of Michigan</div>
-                <div class="mentor">Advisor: Dr. Inhan Lee</div>
-                <h3>Bioinformatics & Computational Analysis</h3>
-                <p>Analyzing protein expression patterns in COVID-19, opioid addiction, and Parkinson's disease using computational methods. Building data pipelines and analysis tools to identify molecular mechanisms underlying major health conditions.</p>
+            <div class="leadership-card">
+                <h3>SteamFun4Kids</h3>
+                <div class="role">Founder & President</div>
+                <p>501(c)(3) nonprofit. Hosted 200+ STEM workshops, raised $3,100+ for Title I schools.</p>
             </div>
 
-            <div class="research-card">
-                <div class="institution">Geisel School of Medicine at Dartmouth</div>
-                <div class="mentor">Advisors: Dr. Joshua Levy & Dr. Louis Vaickus | AI/ML Intern '23-'24, Mentor '25</div>
-                <h3>Computational Pathology & Deep Learning</h3>
-                <p>Conducted AI-driven research in computational pathology, working with multimodal clinical and imaging data to develop deep learning models for cancer diagnostics. Contributed to two major research projects: (1) Multimodal Deep Learning for Colorectal Cancer Survival Analysis and (2) Ranking Urothelial Cells by Malignancy Using Multiple Instance Learning. Developed models using whole slide images, EHRs, and metagenomic data. Presented findings at scientific conferences and engaged in seminars on AI applications in medicine. Transitioned from intern to mentor role in 2025.</p>
-                <a href="https://ben-m-7.github.io/editai_internship/mentors/" target="_blank" class="award-link">View Mentor Profile →</a>
+            <div class="leadership-card">
+                <h3>US AI Olympiad</h3>
+                <div class="role">Ambassador</div>
+                <p>Conducted training programs on AI fundamentals nationwide.</p>
             </div>
 
-            <div class="research-card">
-                <div class="institution">MIT Beaver Works Summer Institute (BWSI)</div>
-                <div class="mentor">Medlytics Course</div>
-                <h3>AI/ML Applications in Healthcare</h3>
-                <p>Participated in project-based training focused on artificial intelligence and machine learning applications in healthcare. Worked with complex medical datasets, developed predictive models using Python and TensorFlow for early disease detection, and created machine learning pipelines for medical image analysis. Gained experience in data preprocessing, model development, and healthcare-specific AI challenges.</p>
+            <div class="leadership-card">
+                <h3>Science Bowl Team</h3>
+                <div class="role">Captain (2025–2026)</div>
+                <p>Led team to Michigan Championship and National Top 32 finish.</p>
             </div>
         </div>
     </section>
@@ -614,7 +721,7 @@
                 nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
             } else {
                 nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
+            </div>
         });
     </script>
 </body>
