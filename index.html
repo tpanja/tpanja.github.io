@@ -18,7 +18,6 @@
             background: #ffffff;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -59,7 +58,6 @@
             color: #3498db;
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -74,13 +72,11 @@
         .hero-content h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
         }
 
         .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
         }
 
         .hero-buttons {
@@ -88,7 +84,6 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.4s backwards;
         }
 
         .btn {
@@ -117,18 +112,6 @@
             border-color: #764ba2;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Sections */
         section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -159,7 +142,6 @@
             font-size: 1.2rem;
         }
 
-        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 300px 1fr;
@@ -206,7 +188,6 @@
             font-size: 0.9rem;
         }
 
-        /* Research Section */
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -250,7 +231,6 @@
             line-height: 1.7;
         }
 
-        /* Awards Section */
         .awards-content {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -289,7 +269,6 @@
             text-decoration: underline;
         }
 
-        /* Music Section */
         .music-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -321,7 +300,6 @@
             border-bottom: none;
         }
 
-        /* Leadership Section */
         .leadership-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -364,20 +342,6 @@
             background: #e9ecef;
         }
 
-        .research-title {
-            font-weight: bold;
-            color: #764ba2;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .research-details {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.8;
-        }
-
-        /* Contact Section */
         .contact {
             background: #f8f9fa;
             text-align: center;
@@ -410,7 +374,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
-        /* Footer */
         footer {
             background: #2c3e50;
             color: white;
@@ -418,7 +381,6 @@
             padding: 2rem;
         }
 
-        /* Mobile Menu */
         .mobile-menu {
             display: none;
             cursor: pointer;
@@ -476,7 +438,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">Tanay Panja</div>
@@ -499,7 +460,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Tanay Panja</h1>
@@ -511,7 +471,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
         <p class="section-subtitle">Environmental Engineer | AI & IoT Systems Developer | University of Michigan Dual Enrollment</p>
@@ -551,7 +510,6 @@
         </div>
     </section>
 
-    <!-- Research Section -->
     <section id="research">
         <h2>Research Experience</h2>
         <p class="section-subtitle">Environmental Engineering, AI, and IoT Systems Innovation</p>
@@ -615,79 +573,49 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications">
-        <h2>Publications & Presentations</h2>
-        <p class="section-subtitle">Conference Papers, Presentations, and Invited Talks</p>
-        
-        <div style="margin-bottom: 3rem;">
-            <h3 style="color: #2c3e50; margin-bottom: 1.5rem;">Conference Publications & Presentations</h3>
-            
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2025</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T., et al. (2025). Spatiotemporal Prediction of Pollen Distribution for Genus Acer Using Autoregressive Machine Learning Models. U-M Annual Data Science & AI Summit.</p>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2025</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T. (2025, October). Novel insights into the role of turbulent fluxes and diabatic heating in shaping the spatiotemporal structure of the Hadley Cell. IEEE MIT Undergraduate Research Technology Conference (URTC).</p>
-                <p style="color: #7f8c8d; font-size: 0.9rem;">Accepted at MIT Undergraduate Research Technology Conference</p>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2025</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T. (2025, October). Dementia AI: A low-cost, privacy-preserving mobile app for dementia screening using multinomial logistic regression and computer vision. 12th International Conference on Neurology and Brain Disorders, Orlando, FL.</p>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2024</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T., et al. (2024). Deducing the role of antigen presentation in autoimmune idiopathic Parkinson's disease. 11th Annual High School GIDAS Research Conference, Ann Arbor, MI.</p>
-                <a href="https://www.mircore.org/2024-conference/" target="_blank" class="award-link">View Conference →</a>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2024</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T., et al. (2024). Fetal sex influences the maternal plasma proteome in SARS-CoV-2. Society for Maternal-Fetal Medicine Annual Meeting, Washington, DC.</p>
-                <a href="https://doi.org/10.1002/pmf2.12028" target="_blank" class="award-link">DOI: 10.1002/pmf2.12028 →</a>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2024</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T. (2024). Dynamically ranking urothelial cells by malignancy using multiple instance learning and attention. EDIT Machine Learning Conference, Dartmouth.</p>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2024</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T., et al. (2024, January). Deep learning in tumor microenvironment. Pacific Symposium on Biocomputing, Kohala Coast, HI.</p>
-                <a href="https://doi.org/10.7490/f1000research.1119682.1" target="_blank" class="award-link">DOI: 10.7490/f1000research.1119682.1 →</a>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2023</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T., et al. (2023). KEGG analysis of S. aureus on multiple sclerosis. 10th Annual High School GIDAS Research Conference, Ann Arbor, MI.</p>
-                <p style="color: #7f8c8d; font-size: 0.9rem; margin-bottom: 0.5rem;">2nd Place Award</p>
-                <a href="https://www.mircore.org/2023-conference/" target="_blank" class="award-link">View Conference →</a>
-            </div>
-
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2023</div>
-                <p style="margin-bottom: 0.5rem;">Panja, T., et al. (2023). Tumor immune microenvironment-centered multimodal deep learning approaches to colorectal cancer survival analysis. EDIT Machine Learning Conference, Dartmouth.</p>
-            </div>
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p class="section-subtitle">Let's connect and collaborate</p>
+        <div class="contact-links">
+            <a href="mailto:tpanja2017@gmail.com">
+                <span>📧</span> Email
+            </a>
+            <a href="https://linkedin.com/in/tanaypanja" target="_blank">
+                <span>💼</span> LinkedIn
+            </a>
+            <a href="https://github.com/tpanja" target="_blank">
+                <span>🔗</span> GitHub
+            </a>
         </div>
+    </section>
 
-        <div style="margin-bottom: 3rem;">
-            <h3 style="color: #2c3e50; margin-bottom: 1.5rem;">Invited Speaking Events</h3>
-            
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2024</div>
-                <p style="margin-bottom: 0.5rem;">National Panelist, MIT Beaver Works Summer Institute (BWSI): "You Belong in STEM"</p>
-                <p style="color: #7f8c8d; font-size: 0.9rem;">Invited speaker discussing accessibility and inclusion in STEM education</p>
-            </div>
+    <footer>
+        <p>&copy; 2025 Tanay Panja. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Ann Arbor, Michigan</p>
+    </footer>
 
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
-                <div style="color: #667eea; font-weight: 500; margin-bottom: 0.5rem;">2024</div>
-                <p style="margin-bottom: 0.5rem;">TEDx Youth, Ann Arbor, MI: Microbial Fuel Cells</p>
-                <p style="color: #7f8c8d; font-size: 0.9rem;">Presented research on wastewater treatment innovation and energy generation</p>
-            </div>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-            <div class="research-item" style="background: #fff; border: 1px solid #e0e0e0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
