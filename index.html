@@ -270,6 +270,19 @@
             text-decoration: underline;
         }
 
+        /* Prevent certificate image copying/downloading */
+        img {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .profile-photo {
+            pointer-events: auto;
+        }
+
         .music-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -778,6 +791,59 @@
                 nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
             } else {
                 nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(elementId, button) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#27ae60';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+        // Copy to clipboard function
+        function copyToClipboard(elementId, button) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#27ae60';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        // Disable right-click on certificate images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG' && !e.target.classList.contains('profile-photo')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Prevent dragging certificate images
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG' && !e.target.classList.contains('profile-photo')) {
+                e.preventDefault();
+                return false;
             }
         });
     </script>
