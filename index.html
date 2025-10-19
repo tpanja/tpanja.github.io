@@ -28,7 +28,6 @@
             background: #fff;
         }
 
-        /* Compact Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -75,15 +74,14 @@
             color: var(--primary);
         }
 
-        /* Compact Hero with Profile Photo */
         .hero {
             background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 4rem 1.5rem 3rem;
+            padding: 3rem 1.5rem 2rem;
             text-align: center;
         }
 
         .profile-photo-container {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .profile-photo {
@@ -112,7 +110,7 @@
         .hero p {
             font-size: 1.1rem;
             color: var(--gray);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .hero-stats {
@@ -139,7 +137,6 @@
             color: var(--gray);
         }
 
-        /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -163,7 +160,27 @@
             border-radius: 2px;
         }
 
-        /* Research Cards with Images */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -191,11 +208,6 @@
             height: 200px;
             object-fit: cover;
             background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray);
-            font-size: 3rem;
         }
 
         .research-content {
@@ -256,17 +268,6 @@
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
 
-        .research-link.secondary {
-            background: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .research-link.secondary:hover {
-            background: var(--light);
-        }
-
-        /* Compact Cards */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -341,49 +342,6 @@
             transform: translateX(3px);
         }
 
-        /* Tabs */
-        .tabs {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #e8e8e8;
-            overflow-x: auto;
-        }
-
-        .tab {
-            padding: 0.75rem 1.5rem;
-            background: none;
-            border: none;
-            color: var(--gray);
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -2px;
-            white-space: nowrap;
-        }
-
-        .tab.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Compact List Items */
         .list-item {
             background: white;
             border: 1px solid #e8e8e8;
@@ -416,7 +374,6 @@
             color: var(--gray);
         }
 
-        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -446,7 +403,6 @@
             box-shadow: var(--shadow-lg);
         }
 
-        /* Footer */
         footer {
             background: var(--dark);
             color: white;
@@ -455,7 +411,6 @@
             margin-top: 3rem;
         }
 
-        /* Mobile Menu */
         .mobile-toggle {
             display: none;
             background: none;
@@ -465,7 +420,6 @@
             color: var(--dark);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -474,6 +428,16 @@
             .profile-photo {
                 width: 120px;
                 height: 120px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                max-width: 250px;
+                margin: 0 auto;
             }
 
             .nav-links {
@@ -499,19 +463,10 @@
             .grid, .research-grid {
                 grid-template-columns: 1fr;
             }
-
-            .tabs {
-                font-size: 0.85rem;
-            }
-
-            .tab {
-                padding: 0.5rem 1rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">Tanay Panja</div>
@@ -529,7 +484,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Profile Photo -->
     <section class="hero">
         <div class="profile-photo-container">
             <img src="profile.jpg" alt="Tanay Panja" class="profile-photo">
@@ -556,40 +510,22 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <div id="about" class="container">
         <h2 class="section-title">About</h2>
-        <div style="display: grid; grid-template-columns: 350px 1fr; gap: 2rem; align-items: start; margin-top: 1.5rem;">
+        <div class="about-grid">
             <div>
-                <img src="profile.jpg" alt="Tanay Panja" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);">
+                <img src="profile.jpg" alt="Tanay Panja" class="about-image">
             </div>
-            <div>
-                <p style="font-size: 1rem; line-height: 1.8; color: var(--gray); margin-bottom: 1rem;">
-                    High school senior at Huron High School passionate about environmental engineering and wastewater treatment innovation. Through dual enrollment at the University of Michigan, I pursue graduate-level coursework while conducting research on AI-enabled water treatment systems.
-                </p>
-                <p style="font-size: 1rem; line-height: 1.8; color: var(--gray);">
-                    Beyond research, I'm an accomplished double bassist competing internationally and founder of SteamFun4Kids, a 501(c)(3) nonprofit making STEM education accessible to underserved communities.
-                </p>
+            <div class="about-text">
+                <p>High school senior at Huron High School passionate about environmental engineering and wastewater treatment innovation. Through dual enrollment at the University of Michigan, I pursue graduate-level coursework while conducting research on AI-enabled water treatment systems.</p>
+                <p>Beyond research, I'm an accomplished double bassist competing internationally and founder of SteamFun4Kids, a 501(c)(3) nonprofit making STEM education accessible to underserved communities.</p>
             </div>
         </div>
-
-        @media (max-width: 768px) {
-            #about > div {
-                grid-template-columns: 1fr !important;
-                text-align: center;
-            }
-            #about img {
-                max-width: 250px;
-                margin: 0 auto;
-            }
-        }
     </div>
 
-    <!-- Research Section with Photos and Links -->
     <div id="research" class="container">
         <h2 class="section-title">Research Experience</h2>
         <div class="research-grid">
-            <!-- Research Card 1 -->
             <div class="research-card">
                 <img src="research/pollen-forecast.jpg" alt="Pollen Forecasting Research" class="research-image" onerror="this.style.display='none';">
                 <div class="research-content">
@@ -603,7 +539,6 @@
                 </div>
             </div>
 
-            <!-- Research Card 2 -->
             <div class="research-card">
                 <img src="research/wastewater.jpg" alt="Wastewater Treatment System" class="research-image" onerror="this.style.display='none';">
                 <div class="research-content">
@@ -617,14 +552,13 @@
                 </div>
             </div>
 
-            <!-- Research Card 3 -->
             <div class="research-card">
                 <img src="research/hadley-cell.jpg" alt="Climate Dynamics Research" class="research-image" onerror="this.style.display='none';">
                 <div class="research-content">
-                    <div class="research-meta">Independent Research</div>
+                    <div class="research-meta">Harvard University</div>
                     <h3 class="research-title">Novel Insights into the Role of Turbulent Fluxes and Diabatic Heating in Shaping the Spatiotemporal Structure of the Hadley Cell</h3>
                     <p class="research-description">Hadley Cell climate modeling research focusing on atmospheric circulation dynamics using computational fluid dynamics and Julia programming.</p>
-                    <p class="research-mentor">Advisor: Eojin Kim, Doctoral Student, Dept. of Earth and Planetary Sciences,Harvard University</p>
+                    <p class="research-mentor">Advisor: Eojin Kim, Doctoral Student, Dept. of Earth and Planetary Sciences, Harvard University</p>
                     <div class="research-links">
                         <a href="papers/climate-paper.pdf" class="research-link">Paper</a>
                     </div>
@@ -633,298 +567,147 @@
         </div>
     </div>
 
-    <!-- Achievements Section with Tabs -->
     <div id="achievements" class="container">
         <h2 class="section-title">Top Honors & Achievements</h2>
-        
         <div class="grid">
-            <div class="grid">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"> National STEM Champion</div>
-                        <div class="card-badge">2024-25</div>
-                    </div>
-                    <p class="card-text">Congressional Innovation Award - U.S. Dept. of Education (Top 5%)</p>
-                    <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html" class="card-link">2025 Student Innovators →</a>
-                    <a href="https://www.nationalstemfestival.com/2024-student-innovators" class="card-link" style="display: block; margin-top: 0.3rem;">2024 Student Innovators →</a>
-                    
-                    <a href="certificates/Stem Champion Depart of Education.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2024 STEM Champion Letter →</a>
-                
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🏆 National STEM Champion</div>
+                    <div class="card-badge">2024-25</div>
                 </div>
+                <p class="card-text">Congressional Innovation Award - U.S. Dept. of Education (Top 5%)</p>
+                <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html" class="card-link">2025 Press Release →</a>
+                <a href="https://www.nationalstemfestival.com/2024-student-innovators" class="card-link" style="display: block; margin-top: 0.3rem;">2024 Student Innovators →</a>
+                <a href="certificates/Stem Champion Depart of Education.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 Certificate →</a>
+            </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"> GENIUS Olympiad Gold</div>
-                        <div class="card-badge">2025</div>
-                    </div>
-                    <p class="card-text">International Environmental Science Fair - Energy Category</p>
-                    <a href="certificates/genius certificate.jpg" class="card-link">View 2025 Certificate →</a>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🥇 GENIUS Olympiad Gold</div>
+                    <div class="card-badge">2025</div>
                 </div>
+                <p class="card-text">International Environmental Science Fair - Energy Category</p>
+                <a href="certificates/genius certificate.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
+            </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">US AI Olympiad Gold</div>
-                        <div class="card-badge">2025</div>
-                    </div>
-                    <p class="card-text">MIT Round 2 - Top 19 Nationally (Top 5%)</p>
-                    <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" class="card-link">View Awardee List →</a>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🥇 US AI Olympiad Gold</div>
+                    <div class="card-badge">2025</div>
                 </div>
+                <p class="card-text">MIT Round 2 - Top 19 Nationally (Top 5%)</p>
+                <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" class="card-link">View Awardee List →</a>
+            </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"> ISB Semifinalist</div>
-                        <div class="card-badge">2025</div>
-                    </div>
-                    <p class="card-text">International Society of Bassists - Top 8 USA / Top 16 Worldwide</p>
-                    <a href="https://www.isbworldoffice.com/" class="card-link">ISB Official Website →</a>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🎵 ISB Semifinalist</div>
+                    <div class="card-badge">2025</div>
                 </div>
+                <p class="card-text">International Society of Bassists - Top 8 USA / Top 16 Worldwide</p>
+                <a href="https://www.isbworldoffice.com/" class="card-link">ISB Website →</a>
+            </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"> USABO Semifinalist (2×)</div>
-                        <div class="card-badge">2023-25</div>
-                    </div>
-                    <p class="card-text">USA Biology Olympiad - Top 250 of 9,700 nationally</p>
-                    <a href="certificates/usabo_certificate.jpg" class="card-link">USABO 2023 Certificate →</a>
-                    <a href="certificates/USABO2023.pdf" class="card-link" style="display: block; margin-top: 0.3rem;">USABO 2023 Semifinalist Email →</a>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🧬 USABO Semifinalist (2×)</div>
+                    <div class="card-badge">2023-25</div>
                 </div>
+                <p class="card-text">USA Biology Olympiad - Top 250 of 9,700 nationally</p>
+                <a href="certificates/usabo_certificate.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2023 Certificate →</a>
+            </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"> USNCO National Finalist</div>
-                        <div class="card-badge">2024</div>
-                    </div>
-                    <p class="card-text">USA Chemistry Olympiad - National Finalist 2024, 3× Regional Top 3 (2023, 2024, 2025)</p>
-                    <a href="certificates/scanned_usnco_Page_1.jpg" class="card-link">2024 National Finalist →</a>
-                    <a href="certificates/scanned_usnco_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2024 Regional 2nd Place →</a>
-                    <a href="certificates/scanned_usnco_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2023 Regional 3rd Place →</a>
-                    <a href="certificates/usnco_2025.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2025 Regional 3rd Place →</a>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🧪 USNCO National Finalist</div>
+                    <div class="card-badge">2024</div>
                 </div>
+                <p class="card-text">USA Chemistry Olympiad - 3× Regional Top 3 (2023-25)</p>
+                <a href="certificates/scanned_usnco_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2024 National →</a>
+                <a href="certificates/scanned_usnco_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 Regional 2nd →</a>
+                <a href="certificates/scanned_usnco_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 Regional 3rd →</a>
+                <a href="certificates/usnco_2025.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2025 Regional 3rd →</a>
+            </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title"> AIME Qualifier (2×)</div>
-                        <div class="card-badge">2024-25</div>
-                    </div>
-                    <p class="card-text">American Invitational Mathematics Examination - AMC 10A Honor Roll of Distinction (Top 1%)</p>
-                    <a href="certificates/all_amc_certificates_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2025 AIME Certificate →</a>
-                    <a href="certificates/all_amc_certificates_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 AIME Certificate →</a>
-                    <a href="certificates/all_amc_certificates_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 Honor Roll Certificate →</a>
-                    <a href="certificates/aime_2025_score.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2025 AIME Score Report →</a>
-                    <a href="certificates/aime_2024_score.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 AIME Score Report →</a>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">📐 AIME Qualifier (2×)</div>
+                    <div class="card-badge">2024-25</div>
                 </div>
+                <p class="card-text">American Invitational Mathematics Examination - Honor Roll of Distinction (Top 1%)</p>
+                <a href="certificates/all_amc_certificates_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2025 AIME →</a>
+                <a href="certificates/all_amc_certificates_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 AIME →</a>
+                <a href="certificates/aime_2025_score.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2025 Score →</a>
+                <a href="certificates/aime_2024_score.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 Score →</a>
+            </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">🥈 British Biology Olympiad Silver</div>
-                        <div class="card-badge">2024</div>
-                    </div>
-                    <p class="card-text">Top 10% of 13,000+ participants</p>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">🥈 British Biology Olympiad Silver</div>
+                    <div class="card-badge">2024</div>
                 </div>
+                <p class="card-text">Top 10% of 13,000+ participants</p>
             </div>
         </div>
     </div>
 
-    <!-- Science Fair Awards Section -->
     <div id="science-fairs" class="container">
         <h2 class="section-title">Science Fair Awards</h2>
-            <div class="list-item">
-                  <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
-                  <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
-                <div class="list-item-title"> NASA Award</div>
-                <div class="list-item-meta">SEFMD Science Fair - 1st Place NASA Earth System Science Award</div>
-                <a href="certificates/science fair certificates_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
-                <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title"> Navy ONR Award</div>
-                <div class="list-item-meta">Office of Naval Research - 1st Place U.S. Navy ONR Medallion with Naval Science Award Certificate</div>
-                <a href="certificates/science fair certificates_Page_4.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
-              
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Stockholm Junior Water Prize</div>
-                <div class="list-item-meta">Michigan Regional Winner - 1st Place Regional Award and National Recommendation</div>
-                <a href="certificates/science fair certificates_Page_2.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
-              
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title"> NOAA Award</div>
-                <div class="list-item-meta">National Oceanic and Atmospheric Administration - "Taking the Pulse of the Planet" Award</div>
-                <a href="certificates/science fair certificates_Page_3.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
-                <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title"> Sigma Xi Award</div>
-                <div class="list-item-meta">University of Michigan Chapter - 1st Place (2024, 2025)</div>
-                <a href="https://sefmd.org/results-2025/" class="card-link">SEFMD 2025 Results →</a>
-                <a href="https://sefmd.org/results-2024/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2024 Results →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Air & Waste Management Association Award</div>
-                <div class="list-item-meta">SEFMD Science Fair - Environmental engineering innovation</div>
-                <a href="certificates/science fair certificates_Page_6.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
-                <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">James Doetsch Memorial Science Fair Scholarship Award</div>
-                <div class="list-item-meta">$1,000 Scholarship - Engineering & Manufacturing Association (2024)</div>
-                <a href="certificates/science fair certificates_Page_5.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
-                <a href="https://sefmd.org/results-2024/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2024 Results →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Environmental Management Association Award</div>
-                <div class="list-item-meta">2nd Place (2024)</div>
-                <a href="https://sefmd.org/results-2024/" class="card-link">SEFMD 2024 Results →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Detroit Science & Engineering Fair</div>
-                <div class="list-item-meta">1st Place (2023)</div>
-                <a href="https://sefmd.org/results-2023/" class="card-link">SEFMD 2023 Results →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Science Bowl Champion</div>
-                <div class="list-item-meta">Michigan 1st Place (2023, 2024), National Top 32</div>
-                <a href="certificates/science bowl_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2024 National Finals Certificate →</a>
-                <a href="certificates/science bowl_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 National Finals Certificate →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">ACSL 1st Place Nationally</div>
-                <div class="list-item-meta">American Computer Science League - Senior Division Champion (2023-24)</div>
-                <a href="certificates/acsl_awards_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2023-24 Senior 1st Place Certificate →</a>
-                <a href="certificates/acsl_awards_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 Finals Bronze Certificate →</a>
-                <a href="certificates/acsl_awards_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2022-23 Intermediate 1st Place Certificate →</a>
-            </div>
+        <div class="list-item">
+            <div class="list-item-title">🛰️ NASA Earth System Science Award</div>
+            <div class="list-item-meta">SEFMD Science Fair - 1st Place (2025)</div>
+            <a href="certificates/science fair certificates_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
+            <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
         </div>
-    </div>
 
-    <!-- Music Section -->
-    <div id="music" class="container">
-        <h2 class="section-title">Music: Double Bass</h2>
-            <div class="list-item">
-                <div class="list-item-title">ISB Youth Solo Competition Semifinalist</div>
-                <div class="list-item-meta">International Society of Bassists - Top 8 USA, Top 16 Worldwide (2025)</div>
-                <div class="list-item-text">ISB Convention, Florida State University College of Music, Tallahassee</div>
-                <a href="https://www.isbworldoffice.com/" class="card-link">ISB Official Website →</a>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">ENKOR International Music Competition</div>
-                <div class="list-item-meta">Third Prize - Strings Division (2025)</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">🎼 Michigan All-State High School Orchestra (MSBOA)</div>
-                <div class="list-item-meta">4× Selection (2021, 2022, 2024, 2025) - 1st Chair recognition (2021, 2022)</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">MSBOA Outstanding Chamber Ensemble Award</div>
-                <div class="list-item-meta">Michigan School Band and Orchestra Association (2025)</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">MSBOA Strings Honors Ensemble</div>
-                <div class="list-item-meta">Michigan School Band and Orchestra Association (2025)</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Principal Double Bass & Mentorship Coordinator</div>
-                <div class="list-item-meta">Huron Symphony Orchestra (2024–Present)</div>
-                <div class="list-item-text">Section Leader, mentored younger musicians, led sectionals</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Performance Venues</div>
-                <div class="list-item-meta">Notable Concert Halls</div>
-                <div class="list-item-text">• Hill Auditorium (University of Michigan)<br>
-                • Auditorio Nacional de Música (Madrid, Spain)<br>
-                • L'Auditori Nacional de Barcelona (Barcelona, Spain)<br>
-                • Valencia UNESCO venues (Valencia, Spain)<br>
-                • Canada Tour</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Interlochen Arts Camp with Huron Orchestra</div>
-                <div class="list-item-meta">Orchestra & Composition Program (Summers 2022–2025)</div>
-                <div class="list-item-text">Performed in weekly concerts, received double bass instruction, and participated in composition workshops</div>
-            </div>
-
-            <div class="list-item">
-                <div class="list-item-title">Michigan State Solo & Ensemble Festival</div>
-                <div class="list-item-meta">Multiple Division 1 ratings (98/100)</div>
-            </div>
+        <div class="list-item">
+            <div class="list-item-title">⚓ Navy ONR Award</div>
+            <div class="list-item-meta">Office of Naval Research - 1st Place (2025)</div>
+            <a href="certificates/science fair certificates_Page_4.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
+            <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
         </div>
-    </div>
 
-    <!-- Publications Section -->
-    <div id="publications" class="container">
-        <h2 class="section-title">Publications & Presentations</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-meta">U-M Data Science Summit 2025</div>
-                <h3 class="card-title">Spatiotemporal Prediction of Pollen Distribution</h3>
-                <p class="card-text">ML models for predicting Genus Acer pollen using autoregressive approaches</p>
-            </div>
-
-            <div class="card">
-                <div class="card-meta">IEEE MIT URTC 2025</div>
-                <h3 class="card-title">Novel Insights into Hadley Cell Dynamics</h3>
-                <p class="card-text">Research on turbulent fluxes and diabatic heating in atmospheric circulation</p>
-            </div>
-
-            <div class="card">
-                <div class="card-meta">PSB 2024</div>
-                <h3 class="card-title">Deep Learning in Tumor Microenvironment</h3>
-                <p class="card-text">Advanced approaches for analyzing tumor immune microenvironments</p>
-                <a href="https://doi.org/10.7490/f1000research.1119682.1" class="card-link">View Publication →</a>
-            </div>
-
-
+        <div class="list-item">
+            <div class="list-item-title">💧 Stockholm Junior Water Prize</div>
+            <div class="list-item-meta">Michigan Regional Winner - National Recommendation (2025)</div>
+            <a href="certificates/science fair certificates_Page_2.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
+            <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
         </div>
-    </div>
 
-    <!-- Leadership Section -->
-    <div id="leadership" class="container">
-        <h2 class="section-title">Leadership & Service</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-title">GIDAS Research Club - Chair</div>
-                <div class="card-meta">2025-2026</div>
-                <p class="card-text">Led global network of 100+ chapters, organized conference with 400+ projects, raised $10,000+</p>
-                <a href="https://www.mircore.org/gidas/" class="card-link">Visit Website →</a>
-            </div>
+        <div class="list-item">
+            <div class="list-item-title">🌊 NOAA "Taking the Pulse of the Planet" Award</div>
+            <div class="list-item-meta">National Oceanic and Atmospheric Administration (2025)</div>
+            <a href="certificates/science fair certificates_Page_3.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
+            <a href="https://sefmd.org/results-2025/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
+        </div>
 
-            <div class="card">
-                <div class="card-title">SteamFun4Kids - Founder & President</div>
-                <div class="card-meta">501(c)(3) Nonprofit</div>
-                <p class="card-text">Hosted 200+ STEM workshops, raised $3,100+ for Title I schools</p>
-                <a href="https://news.a2schools.org/king-elementary-students-shine-in-robotics-competition-at-first-lego-league-competition/" class="card-link">Press Coverage - Robotics Competition →</a>
-            </div>
+        <div class="list-item">
+            <div class="list-item-title">🔬 Sigma Xi Award</div>
+            <div class="list-item-meta">University of Michigan Chapter - 1st Place (2024, 2025)</div>
+            <a href="https://sefmd.org/results-2025/" class="card-link">2025 Results →</a>
+            <a href="https://sefmd.org/results-2024/" class="card-link" style="display: block; margin-top: 0.3rem;">2024 Results →</a>
+        </div>
 
-            <div class="card">
-                <div class="card-title">Huron BioGIDAS - Founder & President</div>
-                <div class="card-meta">School Research Club</div>
-                <p class="card-text">Founded and led school chapter of GIDAS research network, mentoring students in biological research</p>
-            </div>
+        <div class="list-item">
+            <div class="list-item-title">💨 Air & Waste Management Association Award</div>
+            <div class="list-item-meta">SEFMD Science Fair (2025)</div>
+            <a href="certificates/science fair certificates_Page_6.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
+        </div>
 
-            <div class="card">
-                <div class="card-title">Huron Science Bowl - Captain</div>
-                <div class="card-meta">2024-2026</div>
-                <p class="card-text">Led team to Michigan Championship and National Top 32 finish</p>
-            </div>
+        <div class="list-item">
+            <div class="list-item-title">🎓 James Doetsch Memorial Scholarship</div>
+            <div class="list-item-meta">$1,000 Scholarship (2024)</div>
+            <a href="certificates/science fair certificates_Page_5.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
+        </div>
 
-            <div class="card">
-                <div class="card-title">US AI Olympiad - Ambassador</div>
-                <div class="card-meta">National Program</div>
-                <p class="card-text
+        <div class="list-item">
+            <div class="list-item-title">🏆 Science Bowl Champion</div>
+            <div class="list-item-meta">Michigan 1st Place (2023, 2024), National Top 32</div>
+            <a href="certificates/science bowl_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2024 Certificate →</a>
+            <a href="certificates/science bowl_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 Certificate →</a>
+        </div>
+
+        <div class="list-item">
+            <div class="list-item-title">💻 ACSL 1st Place Nationally</div>
+            <div class="list-item-meta">American Computer Science League - Senior Division (2023-24)</div>
+            <a href="certificates/acsl_awards_Page_1.jpg" class="card-link" oncontextmenu="
