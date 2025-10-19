@@ -233,27 +233,39 @@
 
         .awards-content {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .award-card {
-            background: #fff;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             border: 1px solid #e0e0e0;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            border-left-color: #764ba2;
         }
 
         .award-card h4 {
             color: #2c3e50;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+            line-height: 1.4;
         }
 
         .award-card p {
             color: #7f8c8d;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
         }
 
         .award-link {
@@ -261,16 +273,17 @@
             margin-top: 0.5rem;
             color: #667eea;
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            font-weight: 500;
         }
 
         .award-link:hover {
             color: #764ba2;
             text-decoration: underline;
+            transform: translateX(3px);
         }
 
-        /* Prevent certificate image copying/downloading */
         img {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -553,13 +566,11 @@
                 <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" target="_blank" class="award-link">View 2025 Certificate →</a>
             </div>
 
-            
             <div class="award-card">
                 <h4>🥇 Genius Olympiad - Gold Medal</h4>
                 <p>Environmental Science Fair (5% acceptance, 2025)</p>
                 <a href="certificates/genius certificate.jpg" target="_blank" class="award-link">View 2025 Certificate →</a>
             </div>
-            
             
             <div class="award-card">
                 <h4>💻 ACSL - 1st Nationally</h4>
@@ -601,88 +612,21 @@
             
             <div class="award-card">
                 <h4>🔬 Science Fair Awards</h4>
-                <p>NASA, Navy ONR, NOAA, Stockholm Water Prize (2025)</p>
+                <p>NASA, Navy ONR, NOAA, Stockholm Water Prize, Air & Waste Management Association</p>
                 <a href="certificates/science fair certificates_Page_1.jpg" target="_blank" class="award-link">2025 Certificate Page 1 →</a>
                 <a href="certificates/science fair certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Certificate Page 2 →</a>
-                <a href="certificates/science fair certificates_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Certificate NOAA →</a>
-                <a href="certificates/science fair certificates_Page_4.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Certificate Naval →</a>
-                <a href="certificates/science fair certificates_Page_5.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Certificate EMA Scholarship →</a>
-                <a href="certificates/science fair certificates_Page_6.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Airwaste →</a>
+                <a href="certificates/science fair certificates_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 NOAA Award →</a>
+                <a href="certificates/science fair certificates_Page_4.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Naval Award →</a>
+                <a href="certificates/science fair certificates_Page_5.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 EMA Scholarship →</a>
+                <a href="certificates/science fair certificates_Page_6.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Air & Waste Award →</a>
                 
-                <a href="https://sefmd.org/results-2025/" target="_blank" class="award-link" style="display: block; margin-top: 0.5rem; font-weight: 500;">SEFMD Results 2025 →</a>
-                <a href="https://sefmd.org/results-2024/" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem; font-weight: 500;">SEFMD Results 2024 →</a>
+                <a href="https://sefmd.org/results-2025/" target="_blank" class="award-link" style="display: block; margin-top: 0.75rem; font-weight: 600;">SEFMD 2025 Results →</a>
+                <a href="https://sefmd.org/results-2024/" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem; font-weight: 600;">SEFMD 2024 Results →</a>
             </div>
             
             <div class="award-card">
                 <h4>🌍 National STEM Champion</h4>
-                <p>U.S. Dept of Education, </p>
-                <a href="certificates/Stem Champion Depart of Education.jpg" target="_blank" class="award-link">2024 STEM Champion Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🏅 Michigan STEM Innovator</h4>
-                <p>Awarded by Governor Whitmer (2024)</p>
-                <a href="certificates/michiganinnovatoraward.jpg" target="_blank" class="award-link">View 2024 Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>⭐ Presidential Gold Awards</h4>
-                <p>3× Volunteer Service Recognition</p>
-                <a href="certificates/volunteer certificates_Page_1.jpg" target="_blank" class="award-link">2024 Gold Award Certificate →</a>
-                <a href="certificates/volunteer certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Gold Award Certificate →</a>
-                <a href="certificates/volunteer certificates_Page_4.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2022 Gold Award Certificate →</a>
-            </div>iad - Gold Medal</h4>
-                <p>Environmental Science Fair (5% acceptance, 2025)</p>
-                <a href="certificates/genius certificate.jpg" target="_blank" class="award-link">View 2025 Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>💻 ACSL - 1st Nationally</h4>
-                <p>American Computer Science League</p>
-                <a href="certificates/acsl_awards_Page_1.jpg" target="_blank" class="award-link">2023-24 Senior 1st →</a>
-                <a href="certificates/acsl_awards_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Finals Bronze →</a>
-                <a href="certificates/acsl_awards_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2022-23 Intermediate 1st →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>📐 AMC/AIME</h4>
-                <p>3× AIME Qualifier, Honor Roll of Distinction</p>
-                <a href="certificates/all_amc_certificates_Page_1.jpg" target="_blank" class="award-link">2025 AIME Certificate →</a>
-                <a href="certificates/all_amc_certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2024 AIME Certificate →</a>
-                <a href="certificates/all_amc_certificates_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Honor Roll Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🧪 USNCO National Finalist</h4>
-                <p>Chemistry Olympiad, 3× Local Medalist</p>
-                <a href="certificates/scanned_usnco_Page_1.jpg" target="_blank" class="award-link">2024 National Finalist Certificate →</a>
-                <a href="certificates/scanned_usnco_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2024 Local 2nd Place Certificate →</a>
-                <a href="certificates/scanned_usnco_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Local 3rd Place Certificate →</a>
-                <a href="certificates/usnco_page_4.jpeg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Local 3rd Place Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🧬 USABO Semifinalist</h4>
-                <p>Biology Olympiad, Top 250 of 9,700</p>
-                <a href="certificates/usabo_certificate.jpg" target="_blank" class="award-link">2023 Semifinalist Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🏆 Science Bowl Champion</h4>
-                <p>Michigan 1st Place, National Top 32</p>
-                <a href="certificates/science bowl_Page_1.jpg" target="_blank" class="award-link">2024 National Finals Certificate →</a>
-                <a href="certificates/science bowl_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 National Finals Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🔬 Science Fair Awards</h4>
-                <p>NASA, Navy ONR, NOAA, Stockholm Water Prize (2025)</p>
-                <a href="certificates/science fair certificates_Page_1.jpg" target="_blank" class="award-link">View 2025 Certificates →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🌍 National STEM Champion</h4>
-                <p>U.S. Dept of Education, Obama Letter</p>
+                <p>U.S. Department of Education</p>
                 <a href="certificates/Stem Champion Depart of Education.jpg" target="_blank" class="award-link">2024 STEM Champion Certificate →</a>
                 <a href="certificates/Obama certificate.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Obama Letter →</a>
             </div>
@@ -690,7 +634,7 @@
             <div class="award-card">
                 <h4>🏅 Michigan STEM Innovator</h4>
                 <p>Awarded by Governor Whitmer (2024)</p>
-                <a href="certificates/michigan innovator award.jpg" target="_blank" class="award-link">View 2024 Certificate →</a>
+                <a href="certificates/michiganinnovatoraward.jpg" target="_blank" class="award-link">View 2024 Certificate →</a>
             </div>
             
             <div class="award-card">
@@ -870,43 +814,6 @@
                 nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
         });
-
-        // Copy to clipboard function
-        function copyToClipboard(elementId, button) {
-            const element = document.getElementById(elementId);
-            const text = element.textContent;
-            
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                button.style.background = '#27ae60';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = '#667eea';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-            });
-        }
-        // Copy to clipboard function
-        function copyToClipboard(elementId, button) {
-            const element = document.getElementById(elementId);
-            const text = element.textContent;
-            
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                button.style.background = '#27ae60';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.style.background = '#667eea';
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-            });
-        }
 
         // Disable right-click on certificate images
         document.addEventListener('contextmenu', function(e) {
