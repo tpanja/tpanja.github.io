@@ -559,14 +559,30 @@
     <!-- About Section -->
     <div id="about" class="container">
         <h2 class="section-title">About</h2>
-        <div style="max-width: 900px;">
-            <p style="font-size: 1rem; line-height: 1.8; color: var(--gray); margin-bottom: 1rem;">
-                High school senior at Huron High School passionate about environmental engineering and wastewater treatment innovation. Through dual enrollment at the University of Michigan, I pursue graduate-level coursework while conducting research on AI-enabled water treatment systems.
-            </p>
-            <p style="font-size: 1rem; line-height: 1.8; color: var(--gray);">
-                Beyond research, I'm an accomplished double bassist competing internationally and founder of SteamFun4Kids, a 501(c)(3) nonprofit making STEM education accessible to underserved communities.
-            </p>
+        <div style="display: grid; grid-template-columns: 350px 1fr; gap: 2rem; align-items: start; margin-top: 1.5rem;">
+            <div>
+                <img src="profile.jpg" alt="Tanay Panja" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);">
+            </div>
+            <div>
+                <p style="font-size: 1rem; line-height: 1.8; color: var(--gray); margin-bottom: 1rem;">
+                    High school senior at Huron High School passionate about environmental engineering and wastewater treatment innovation. Through dual enrollment at the University of Michigan, I pursue graduate-level coursework while conducting research on AI-enabled water treatment systems.
+                </p>
+                <p style="font-size: 1rem; line-height: 1.8; color: var(--gray);">
+                    Beyond research, I'm an accomplished double bassist competing internationally and founder of SteamFun4Kids, a 501(c)(3) nonprofit making STEM education accessible to underserved communities.
+                </p>
+            </div>
         </div>
+
+        @media (max-width: 768px) {
+            #about > div {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            #about img {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
     </div>
 
     <!-- Research Section with Photos and Links -->
