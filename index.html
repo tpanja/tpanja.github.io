@@ -11,970 +11,874 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --gray: #7f8c8d;
+            --shadow: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #ffffff;
+            color: var(--dark);
+            background: #fff;
         }
 
+        /* Compact Navigation */
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 100;
+            padding: 0.75rem 0;
         }
 
-        nav .container {
-            max-width: 1200px;
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        nav ul {
+        .nav-links {
             display: flex;
+            gap: 1.5rem;
             list-style: none;
-            gap: 2rem;
         }
 
-        nav a {
-            color: #2c3e50;
+        .nav-links a {
+            color: var(--dark);
             text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #3498db;
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
+        /* Compact Hero with Profile Photo */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 4rem 1.5rem 3rem;
             text-align: center;
-            background: #ffffff;
-            color: #2c3e50;
-            padding: 2rem;
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: 2px solid #667eea;
-            background: transparent;
-            color: #667eea;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #764ba2;
-            border-color: #764ba2;
-        }
-
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-            position: relative;
-            display: inline-block;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50%;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .section-subtitle {
-            color: #7f8c8d;
-            margin-bottom: 3rem;
-            font-size: 1.2rem;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-            align-items: start;
-        }
-
-        .profile-photo {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .stat-box {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            border-left: 4px solid #667eea;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #667eea;
-            display: block;
-        }
-
-        .stat-label {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .research-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .research-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-
-        .research-card h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .research-card .institution {
-            color: #667eea;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .research-card .mentor {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .research-card p {
-            color: #555;
-            line-height: 1.7;
-        }
-
-        .awards-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .award-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border: 1px solid #e0e0e0;
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 5px solid #667eea;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .award-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
-            border-left-color: #764ba2;
-        }
-
-        .award-card h4 {
-            color: #2c3e50;
-            margin-bottom: 0.75rem;
-            font-size: 1.15rem;
-            line-height: 1.4;
-        }
-
-        .award-card p {
-            color: #7f8c8d;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-
-        .award-link {
-            display: inline-block;
-            margin-top: 0.5rem;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .award-link:hover {
-            color: #764ba2;
-            text-decoration: underline;
-            transform: translateX(3px);
-        }
-
-        img {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            pointer-events: none;
-        }
-
-        .profile-photo {
-            pointer-events: auto;
-        }
-
-        .music-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .music-highlights {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .music-highlights h3 {
-            color: #2c3e50;
+        .profile-photo-container {
             margin-bottom: 1.5rem;
         }
 
-        .music-highlights ul {
-            list-style: none;
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
         }
 
-        .music-highlights li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #e0e0e0;
+        .profile-photo:hover {
+            transform: scale(1.05);
         }
 
-        .music-highlights li:last-child {
-            border-bottom: none;
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .leadership-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
 
-        .leadership-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            padding: 2rem;
-            border-radius: 10px;
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 1.75rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Research Cards with Images */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .research-card {
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .research-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 3rem;
+        }
+
+        .research-content {
+            padding: 1.25rem;
+        }
+
+        .research-meta {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .research-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .research-mentor {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .research-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .research-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
             transition: all 0.3s;
         }
 
-        .leadership-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        .research-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
 
-        .leadership-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
+        .research-link.secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
 
-        .leadership-card .role {
-            color: #2c3e50;
+        .research-link.secondary:hover {
+            background: var(--light);
+        }
+
+        /* Compact Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .card-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .card-meta {
+            color: var(--primary);
+            font-size: 0.9rem;
             font-weight: 500;
             margin-bottom: 0.5rem;
         }
 
-        .contact {
-            background: #f8f9fa;
-            text-align: center;
-            padding: 4rem 2rem;
+        .card-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.5;
         }
 
-        .contact-links {
+        .card-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--primary);
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .card-link:hover {
+            color: var(--secondary);
+            transform: translateX(3px);
+        }
+
+        /* Tabs */
+        .tabs {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e8e8e8;
+            overflow-x: auto;
         }
 
-        .contact-links a {
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            white-space: nowrap;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Compact List Items */
+        .list-item {
+            background: white;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .list-item:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .list-item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .list-item-meta {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .list-item-text {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-btn {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
-            padding: 1rem 2rem;
+            padding: 1rem;
             background: white;
-            color: #2c3e50;
+            border: 2px solid var(--primary);
+            color: var(--primary);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .contact-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        .contact-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
+        /* Footer */
         footer {
-            background: #2c3e50;
+            background: var(--dark);
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
         }
 
-        .mobile-menu {
+        /* Mobile Menu */
+        .mobile-toggle {
             display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
             cursor: pointer;
+            color: var(--dark);
         }
 
-        .mobile-menu span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: #2c3e50;
-            margin: 5px 0;
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-
-            .about-content,
-            .music-content {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-photo {
-                max-width: 200px;
-                margin: 0 auto;
-                display: block;
-            }
-
-            section h2 {
+            .hero h1 {
                 font-size: 2rem;
             }
 
-            .stats-grid {
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .grid, .research-grid {
                 grid-template-columns: 1fr;
             }
 
-            .research-grid,
-            .leadership-grid {
-                grid-template-columns: 1fr;
+            .tabs {
+                font-size: 0.85rem;
+            }
+
+            .tab {
+                padding: 0.5rem 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <div class="container">
+        <div class="nav-container">
             <div class="logo">Tanay Panja</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#research">Research</a></li>
-                <li><a href="#honors">Honors</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#summer-programs">Summer Programs</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#music">Music</a></li>
                 <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Tanay Panja</h1>
-            <p>Environmental Engineer • STEM Educator • Musician</p>
-            <div class="hero-buttons">
-                <a href="#research" class="btn btn-primary">View My Research</a>
-                <a href="#contact" class="btn">Get In Touch</a>
+    <!-- Hero Section with Profile Photo -->
+    <section class="hero">
+        <div class="profile-photo-container">
+            <img src="profile.jpg" alt="Tanay Panja" class="profile-photo">
+        </div>
+        <h1>Tanay Panja</h1>
+        <p>Environmental Engineer • AI Researcher • Musician</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">4.0</span>
+                <span class="stat-label">GPA</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">36</span>
+                <span class="stat-label">ACT</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">16</span>
+                <span class="stat-label">AP Courses</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">500+</span>
+                <span class="stat-label">Volunteer Hrs</span>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p class="section-subtitle">Environmental Engineer | AI & IoT Systems Developer | University of Michigan</p>
-        <div class="about-content">
-            <div>
-                <img src="https://via.placeholder.com/300" alt="Tanay Panja" class="profile-photo">
-            </div>
-            <div>
-                <div class="about-text">
-                    <p>I'm a high school senior at Huron High School with a passion for environmental engineering and wastewater treatment innovation. My work focuses on using artificial intelligence and IoT systems to revolutionize how we approach water treatment, making existing systems more efficient, sustainable, and intelligent.</p>
-                    
-                    <p>Through dual enrollment at the University of Michigan, I pursue graduate-level coursework in environmental data analysis while conducting hands-on research. My signature project involves developing an intelligent aeration system for microbial fuel cells in wastewater treatment, using machine learning optimization to maximize energy efficiency and treatment effectiveness.</p>
-                    
-                    <p>Beyond research, I'm an accomplished double bassist who has competed internationally and performed across the US and Europe. I also founded SteamFun4Kids, a 501(c)(3) nonprofit dedicated to making STEM education accessible to underserved communities.</p>
+    <!-- About Section -->
+    <div id="about" class="container">
+        <h2 class="section-title">About</h2>
+        <div style="max-width: 900px;">
+            <p style="font-size: 1rem; line-height: 1.8; color: var(--gray); margin-bottom: 1rem;">
+                High school senior at Huron High School passionate about environmental engineering and wastewater treatment innovation. Through dual enrollment at the University of Michigan, I pursue graduate-level coursework while conducting research on AI-enabled water treatment systems.
+            </p>
+            <p style="font-size: 1rem; line-height: 1.8; color: var(--gray);">
+                Beyond research, I'm an accomplished double bassist competing internationally and founder of SteamFun4Kids, a 501(c)(3) nonprofit making STEM education accessible to underserved communities.
+            </p>
+        </div>
+    </div>
+
+    <!-- Research Section with Photos and Links -->
+    <div id="research" class="container">
+        <h2 class="section-title">Research Experience</h2>
+        <div class="research-grid">
+            <!-- Research Card 1 -->
+            <div class="research-card">
+                <img src="research/pollen-forecast.jpg" alt="Pollen Forecasting Research" class="research-image" onerror="this.style.display='none';">
+                <div class="research-content">
+                    <div class="research-meta">University of Michigan</div>
+                    <h3 class="research-title">Environmental Data Science & Pollen Forecasting</h3>
+                    <p class="research-description">Developed neural network models for pollen forecasting (F1 = 0.684). Built interactive Streamlit app and awarded MIDAS PODS grant.</p>
+                    <p class="research-mentor">Mentor: Dr. Kai Zhu, School of Environment and Sustainability & MIDAS</p>
+                    <div class="research-links">
+                        <a href="papers/pollen-paper.pdf" class="research-link">Paper</a>
+                    </div>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <span class="stat-number">4.0</span>
-                        <span class="stat-label">GPA (Unweighted)</span>
+            </div>
+
+            <!-- Research Card 2 -->
+            <div class="research-card">
+                <img src="research/wastewater.jpg" alt="Wastewater Treatment System" class="research-image" onerror="this.style.display='none';">
+                <div class="research-content">
+                    <div class="research-meta">Huron High School</div>
+                    <h3 class="research-title">AI-IoT Wastewater Treatment System</h3>
+                    <p class="research-description">Developed AI-enabled aeration system for microbial fuel cells. Won National STEM Champion, Gold-GENIUS Olympiad, and multiple science fair awards.</p>
+                    <p class="research-mentor">Mentors: Mrs. Martha Hale & Mr. David Caine</p>
+                    <div class="research-links">
+                        <a href="papers/wastewater-paper.pdf" class="research-link">Paper</a>
                     </div>
-                    <div class="stat-box">
-                        <span class="stat-number">36</span>
-                        <span class="stat-label">ACT Score</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Volunteer Hours</span>
-                    </div>
-                    <div class="stat-box">
-                        <span class="stat-number">16</span>
-                        <span class="stat-label">AP Courses</span>
+                </div>
+            </div>
+
+            <!-- Research Card 3 -->
+            <div class="research-card">
+                <img src="research/hadley-cell.jpg" alt="Climate Dynamics Research" class="research-image" onerror="this.style.display='none';">
+                <div class="research-content">
+                    <div class="research-meta">Harvard University</div>
+                    <h3 class="research-title">Climate Dynamics Modeling</h3>
+                    <p class="research-description">Hadley Cell climate modeling research focusing on atmospheric circulation dynamics using computational fluid dynamics and Julia programming.</p>
+                    <p class="research-mentor">Advisor: Eojin Kim, Doctoral Student, Dept. of Earth and Planetary Sciences</p>
+                    <div class="research-links">
+                        <a href="papers/climate-paper.pdf" class="research-link">Paper</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="research">
-        <h2>Research Experience</h2>
-        <p class="section-subtitle">Environmental Engineering, AI, and IoT Systems</p>
-        <div class="research-grid">
-            <div class="research-card">
-                <div class="institution">University of Michigan</div>
-                <div class="mentor">Mentor: Dr. Kai Zhu, School of Environment and Sustainability & MIDAS</div>
-                <h3>Environmental Data Science & Pollen Forecasting</h3>
-                <p>Developed neural network models for pollen forecasting (F1 = 0.684). Built interactive Streamlit app and awarded MIDAS PODS grant. Created Shiny R app (PhenoWatch) using NPN data to teach climate-driven phenology shifts.</p>
-            </div>
-
-            <div class="research-card">
-                <div class="institution">Huron High School</div>
-                <div class="mentor">Mentors: Mrs. Martha Hale & Mr. David Caine</div>
-                <h3>AI-IoT Wastewater Treatment System</h3>
-                <p>Developed an AI-enabled aeration system for microbial fuel cells to optimize wastewater treatment and energy generation. Designed self-powered microcontroller with sensors and mobile app for real-time monitoring. Won National Stem Champion, Gold-Genius Olympiad, Science Fair awards.</p>
-            </div>
-
-            <div class="research-card">
-                <div class="institution">Harvard University</div>
-                <div class="mentor">Advisor: Eojin Kim, Doctoral Student, Dept. of Earth and Planetary Sciences</div>
-                <h3>Climate Dynamics Modeling</h3>
-                <p>Conducting Hadley Cell climate modeling research focusing on atmospheric circulation dynamics, analyzing turbulent fluxes and diabatic heating patterns using computational fluid dynamics and Julia programming.Won NASA, Navy ONR, and Stockholm Junior Water Prize awards</p>
-            </div>
-
-  
-
-    <section id="honors">
-        <h2>Honors & Distinctions</h2>
-        <p class="section-subtitle">Top Academic and Competition Achievements</p>
-        <div class="awards-content">
-            <div class="award-card">
-                <h4>🏆 2× National STEM Champion & Congressional Innovation Award</h4>
-                <p>National STEM Challenge by U.S. Department of Education - Environmental Stewardship (Top 5%)</p>
-                <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html" target="_blank" class="award-link">View 2025 Student Innovators →</a>
-                <a href="https://www.nationalstemfestival.com/2024-student-innovators" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">View 2024 Student Innovators →</a>
-                <a href="https://www.nationalstemchallenge.com/2024" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">National STEM Challenge 2024 →</a>
-                <a href="certificates/Stem Champion Depart of Education.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2024 STEM Champion Certificate →</a>
-                <a href="certificates/Obama certificate.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">Letter →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🥇 Gold Medal - GENIUS Olympiad</h4>
-                <p>International Environmental Science Fair, Energy Category (Top 5% of projects from 70+ countries)</p>
-                <a href="certificates/genius certificate.jpg" target="_blank" class="award-link">View 2025 Certificate →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🥇 Gold Medal - USA AI Olympiad (USAAIO)</h4>
-                <p>Team USA Pathway - MIT Round 2 (Top 19 Nationally, Top 5%)</p>
-                <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" target="_blank" class="award-link">View Awardee List→</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🎵 ISB Youth Solo Competition Semifinalist</h4>
-                <p>International Society of Bassists - Top 8 in USA, Top 16 Worldwide, Tallahassee</p>
-                <a href="https://www.isbworldoffice.com/" target="_blank" class="award-link">ISB Official Website →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🧬 Academic Olympiad Achievements</h4>
-                <p>2× USABO Semifinalist (Top 250 of 9,700); USNCO National Finalist; 3× AIME Qualifier (2023, 2024, 2025); AMC 10A: 127.5/150 (2023, Honor Roll of Distinction, Top 1%); British Biology Olympiad Silver Award (Top 10% of 13,000+)</p>
-                
-                <strong style="display: block; margin-top: 1rem; color: #667eea;">USABO Certificates:</strong>
-                <a href="certificates/usabo_certificate.jpg" target="_blank" class="award-link">USABO 2023 Certificate →</a>
-                <a href="certificates/USABO2023.pdf" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">USABO 2023 Semifinalist Email (Top 250) →</a>
-                
-                <strong style="display: block; margin-top: 1rem; color: #667eea;">USNCO Certificates:</strong>
-                <a href="certificates/scanned_usnco_Page_1.jpg" target="_blank" class="award-link">USNCO 2024 National Finalist →</a>
-                <a href="certificates/scanned_usnco_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">USNCO 2024 Local 2nd Place →</a>
-                <a href="certificates/scanned_usnco_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">USNCO 2023 Local 3rd Place →</a>
-                <a href="certificates/usnco_2025.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">USNCO 2025 Local 3rd Place →</a>
-                
-                <strong style="display: block; margin-top: 1rem; color: #667eea;">AMC/AIME Certificates:</strong>
-                <a href="certificates/all_amc_certificates_Page_1.jpg" target="_blank" class="award-link">AMC 2025 AIME Qualification →</a>
-                <a href="certificates/all_amc_certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">AMC 2024 AIME Qualification →</a>
-                <a href="certificates/all_amc_certificates_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">AMC 2023 Honor Roll of Distinction →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="awards">335311.html" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">Press Release (2024) →</a>
-                <a href="https://www.nationalstemchallenge.com/2024" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">National STEM Challenge 2024 →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🥇 Gold Medal - GENIUS Olympiad</h4>
-                <p>International Environmental Science Fair, Energy Category (Top 5% of projects from 70+ countries)</p>
-                <a href="certificates/genius certificate.jpg" target="_blank" class="award-link">View Certificate →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🥇 Gold Medal - USA AI Olympiad (USAAIO)</h4>
-                <p>Team USA Pathway - MIT Round 2 (Top 19 Nationally, Top 5%)</p>
-                <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" target="_blank" class="award-link">View 2025 Certificate →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🎵 ISB Youth Solo Competition Semifinalist</h4>
-                <p>International Society of Bassists - Top 8 in USA, Top 16 Worldwide, Tallahassee</p>
-                <a href="https://www.isbworldoffice.com/" target="_blank" class="award-link">ISB Official Website →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🧬 Academic Olympiad Achievements</h4>
-                <p>2× USABO Semifinalist (Top 250); USNCO National Finalist; 3× AIME Qualifier; AMC 10A Honor Roll of Distinction (Top 1%); British Biology Olympiad Silver Award</p>
-                <a href="certificates/usabo_certificate.jpg" target="_blank" class="award-link">USABO Certificate →</a>
-                <a href="certificates/scanned_usnco_Page_1.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">USNCO Certificate →</a>
-                <a href="certificates/all_amc_certificates_Page_1.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">AIME Certificate →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="awards">
-        <h2>Awards & Recognition</h2>
-        <p class="section-subtitle">International, National, and Regional Honors</p>
-        <div class="awards-content">
-            <div class="award-card">
-                <h4>🥇 US AI Olympiad - Gold Medal</h4>
-                <p>MIT Round 2, Top 19 nationally (2025)</p>
-                <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" target="_blank" class="award-link">View 2025 Certificate →</a>
-            </div>
-
-            <div class="award-card">
-                <h4>🥇 Genius Olympiad - Gold Medal</h4>
-                <p>Environmental Science Fair (5% acceptance, 2025)</p>
-                <a href="certificates/genius certificate.jpg" target="_blank" class="award-link">View 2025 Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>💻 ACSL - 1st Nationally</h4>
-                <p>American Computer Science League</p>
-                <a href="certificates/acsl_awards_Page_1.jpg" target="_blank" class="award-link">2023-24 Senior 1st Place Certificate →</a>
-                <a href="certificates/acsl_awards_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Finals Bronze Certificate →</a>
-                <a href="certificates/acsl_awards_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2022-23 Intermediate 1st Place Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>📐 AMC/AIME</h4>
-                <p>3× AIME Qualifier, Honor Roll of Distinction</p>
-                <a href="certificates/all_amc_certificates_Page_1.jpg" target="_blank" class="award-link">2025 AIME Certificate →</a>
-                <a href="certificates/all_amc_certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2024 AIME Certificate →</a>
-                <a href="certificates/all_amc_certificates_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Honor Roll Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🧪 USNCO National Finalist</h4>
-                <p>Chemistry Olympiad, 3× Local Medalist</p>
-                <a href="certificates/scanned_usnco_Page_1.jpg" target="_blank" class="award-link">2024 National Finalist Certificate →</a>
-                <a href="certificates/scanned_usnco_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2024 Local 2nd Place Certificate →</a>
-                <a href="certificates/scanned_usnco_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Local 3rd Place Certificate →</a>
-                <a href="certificates/usnco_2025.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Local 3rd Place Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🧬 USABO Semifinalist</h4>
-                <p>Biology Olympiad, Top 250 of 9,700</p>
-                <a href="certificates/usabo_certificate.jpg" target="_blank" class="award-link">2023 Semifinalist Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🏆 Science Bowl Champion</h4>
-                <p>Michigan 1st Place, National Top 32</p>
-                <a href="certificates/science bowl_Page_1.jpg" target="_blank" class="award-link">2024 National Finals Certificate →</a>
-                <a href="certificates/science bowl_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 National Finals Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🔬 Science Fair Awards</h4>
-                <p>NASA, Navy ONR, NOAA, Stockholm Water Prize, Air & Waste Management Association</p>
-                <a href="certificates/science fair certificates_Page_1.jpg" target="_blank" class="award-link">2025 Certificate Page 1 →</a>
-                <a href="certificates/science fair certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Certificate Page 2 →</a>
-                <a href="certificates/science fair certificates_Page_3.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 NOAA Award →</a>
-                <a href="certificates/science fair certificates_Page_4.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Naval Award →</a>
-                <a href="certificates/science fair certificates_Page_5.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 EMA Scholarship →</a>
-                <a href="certificates/science fair certificates_Page_6.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2025 Air & Waste Award →</a>
-                
-                <a href="https://sefmd.org/results-2025/" target="_blank" class="award-link" style="display: block; margin-top: 0.75rem; font-weight: 600;">SEFMD 2025 Results →</a>
-                <a href="https://sefmd.org/results-2024/" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem; font-weight: 600;">SEFMD 2024 Results →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🌍 National STEM Champion</h4>
-                <p>U.S. Department of Education</p>
-                <a href="certificates/Stem Champion Depart of Education.jpg" target="_blank" class="award-link">2024 STEM Champion Certificate →</a>
-                <a href="certificates/Obama certificate.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Obama Letter →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>🏅 Michigan STEM Innovator</h4>
-                <p>Awarded by Governor Whitmer (2024)</p>
-                <a href="certificates/michiganinnovatoraward.jpg" target="_blank" class="award-link">View 2024 Certificate →</a>
-            </div>
-            
-            <div class="award-card">
-                <h4>⭐ Presidential Gold Awards</h4>
-                <p>3× Volunteer Service Recognition</p>
-                <a href="certificates/volunteer certificates_Page_1.jpg" target="_blank" class="award-link">2024 Gold Award Certificate →</a>
-                <a href="certificates/volunteer certificates_Page_2.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2023 Gold Award Certificate →</a>
-                <a href="certificates/volunteer certificates_Page_4.jpg" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">2022 Gold Award Certificate →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="music">
-        <h2>Music: Double Bass</h2>
-        <p class="section-subtitle">International Competitor & Orchestra Principal</p>
-        <div class="music-content">
-            <div class="music-highlights">
-                <h3>Performance</h3>
-                <ul>
-                    <li>Principal Double Bass<br>Huron Symphony Orchestra</li>
-                    <li>International Society of Bassists Competition<br>Semifinalist, Top 8 U.S./ 16 Worldwide (2024)<br>
-                    <a href="https://www.isbworldoffice.com/" target="_blank" class="award-link" style="font-size: 0.85rem;">ISB Official Website →</a></li>
-                    <li>4× All-State Orchestra<br>1st Chair (2021, 2022)</li>
-                    <li>ENKOR Competition<br>Third Prize, Strings Division</li>
-                </ul>
-            </div>
-            <div class="music-highlights">
-                <h3>Notable Venues</h3>
-                <ul>
-                    <li>Hill Auditorium<br>University of Michigan</li>
-                    <li>Auditorio Nacional<br>Madrid, Spain</li>
-                    <li>L'Auditori Nacional<br>Barcelona, Spain</li>
-                    <li>Valencia UNESCO<br>Valencia, Spain</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="summer-programs">
-        <h2>Summer Programs & Certificates</h2>
-        <p class="section-subtitle">Research Internships and Specialized Training</p>
-        <div class="research-grid">
-            <div class="research-card">
-                <div class="institution">Michigan Math & Science Scholars (MMSS)</div>
-                <h3>University of Michigan</h3>
-                <p>Summer 2024 • Hands-on experience in ecological and micrometeorological instrumentation research, focusing on advanced sensors for energy and water exchange.</p>
-            </div>
-            
-            <div class="research-card">
-                <div class="institution">Dartmouth Geisel School of Medicine</div>
-                <h3>EDIT Machine Learning Program</h3>
-                <p>Advanced Research Track (2023–2025) • Attended workshops and talks, collaborated on AI technologies for clinical efficiency and patient outcomes using multimodal medical data.</p>
-            </div>
-            
-            <div class="research-card">
-                <div class="institution">MIT Beaver Works</div>
-                <h3>Medlytics Program</h3>
-                <p>Summer 2023 • Developed predictive models using Python and TensorFlow for early disease detection. Created ML pipeline for medical image analysis.</p>
-            </div>
-            
-            <div class="research-card">
-                <div class="institution">Huron - Interlochen Arts Camp</div>
-                <h3>Orchestra & Composition Program</h3>
-                <p>Summers 2022–2025 • Performed in weekly concerts with Huron Orchestra, received double bass instruction, and participated in composition workshops.</p>
-            </div>
-            
-            <div class="research-card">
-                <div class="institution">Eastern Michigan University</div>
-                <h3>Mechanical Engineering with Sustainability</h3>
-                <p>Summer 2024 • Completed coursework in sustainable engineering practices. GPA: 4.0/4.0</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="publications">
-        <h2>Publications & Media</h2>
-        <p class="section-subtitle">Featured Work and Press Coverage</p>
+    <!-- Achievements Section with Tabs -->
+    <div id="achievements" class="container">
+        <h2 class="section-title">Achievements</h2>
         
-        <h3 style="color: #667eea; margin-top: 2rem; margin-bottom: 1rem;">Conference Presentations</h3>
-        <div class="research-grid">
-            <div class="research-card">
-                <h3>Spatiotemporal Prediction of Pollen Distribution</h3>
-                <div class="institution">U-M Annual Data Science & AI Summit (2025)</div>
-                <p>Machine learning models for predicting Genus Acer pollen distribution using autoregressive approaches.</p>
-                <a href="https://midas.umich.edu/events/midas-summit-2025-schedule/" target="_blank" class="award-link">View Summit Schedule →</a>
-            </div>
-            
-            <div class="research-card">
-                <h3>Novel Insights into Hadley Cell Dynamics</h3>
-                <div class="institution">IEEE MIT URTC (2025)</div>
-                <p>Research on turbulent fluxes and diabatic heating in shaping the spatiotemporal structure of the Hadley Cell.</p>
-                <a href="https://drive.google.com/file/d/1uUHdaXFJeAz8ocFRRaTW9gRNLxCVh_cU/view" target="_blank" class="award-link">View URTC Schedule →</a>
-            </div>
-            
-            <div class="research-card">
-                <h3>Dementia AI: Mobile App for Screening</h3>
-                <div class="institution">12th Intl Conference on Neurology and Brain Disorders (2025)</div>
-                <p>Low-cost, privacy-preserving mobile app using multinomial logistic regression and computer vision.</p>
-            </div>
-            
-            <div class="research-card">
-                <h3>Deep Learning in Tumor Microenvironment</h3>
-                <div class="institution">Pacific Symposium on Biocomputing (2024)</div>
-                <p>Advanced deep learning approaches for analyzing tumor immune microenvironments.</p>
-                <a href="https://doi.org/10.7490/f1000research.1119682.1" target="_blank" class="award-link">View Publication →</a>
-            </div>
-            
-            <div class="research-card">
-                <h3>Fetal Sex Influences Maternal Plasma Proteome</h3>
-                <div class="institution">Society for Maternal-Fetal Medicine (2024)</div>
-                <p>Research on SARS-CoV-2 impact on maternal plasma proteome variation by fetal sex.</p>
-                <a href="https://doi.org/10.1002/pmf2.12028" target="_blank" class="award-link">View Publication →</a>
-            </div>
-            
-            
-        <h3 style="color: #667eea; margin-top: 3rem; margin-bottom: 1rem;">TEDx Talks</h3>
-        <div class="awards-content">
-            <div class="award-card">
-                <h4>🎤 AI & Dementia Care</h4>
-                <p>TEDx Youth, Ann Arbor, MI (2023)</p>
-            </div>
-            
-            <div class="award-card">
-                <h4>🎤 Microbial Fuel Cells</h4>
-                <p>TEDx Youth, Ann Arbor, MI (2024)</p>
-            </div>
-            
-            <div class="award-card">
-                <h4>🎤 You Belong in STEM</h4>
-                <p>National Panelist, MIT Beaver Works Summer Institute (2024)</p>
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab(event, 'honors')">Top Honors</button>
+            <button class="tab" onclick="switchTab(event, 'science')">Science Fairs</button>
+            <button class="tab" onclick="switchTab(event, 'music')">Music</button>
+        </div>
+
+        <div id="honors" class="tab-content active">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🏆 National STEM Champion</div>
+                        <div class="card-badge">2024-25</div>
+                    </div>
+                    <p class="card-text">Congressional Innovation Award - U.S. Dept. of Education (Top 5%)</p>
+                    <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html" class="card-link">2025 Student Innovators →</a>
+                    <a href="https://www.nationalstemfestival.com/2024-student-innovators" class="card-link" style="display: block; margin-top: 0.3rem;">2024 Student Innovators →</a>
+                    <a href="https://www.nationalstemchallenge.com/2024" class="card-link" style="display: block; margin-top: 0.3rem;">National STEM Challenge 2024 →</a>
+                    <a href="certificates/Stem Champion Depart of Education.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2024 STEM Champion Certificate →</a>
+                    <a href="certificates/Obama certificate.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">Letter →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🥇 GENIUS Olympiad Gold</div>
+                        <div class="card-badge">2025</div>
+                    </div>
+                    <p class="card-text">International Environmental Science Fair - Energy Category</p>
+                    <a href="certificates/genius certificate.jpg" class="card-link">View 2025 Certificate →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🥇 US AI Olympiad Gold</div>
+                        <div class="card-badge">2025</div>
+                    </div>
+                    <p class="card-text">MIT Round 2 - Top 19 Nationally (Top 5%)</p>
+                    <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" class="card-link">View Awardee List →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🎵 ISB Semifinalist</div>
+                        <div class="card-badge">2024</div>
+                    </div>
+                    <p class="card-text">International Society of Bassists - Top 8 USA / Top 16 Worldwide</p>
+                    <a href="https://www.isbworldoffice.com/" class="card-link">ISB Official Website →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🧬 USABO Semifinalist (2×)</div>
+                        <div class="card-badge">2023-25</div>
+                    </div>
+                    <p class="card-text">USA Biology Olympiad - Top 250 of 9,700 nationally</p>
+                    <a href="certificates/usabo_certificate.jpg" class="card-link">USABO 2023 Certificate →</a>
+                    <a href="certificates/USABO2023.pdf" class="card-link" style="display: block; margin-top: 0.3rem;">USABO 2023 Semifinalist Email →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🧪 USNCO National Finalist</div>
+                        <div class="card-badge">2024</div>
+                    </div>
+                    <p class="card-text">USA Chemistry Olympiad - National Finalist 2024, 3× Regional Top 3 (2023, 2024, 2025)</p>
+                    <a href="certificates/scanned_usnco_Page_1.jpg" class="card-link">2024 National Finalist →</a>
+                    <a href="certificates/scanned_usnco_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2024 Regional 2nd Place →</a>
+                    <a href="certificates/scanned_usnco_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2023 Regional 3rd Place →</a>
+                    <a href="certificates/usnco_2025.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2025 Regional 3rd Place →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">📐 AIME Qualifier (2×)</div>
+                        <div class="card-badge">2024-25</div>
+                    </div>
+                    <p class="card-text">American Invitational Mathematics Examination - AMC 10A Honor Roll of Distinction (Top 1%)</p>
+                    <a href="certificates/all_amc_certificates_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2025 AIME Certificate →</a>
+                    <a href="certificates/all_amc_certificates_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 AIME Certificate →</a>
+                    <a href="certificates/all_amc_certificates_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 Honor Roll Certificate →</a>
+                    <a href="certificates/aime_2025_score.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2025 AIME Score Report →</a>
+                    <a href="certificates/aime_2024_score.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 AIME Score Report →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🥈 British Biology Olympiad Silver</div>
+                        <div class="card-badge">2024</div>
+                    </div>
+                    <p class="card-text">Top 10% of 13,000+ participants</p>
+                </div>
             </div>
         </div>
-        
 
-            
-            <div class="award-card">
-                <h4>🌐 National STEM Festival - STEM Champion</h4>
-                <p>Featured as National STEM Champion and Congressional Innovation Award recipient at the 2024 National STEM Festival in Washington, D.C.</p>
-                <a href="https://www.nationalstemfestival.com/2024-student-innovators" target="_blank" class="award-link">View Student Innovators Page →</a>
-                <a href="https://www.nationalstemchallenge.com/2024" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">National STEM Challenge 2024 →</a>
-                <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html" target="_blank" class="award-link" style="display: block; margin-top: 0.3rem;">Press Release - Dec 2024 →</a>
+        <div id="science" class="tab-content">
+            <div class="list-item">
+                <div class="list-item-title">🛰️ NASA Award</div>
+                <div class="list-item-meta">SEFMD Science Fair</div>
+                <div class="list-item-text">Recognition for outstanding research in environmental engineering</div>
+                <a href="certificates/science fair certificates_Page_1.jpg" class="card-link">View Certificate →</a>
             </div>
-            
-            <div class="award-card">
-                <h4>📰 Science Bowl Success</h4>
-                <p>Clague Middle School finished third in the Indiana Regional Middle School Science Bowl event for Indiana, Michigan, and Ohio</p>
-                <a href="https://news.a2schools.org/clague-middle-school-team-takes-third-place-in-regional-science-bowl/" target="_blank" class="award-link">Read Article (2020) →</a>
+
+            <div class="list-item">
+                <div class="list-item-title">⚓ Navy ONR Award</div>
+                <div class="list-item-meta">Office of Naval Research</div>
+                <div class="list-item-text">Excellence in STEM research and innovation</div>
+                <a href="certificates/science fair certificates_Page_4.jpg" class="card-link">View Certificate →</a>
             </div>
-            
-           
+
+            <div class="list-item">
+                <div class="list-item-title">💧 Stockholm Junior Water Prize</div>
+                <div class="list-item-meta">Michigan Regional Winner</div>
+                <div class="list-item-text">Water treatment innovation and environmental impact</div>
+                <a href="certificates/science fair certificates_Page_2.jpg" class="card-link">View Certificate →</a>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">🌊 NOAA Award</div>
+                <div class="list-item-meta">National Oceanic and Atmospheric Administration</div>
+                <div class="list-item-text">Environmental science research excellence</div>
+                <a href="certificates/science fair certificates_Page_3.jpg" class="card-link">View Certificate →</a>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">💨 Air & Waste Management Association Award</div>
+                <div class="list-item-meta">SEFMD Science Fair</div>
+                <div class="list-item-text">Environmental engineering innovation</div>
+                <a href="certificates/science fair certificates_Page_6.jpg" class="card-link">View Certificate →</a>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">🎓 EMA Scholarship Award</div>
+                <div class="list-item-meta">Engineering & Manufacturing Association</div>
+                <div class="list-item-text">Scholarship for engineering excellence</div>
+                <a href="certificates/science fair certificates_Page_5.jpg" class="card-link">View Certificate →</a>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">🏆 Science Bowl Champion</div>
+                <div class="list-item-meta">Michigan 1st Place, National Top 32</div>
+                <div class="list-item-text">DOE National Science Bowl - 2023, 2024</div>
+                <a href="certificates/science bowl_Page_1.jpg" class="card-link">2024 National Finals Certificate →</a>
+                <a href="certificates/science bowl_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2023 National Finals Certificate →</a>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">💻 ACSL 1st Place Nationally</div>
+                <div class="list-item-meta">American Computer Science League</div>
+                <div class="list-item-text">Senior Division Champion - 2023-24</div>
+                <a href="certificates/acsl_awards_Page_1.jpg" class="card-link">2023-24 Senior 1st Place Certificate →</a>
+                <a href="certificates/acsl_awards_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2023 Finals Bronze Certificate →</a>
+                <a href="certificates/acsl_awards_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;">2022-23 Intermediate 1st Place Certificate →</a>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">📊 SEFMD Results</div>
+                <div class="list-item-meta">Southeastern Michigan Science Fair</div>
+                <div class="list-item-text">Multiple awards across 2024 and 2025</div>
+                <a href="https://sefmd.org/results-2025/" class="card-link">SEFMD 2025 Results →</a>
+                <a href="https://sefmd.org/results-2024/" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2024 Results →</a>
+            </div>
         </div>
-    </section>
 
-    <section id="leadership">
-        <h2>Leadership & Service</h2>
-        <p class="section-subtitle">Empowering the Next Generation in STEM</p>
-        <div class="leadership-grid">
-            <div class="leadership-card">
-                <h3>GIDAS Research Club</h3>
-                <div class="role">Chair (2025–2026)</div>
-                <p>Led global network of 100+ chapters, organized conference with 400+ projects, raised $10,000+.</p>
-                <a href="https://www.mircore.org/gidas/" target="_blank" class="award-link">Visit GIDAS Website →</a>
+        <div id="music" class="tab-content">
+            <div class="list-item">
+                <div class="list-item-title">🎻 ISB Youth Solo Competition Semifinalist</div>
+                <div class="list-item-meta">Top 8 USA, Top 16 Worldwide</div>
+                <div class="list-item-text">International Society of Bassists, Tallahassee (2024)</div>
+                <a href="https://www.isbworldoffice.com/" class="card-link">ISB Official Website →</a>
             </div>
 
-            <div class="leadership-card">
-                <h3>SteamFun4Kids</h3>
-                <div class="role">Founder & President</div>
-                <p>501(c)(3) nonprofit. Hosted 200+ STEM workshops, raised $3,100+ for Title I schools.</p>
-            </div>
-        <h3 style="color: #667eea; margin-top: 3rem; margin-bottom: 1rem;">Press Coverage</h3>
-        <div class="awards-content">
-            <div class="award-card">
-                <h4>📰 Ann Arbor Schools News - SteamFun4Kids Robotics</h4>
-                <p>King Elementary Students Shine in Robotics Competition - First Lego League Competition featuring SteamFun4Kids program</p>
-                <a href="https://news.a2schools.org/king-elementary-students-shine-in-robotics-competition-at-first-lego-league-competition/" target="_blank" class="award-link">Read Article →</a>
-            </div>
-            <div class="leadership-card">
-                <h3>US AI Olympiad</h3>
-                <div class="role">Ambassador</div>
-                <p>Conducted training programs on AI fundamentals nationwide.</p>
-                <a href="https://usaaio.org/ambassadors" target="_blank" class="award-link">View Ambassadors →</a>
+            <div class="list-item">
+                <div class="list-item-title">🎼 All-State Orchestra (4×)</div>
+                <div class="list-item-meta">1st Chair - 2021, 2022</div>
+                <div class="list-item-text">Michigan All-State Honor Orchestra - 2021, 2022, 2023, 2024</div>
             </div>
 
-            <div class="leadership-card">
-                <h3>National STEM Festival</h3>
-                <div class="role">Student Council Member (2024–2025)</div>
-                <p>Selected to shape festival programming and presented at National Expo with 2,300+ attendees.</p>
-                <a href="https://www.nationalstemfestival.com/advisory-committee" target="_blank" class="award-link">View Advisory Committee →</a>
+            <div class="list-item">
+                <div class="list-item-title">🥉 ENKOR Competition - Third Prize</div>
+                <div class="list-item-meta">Strings Division</div>
+                <div class="list-item-text">International Music Competition</div>
             </div>
 
-            <div class="leadership-card">
-                <h3>Science Bowl Team</h3>
-                <div class="role">Captain (2025–2026)</div>
-                <p>Led team to Michigan Championship and National Top 32 finish.</p>
+            <div class="list-item">
+                <div class="list-item-title">🎭 Principal Double Bass</div>
+                <div class="list-item-meta">Huron Symphony Orchestra (2021-Present)</div>
+                <div class="list-item-text">Lead bassist for high school symphony orchestra</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">🎵 Performance Venues</div>
+                <div class="list-item-meta">Notable Concert Halls</div>
+                <div class="list-item-text">Hill Auditorium (University of Michigan), Auditorio Nacional (Madrid, Spain), L'Auditori Nacional (Barcelona, Spain), Valencia UNESCO (Valencia, Spain)</div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-item-title">🎪 Interlochen Arts Camp</div>
+                <div class="list-item-meta">Orchestra & Composition Program (2022-2025)</div>
+                <div class="list-item-text">Performed in weekly concerts with Huron Orchestra, received double bass instruction, and participated in composition workshops</div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <p class="section-subtitle">Let's connect and collaborate</p>
-        <div class="contact-links">
-            <a href="mailto:tpanja2017@gmail.com">
-                <span>📧</span> Email
-            </a>
-            <a href="https://linkedin.com/in/tanaypanja" target="_blank">
-                <span>💼</span> LinkedIn
-            </a>
-            <a href="https://github.com/tpanja" target="_blank">
-                <span>🔗</span> GitHub
-            </a>
+    <!-- Publications Section -->
+    <div id="publications" class="container">
+        <h2 class="section-title">Publications & Presentations</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-meta">U-M Data Science Summit 2025</div>
+                <h3 class="card-title">Spatiotemporal Prediction of Pollen Distribution</h3>
+                <p class="card-text">ML models for predicting Genus Acer pollen using autoregressive approaches</p>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">IEEE MIT URTC 2025</div>
+                <h3 class="card-title">Novel Insights into Hadley Cell Dynamics</h3>
+                <p class="card-text">Research on turbulent fluxes and diabatic heating in atmospheric circulation</p>
+            </div>
+
+            <div class="card">
+                <div class="card-meta">PSB 2024</div>
+                <h3 class="card-title">Deep Learning in Tumor Microenvironment</h3>
+                <p class="card-text">Advanced approaches for analyzing tumor immune microenvironments</p>
+                <a href="https://doi.org/10.7490/f1000research.1119682.1" class="card-link">View Publication →</a>
+            </div>
+
+
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Tanay Panja. All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">Ann Arbor, Michigan</p>
-    </footer>
+    <!-- Leadership Section -->
+    <div id="leadership" class="container">
+        <h2 class="section-title">Leadership & Service</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">GIDAS Research Club - Chair</div>
+                <div class="card-meta">2025-2026</div>
+                <p class="card-text">Led global network of 100+ chapters, organized conference with 400+ projects, raised $10,000+</p>
+                <a href="https://www.mircore.org/gidas/" class="card-link">Visit Website →</a>
+            </div>
 
-    <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+            <div class="card">
+                <div class="card-title">SteamFun4Kids - Founder & President</div>
+                <div class="card-meta">501(c)(3) Nonprofit</div>
+                <p class="card-text">Hosted 200+ STEM workshops, raised $3,100+ for Title I schools</p>
+                <a href="https://news.a2schools.org/king-elementary-students-shine-in-robotics-competition-at-first-lego-league-competition/" class="card-link">Press Coverage - Robotics Competition →</a>
+            </div>
 
-        // Nav shadow on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
-            } else {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
+            <div class="card">
+                <div class="card-title">Huron BioGIDAS - Founder & President</div>
+                <div class="card-meta">School Research Club</div>
+                <p class="card-text">Founded and led school chapter of GIDAS research network, mentoring students in biological research</p>
+            </div>
 
-        // Disable right-click on certificate images
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.tagName === 'IMG' && !e.target.classList.contains('profile-photo')) {
-                e.preventDefault();
-                return false;
-            }
-        });
+            <div class="card">
+                <div class="card-title">Huron Science Bowl - Captain</div>
+                <div class="card-meta">2024-2026</div>
+                <p class="card-text">Led team to Michigan Championship and National Top 32 finish</p>
+            </div>
 
-        // Prevent dragging certificate images
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'IMG' && !e.target.classList.contains('profile-photo')) {
-                e.preventDefault();
-                return false;
-            }
-        });
-    </script>
-</body>
-</html>
+            <div class="card">
+                <div class="card-title">US AI Olympiad - Ambassador</div>
+                <div class="card-meta">National Program</div>
+                <p class="card-text
