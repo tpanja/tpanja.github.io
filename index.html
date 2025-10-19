@@ -120,7 +120,7 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         .stat {
@@ -143,12 +143,12 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
         }
 
         .section-title {
             font-size: 1.75rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--dark);
             display: flex;
             align-items: center;
@@ -167,8 +167,8 @@
         .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .research-card {
@@ -270,8 +270,8 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.25rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
         .card {
@@ -345,7 +345,7 @@
         .tabs {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             border-bottom: 2px solid #e8e8e8;
             overflow-x: auto;
         }
@@ -620,9 +620,9 @@
         <h2 class="section-title">Achievements</h2>
         
         <div class="tabs">
-            <button class="tab active" onclick="switchTab(event, 'honors')">Top Honors</button>
-            <button class="tab" onclick="switchTab(event, 'science')">Science Fairs</button>
-            <button class="tab" onclick="switchTab(event, 'music')">Music</button>
+            <button class="tab active" data-tab="honors">Top Honors</button>
+            <button class="tab" data-tab="science">Science Fairs</button>
+            <button class="tab" data-tab="music">Music</button>
         </div>
 
         <div id="honors" class="tab-content active">
