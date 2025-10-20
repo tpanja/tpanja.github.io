@@ -14,25 +14,21 @@
         .section-content.expanded {
             max-height: 5000px;
         }
-        /* Disable text selection */
         body {
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
-        /* Allow selection for links and interactive elements */
         a, button, input, textarea {
             -webkit-user-select: text;
             -moz-user-select: text;
             -ms-user-select: text;
             user-select: text;
         }
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-        /* Offset for fixed navigation */
         section {
             scroll-margin-top: 140px;
         }
@@ -67,7 +63,6 @@
             </div>
         </div>
         
-        <!-- Navigation Bar -->
         <nav class="border-t border-slate-200 bg-slate-50">
             <div class="max-w-5xl mx-auto px-6 py-3">
                 <div class="flex flex-wrap gap-2 justify-center">
@@ -83,6 +78,7 @@
             </div>
         </nav>
     </header>
+
     <main class="max-w-5xl mx-auto px-6 py-6 space-y-6">
         
         <section id="education" class="bg-white rounded-lg shadow-sm p-6">
@@ -376,9 +372,22 @@
                     <p class="text-slate-700">Orchestra & Composition Program</p>
                 </div>
 
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">Assistant, Family Rental Property Business</p>
+                        <span class="text-slate-600">2022–2025</span>
+                    </div>
+                    <p class="text-slate-700">Assisted in managing Airbnb and rental properties, supporting daily operations and guest services for a family-owned business.</p>
+                </div>
+            </div>
+        </section>
 
-
-                  
+        <section id="music" class="bg-white rounded-lg shadow-sm p-6">
+            <button onclick="toggleSection('music')" class="w-full flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-slate-900 uppercase tracking-wide">Music: Double Bass</h2>
+                <span id="music-icon">▼</span>
+            </button>
+            
             <div id="music-content" class="section-content expanded text-sm space-y-3">
                 <div>
                     <p class="font-semibold text-slate-900 mb-1">Performance Experience</p>
@@ -410,31 +419,13 @@
             </div>
         </section>
 
-        <section class="bg-white rounded-lg shadow-sm p-6">
+        <section id="leadership" class="bg-white rounded-lg shadow-sm p-6">
             <button onclick="toggleSection('leadership')" class="w-full flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold text-slate-900 uppercase tracking-wide">Leadership & Service</h2>
                 <span id="leadership-icon">▼</span>
             </button>
-                <div>
-                    <div class="flex justify-between flex-wrap">
-                        <p class="font-semibold text-slate-900">Assistant, Family Rental Property Business</p>
-                        <span class="text-slate-600">2022–2025</span>
-                    </div>
-                    <p class="text-slate-700">Assisted in managing Airbnb and rental properties, supporting daily operations and guest services for a family-owned business.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="music" class="bg-white rounded-lg shadow-sm p-6">
-            <button onclick="toggleSection('music')" class="w-full flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold text-slate-900 uppercase tracking-wide">Music: Double Bass</h2>
-                <span id="music-icon">▼</span>
-            </button>
             
-            <div id="music-content" class="
-
-                
- <div id="leadership-content" class="section-content expanded space-y-3 text-sm">
+            <div id="leadership-content" class="section-content expanded space-y-3 text-sm">
                 <div>
                     <div class="flex justify-between flex-wrap">
                         <p class="font-semibold text-slate-900">GIDAS Research Club–miRcore</p>
