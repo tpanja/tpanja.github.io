@@ -1,719 +1,508 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanay Panja - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --gray: #7f8c8d;
-            --shadow: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background: #fff;
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow);
-            z-index: 100;
-            padding: 0.75rem 0;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 3rem 1.5rem 2rem;
-            text-align: center;
-        }
-
-        .profile-photo-container {
-            margin-bottom: 1rem;
-        }
-
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.05);
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 1rem;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-num {
-            display: block;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        .section-title {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 1.75rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 2rem;
-            align-items: start;
-            margin-top: 1.5rem;
-        }
-
-        .about-image {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
-        }
-
-        .about-text p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--gray);
-            margin-bottom: 1rem;
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .research-card {
-            background: white;
-            border: 1px solid #e8e8e8;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .research-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-        }
-
-        .research-content {
-            padding: 1.25rem;
-        }
-
-        .research-meta {
-            color: var(--primary);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .research-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .research-description {
-            font-size: 0.9rem;
-            color: var(--gray);
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-
-        .research-mentor {
-            font-size: 0.85rem;
-            color: var(--gray);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .research-links {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .research-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .research-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #e8e8e8;
-            border-radius: 10px;
-            padding: 1.25rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 0.75rem;
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .card-badge {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .card-meta {
-            color: var(--primary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-text {
-            font-size: 0.9rem;
-            color: var(--gray);
-            line-height: 1.5;
-        }
-
-        .card-link {
-            display: inline-block;
-            margin-top: 0.75rem;
-            color: var(--primary);
-            font-size: 0.85rem;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .card-link:hover {
-            color: var(--secondary);
-            transform: translateX(3px);
-        }
-
-        .list-item {
-            background: white;
-            border: 1px solid #e8e8e8;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s;
-        }
-
-        .list-item:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow);
-        }
-
-        .list-item-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .list-item-meta {
-            font-size: 0.85rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .list-item-text {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem;
-            background: white;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .contact-btn:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-image {
-                max-width: 250px;
-                margin: 0 auto;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow-lg);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-
-            .grid, .research-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Tanay Panja</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#Honors">Honors</a></li>
-                <li><a href="#science-fairs">Science Fairs</a></li>
-                <li><a href="#music">Music</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+import React, { useState } from 'react';
+import { ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
+
+export default function CVPage() {
+  const [expandedSections, setExpandedSections] = useState({
+    education: true,
+    tests: true,
+    awards: true,
+    research: true,
+    summer: true,
+    music: true,
+    leadership: true,
+    publications: true
+  });
+
+  const toggleSection = (section) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white border-b-4 border-slate-900 shadow-sm">
+        <div className="max-w-5xl mx-auto px-6 py-6">
+          <div className="flex items-start gap-6">
+            <img 
+              src="profile.jpg" 
+              alt="Tanay Panja" 
+              className="w-32 h-32 rounded-lg object-cover border-4 border-slate-200 shadow-lg flex-shrink-0"
+            />
+            <div className="flex-1">
+              <h1 className="text-3xl font-bold text-slate-900 tracking-tight">
+                TANAY PANJA
+              </h1>
+              <p className="text-slate-600 text-sm mt-1">Curriculum Vitae • October 2025</p>
+              
+              <div className="mt-4 text-sm text-slate-700 space-y-1">
+                <p>2956 Leslie Park Circle, Ann Arbor, MI 48105</p>
+                <div className="flex flex-wrap gap-3">
+                  <a href="mailto:tpanja2017@gmail.com" className="hover:text-blue-700 underline">tpanja2017@gmail.com</a>
+                  <span>•</span>
+                  <a href="https://linkedin.com/in/tanaypanja" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 underline">LinkedIn</a>
+                  <span>•</span>
+                  <a href="https://github.com/tpanja" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 underline">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
+      </header>
 
-    <section class="hero">
+      {/* Main Content */}
+      <main className="max-w-5xl mx-auto px-6 py-6 space-y-6">
         
-        </div>
-        <h1>Tanay Panja</h1>
-        <p>Environmental Engineer • AI Researcher • Musician</p>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-num">4.0</span>
-                <span class="stat-label">GPA</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">36</span>
-                <span class="stat-label">ACT</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">16</span>
-                <span class="stat-label">AP Courses</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num">500+</span>
-                <span class="stat-label">Volunteer Hrs</span>
-            </div>
-        </div>
-    </section>
+        {/* Education */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('education')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Education</h2>
+            {expandedSections.education ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.education && (
+            <div className="space-y-4 text-sm">
+              <div>
+                <div className="flex justify-between items-start mb-1">
+                  <h3 className="font-semibold text-slate-900">High School Student, Huron High School (Title I)</h3>
+                  <span className="text-slate-600">2022–2026</span>
+                </div>
+                <p className="text-slate-700">Ann Arbor, MI • Class of 2026</p>
+                <p className="text-slate-700 font-medium">GPA: 4.0/4.0 • ACT: 36 • SAT: 1560</p>
+              </div>
 
-    <div id="about" class="container">
-        <h2 class="section-title">About</h2>
-        <div class="about-grid">
-            <div>
-                <img src="profile.jpg" alt="Tanay Panja" class="about-image">
-            </div>
-            <div class="about-text">
-                <p>High school senior at Huron High School, passionate about environmental engineering and wastewater treatment innovation. Through dual enrollment at the University of Michigan, I pursue graduate-level coursework while conducting research.</p>
-                <p>Beyond research, I'm an accomplished double bassist competing internationally and founder of SteamFun4Kids, a 501(c)(3) nonprofit making STEM education accessible to underserved communities.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="research" class="container">
-        <h2 class="section-title">Research Experience</h2>
-        <div class="research-grid">
-            <div class="research-card">
-                <img src="research/pollen-forecast.jpg" alt="Pollen Forecasting Research" class="research-image" onerror="this.style.display='none';">
-                <div class="research-content">
-                    <div class="research-meta">University of Michigan</div>
-                    <h3 class="research-title">Spatiotemporal Prediction of Pollen Distribution for Genus Acer Using Autoregressive Machine Learning Models</h3>
-                    <p class="research-description">Developed neural network models for pollen forecasting (F1 = 0.684). Built interactive Streamlit app and awarded MIDAS PODS grant.</p>
-                    <p class="research-mentor">Mentor: Dr. Kai Zhu, School of Environment and Sustainability & MIDAS</p>
-                    <div class="research-links">
-                        <a href="papers/pollen-paper.pdf" class="research-link">Paper</a>
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-2">Dual Enrollment</h3>
+                
+                <div className="ml-4 space-y-3">
+                  <div>
+                    <div className="flex justify-between">
+                      <p className="font-medium text-slate-800">University of Michigan • GPA: 4.0/4.0</p>
+                      <span className="text-slate-600">2023–Present</span>
                     </div>
-                </div>
-            </div>
+                    <p className="text-slate-700">Courses: EAS 549 (Analysis and Modeling of Environmental Data), Applied Linear Algebra, Multivariable Calculus, Differential Equations with Linear Algebra; Winter 2026 – Organic Chemistry, Discrete Mathematics</p>
+                  </div>
 
-            <div class="research-card">
-                <img src="research/wastewater.jpg" alt="Wastewater Treatment System" class="research-image" onerror="this.style.display='none';">
-                <div class="research-content">
-                    <div class="research-meta">Huron High School</div>
-                    <h3 class="research-title">AI-Enabled Intelligent Aeration System for Microbial Fuel Cells in Wastewater Treatment</h3>
-                    <p class="research-description">Developed an AI-enabled aeration system for microbial fuel cells. Won National STEM Champion, Gold-GENIUS Olympiad, and multiple science fair awards.</p>
-                    <p class="research-mentor">Mentors: Mrs. Martha Hale & Mr. David Caine</p>
-                    <div class="research-links">
-                        <a href="papers/wastewater-paper.pdf" class="research-link">Paper</a>
+                  <div>
+                    <div className="flex justify-between">
+                      <p className="font-medium text-slate-800">Eastern Michigan University • GPA: 4.0/4.0</p>
+                      <span className="text-slate-600">Summer 2024</span>
                     </div>
-                </div>
-            </div>
+                    <p className="text-slate-700">Mechanical Engineering with Sustainability</p>
+                  </div>
 
-            <div class="research-card">
-                <img src="research/hadley-cell.jpg" alt="Climate Dynamics Research" class="research-image" onerror="this.style.display='none';">
-                <div class="research-content">
-                    <div class="research-meta">Harvard University</div>
-                    <h3 class="research-title">Novel Insights into the Role of Turbulent Fluxes and Diabatic Heating in Shaping the Spatiotemporal Structure of the Hadley Cell</h3>
-                    <p class="research-description">Hadley Cell climate modeling research focusing on atmospheric circulation dynamics using computational fluid dynamics and Julia programming.</p>
-                    <p class="research-mentor">Advisor: Eojin Kim, Doctoral Student, Dept. of Earth and Planetary Sciences, Harvard University</p>
-                    <div class="research-links">
-                        <a href="papers/climate-paper.pdf" class="research-link">Paper</a>
+                  <div>
+                    <div className="flex justify-between">
+                      <p className="font-medium text-slate-800">Brigham Young University (Independent) • GPA: 4.0/4.0</p>
+                      <span className="text-slate-600">2023</span>
                     </div>
+                    <p className="text-slate-700">Introduction to Newtonian Mechanics</p>
+                  </div>
                 </div>
+              </div>
+
+              <div>
+                <p className="font-medium text-slate-800 mb-1">AP Courses Completed (13):</p>
+                <p className="text-slate-700">Calculus BC, Statistics, Computer Science A, Chemistry, Biology, Environmental Science, Physics E&M, Government, Macroeconomics, Microeconomics, Physics Mechanics, English Language, Spanish</p>
+                
+                <p className="font-medium text-slate-800 mb-1 mt-2">In Progress:</p>
+                <p className="text-slate-700">AP English Literature, AP Psychology, AP Human Geography, Engineering Capstone, IB Physics HL</p>
+              </div>
             </div>
+          )}
+        </section>
+
+        {/* Test Scores */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('tests')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Test Scores</h2>
+            {expandedSections.tests ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.tests && (
+            <div className="space-y-3 text-sm">
+              <div>
+                <p className="font-semibold text-slate-900">AMC/AIME</p>
+                <p className="text-slate-700 ml-4">AMC 12: 100.5/150 (2025); AMC 10B: 103.5/150 (2024); AMC 10A: 127.5/150 (2023, Top 1%)</p>
+                <p className="text-slate-700 ml-4">2023, 2024, 2025 AIME Qualifier</p>
+                <div className="ml-4 mt-1 flex flex-wrap gap-2">
+                  <a href="certificates/all_amc_certificates_Page_1.jpg" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    2025 <ExternalLink size={12} />
+                  </a>
+                  <a href="certificates/all_amc_certificates_Page_2.jpg" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    2024 <ExternalLink size={12} />
+                  </a>
+                  <a href="certificates/aime_2025_score.jpg" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    Score <ExternalLink size={12} />
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <p className="font-semibold text-slate-900">USNCO (National Finalist)</p>
+                <p className="text-slate-700 ml-4">50/60 (2025, 3rd), 47/60 (2024, 2nd), 41/60 (2023, 3rd)</p>
+                <div className="ml-4 mt-1 flex flex-wrap gap-2">
+                  <a href="certificates/scanned_usnco_Page_1.jpg" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    2024 Nat <ExternalLink size={12} />
+                  </a>
+                  <a href="certificates/scanned_usnco_Page_2.jpg" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    2024 Reg <ExternalLink size={12} />
+                  </a>
+                  <a href="certificates/usnco_2025.jpg" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    2025 <ExternalLink size={12} />
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <p className="font-semibold text-slate-900">USABO (2× Semifinalist)</p>
+                <p className="text-slate-700 ml-4">Top 250 of 9,700 (2023, 2025)</p>
+                <div className="ml-4 mt-1">
+                  <a href="certificates/usabo_certificate.jpg" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    Certificate <ExternalLink size={12} />
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <p className="font-semibold text-slate-900">ACSL (1st Nationally)</p>
+                <p className="text-slate-700 ml-4">Senior: 48/48 (2024–25), 39/40 (2023–24)</p>
+                <div className="ml-4 mt-1">
+                  <a href="certificates/acsl_awards.pdf" target="_blank" className="text-blue-700 hover:underline inline-flex items-center gap-1">
+                    Certificate <ExternalLink size={12} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* Awards - Condensed */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('awards')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Awards & Recognition</h2>
+            {expandedSections.awards ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.awards && (
+            <div className="grid md:grid-cols-2 gap-4 text-sm">
+              <div className="space-y-3">
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-1 text-xs uppercase tracking-wide">International</h3>
+                  <ul className="space-y-1 ml-2">
+                    <li className="text-slate-800">• <strong>US AI Olympiad Gold</strong> (MIT, Top 19) <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>GENIUS Olympiad Gold</strong> (5% acceptance) <a href="certificates/genius certificate.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>British Biology Olympiad Silver</strong> (Top 10%)</li>
+                    <li className="text-slate-800">• <strong>ISB Double Bass Semifinalist</strong> (Top 8 USA)</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-1 text-xs uppercase tracking-wide">National</h3>
+                  <ul className="space-y-1 ml-2">
+                    <li className="text-slate-800">• <strong>National STEM Champion</strong> (US Dept Ed, Top 5%) <a href="certificates/Stem Champion Depart of Education.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>Congressional Innovation Award</strong></li>
+                    <li className="text-slate-800">• <strong>Cancer Pathway Award</strong> ($1,000)</li>
+                    <li className="text-slate-800">• <strong>National Merit Semifinalist</strong></li>
+                    <li className="text-slate-800">• <strong>Science Bowl Champion</strong> (MI 1st, Nat'l Top 32) <a href="certificates/science bowl_Page_1.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>3× President's Volunteer Gold</strong> (600+ hrs)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-1 text-xs uppercase tracking-wide">Science Fairs</h3>
+                  <ul className="space-y-1 ml-2">
+                    <li className="text-slate-800">• <strong>NASA Earth System Science</strong> (1st) <a href="certificates/science fair certificates_Page_2.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>US Navy ONR</strong> (1st) <a href="certificates/science fair certificates_Page_4.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>Stockholm Junior Water Prize</strong> (MI Winner)</li>
+                    <li className="text-slate-800">• <strong>NOAA Award</strong> <a href="certificates/science fair certificates_Page_3.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>Sigma Xi</strong> (1st, UMich)</li>
+                    <li className="text-slate-800">• <strong>Air & Waste Mgmt</strong> <a href="certificates/science fair certificates_Page_6.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                    <li className="text-slate-800">• <strong>Doetsch Scholarship</strong> ($1,000) <a href="certificates/science fair certificates_Page_5.jpg" target="_blank" className="text-blue-700"><ExternalLink size={10} className="inline" /></a></li>
+                  </ul>
+                  <div className="mt-2 ml-2">
+                    <a href="https://www.sefmd.org/Search/ShowDetail.asp?ID=1774&Year=2025" target="_blank" className="text-blue-700 hover:underline text-xs inline-flex items-center gap-1">
+                      SEFMD 2025 Results <ExternalLink size={10} />
+                    </a>
+                    <span className="mx-2">•</span>
+                    <a href="https://www.sefmd.org/Search/ShowDetail.asp?ID=2012&Year=2024" target="_blank" className="text-blue-700 hover:underline text-xs inline-flex items-center gap-1">
+                      SEFMD 2024 Results <ExternalLink size={10} />
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-1 text-xs uppercase tracking-wide">Music</h3>
+                  <ul className="space-y-1 ml-2">
+                    <li className="text-slate-800">• <strong>4× MI All-State Orchestra</strong> (1st Chair 2021-22)</li>
+                    <li className="text-slate-800">• <strong>ENKOR Int'l 3rd Prize</strong></li>
+                    <li className="text-slate-800">• <strong>MSBOA Outstanding Ensemble</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* Research */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('research')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Research Experience</h2>
+            {expandedSections.research ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.research && (
+            <div className="space-y-3 text-sm">
+              <div>
+                <div className="flex justify-between mb-1">
+                  <h3 className="font-semibold text-slate-900">Environment Science Internship</h3>
+                  <span className="text-slate-600">2024–Present</span>
+                </div>
+                <p className="text-slate-700 italic text-xs">Dr. Kai Zhu, SEAS & MIDAS, University of Michigan</p>
+                <p className="text-slate-700 mt-1">Built ML models for U.S. maple pollen forecasting (F1=0.684); deployed Streamlit app; MIDAS PODS grant awarded</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1">
+                  <h3 className="font-semibold text-slate-900">Environmental Engineering</h3>
+                  <span className="text-slate-600">2021–2025</span>
+                </div>
+                <p className="text-slate-700 italic text-xs">Mrs. Martha Hale & Mr. David Caine, Huron High School</p>
+                <p className="text-slate-700 mt-1">AI-enabled aeration system for microbial fuel cells in wastewater treatment. Won National STEM Champion, GENIUS Gold, NASA Award</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1">
+                  <h3 className="font-semibold text-slate-900">Climate Dynamics</h3>
+                  <span className="text-slate-600">2024–2025</span>
+                </div>
+                <p className="text-slate-700 italic text-xs">Eojin Kim, Harvard Dept. of Earth & Planetary Sciences</p>
+                <p className="text-slate-700 mt-1">Hadley Cell modeling using CFD and Julia programming, analyzing turbulent fluxes and diabatic heating</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1">
+                  <h3 className="font-semibold text-slate-900">Bioinformatics</h3>
+                  <span className="text-slate-600">2022–2025</span>
+                </div>
+                <p className="text-slate-700 italic text-xs">Dr. Inhan Lee, University of Michigan</p>
+                <p className="text-slate-700 mt-1">Protein expression analysis in COVID-19, opioid addiction, and mental health disorders. 2 GIDAS conference presentations</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1">
+                  <h3 className="font-semibold text-slate-900">Biomedical AI</h3>
+                  <span className="text-slate-600">2022–2024</span>
+                </div>
+                <p className="text-slate-700 italic text-xs">Dr. Adi Tarca, Wayne State University</p>
+                <p className="text-slate-700 mt-1">DREAM Challenges: Placental Clock (Top 5 globally), Preterm Birth Prediction (Rank 7/318). SMFM conference presentation</p>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* Summer Activities */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('summer')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Summer Programs</h2>
+            {expandedSections.summer ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.summer && (
+            <div className="space-y-3 text-sm">
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">Michigan Math & Science Scholars (MMSS)</p>
+                  <span className="text-slate-600">Summer 2024</span>
+                </div>
+                <p className="text-slate-700">Ecological and micrometeorological instrumentation research</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">Dartmouth Geisel EDIT ML Program</p>
+                  <span className="text-slate-600">2023–2025</span>
+                </div>
+                <p className="text-slate-700 italic text-xs">Dr. Joshua Levy & Dr. Vaickus</p>
+                <p className="text-slate-700">Multimodal AI for clinical applications. 2 EDIT conference presentations</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">MIT Beaver Works Medlytics</p>
+                  <span className="text-slate-600">Summer 2023</span>
+                </div>
+                <p className="text-slate-700">ML pipeline for medical image analysis using Python/TensorFlow</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">Interlochen Arts Camp</p>
+                  <span className="text-slate-600">2022–2025</span>
+                </div>
+                <p className="text-slate-700">Orchestra & Composition Program, weekly performances</p>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* Music */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('music')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Music: Double Bass</h2>
+            {expandedSections.music ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.music && (
+            <div className="text-sm">
+              <p className="text-slate-800 mb-2"><strong>Huron Symphony Orchestra</strong> (2022–Present): Section Leader & Principal (2024–Present), Mentorship Coordinator (2025–Present)</p>
+              <p className="text-slate-800 mb-2"><strong>Performance Venues:</strong> Hill Auditorium (UMich); Spain Tour (Madrid, Barcelona, Valencia UNESCO venues); Canada Tour</p>
+              <p className="text-slate-800"><strong>Competition:</strong> Michigan Solo & Ensemble Festival – Multiple Division 1 ratings (98/100)</p>
+            </div>
+          )}
+        </section>
+
+        {/* Leadership */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('leadership')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Leadership & Service</h2>
+            {expandedSections.leadership ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.leadership && (
+            <div className="space-y-3 text-sm">
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">GIDAS Research Club–miRcore</p>
+                  <span className="text-slate-600">2023–Present</span>
+                </div>
+                <p className="text-slate-700">Chair (2025–26), Vice Chair (2024–25). Led 100+ chapters globally, organized annual conference (400+ projects), raised $10,000+</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">Founder & President, SteamFun4Kids 501(c)(3)</p>
+                  <span className="text-slate-600">2019–Present</span>
+                </div>
+                <p className="text-slate-700">200+ STEM workshops, raised $3,100+ for Title I schools, led robotics teams to regional wins</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">National STEM Festival Student Council</p>
+                  <span className="text-slate-600">2024–2025</span>
+                </div>
+                <p className="text-slate-700">Presented to 2,300+ attendees, selected to shape festival programming</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">US AI Olympiad Ambassador</p>
+                  <span className="text-slate-600">2022–Present</span>
+                </div>
+                <p className="text-slate-700">Conducted AI fundamentals training programs</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">National Science Bowl Team Captain</p>
+                  <span className="text-slate-600">2023–2026</span>
+                </div>
+                <p className="text-slate-700">MI Champions (2023, 2024), National Top 32 (2023), Captain (2025, 2026)</p>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">President, Huron Biology & GIDAS Research Club</p>
+                  <span className="text-slate-600">2024–2025</span>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">JV Tennis Team Captain</p>
+                  <span className="text-slate-600">2022–Present</span>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between">
+                  <p className="font-semibold text-slate-900">AYA Mott Advisory Council, UM Medicine</p>
+                  <span className="text-slate-600">2022–Present</span>
+                </div>
+                <p className="text-slate-700">Youth perspective on healthcare initiatives</p>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* Publications */}
+        <section className="bg-white rounded-lg shadow-sm p-6">
+          <button 
+            onClick={() => toggleSection('publications')}
+            className="w-full flex justify-between items-center mb-4"
+          >
+            <h2 className="text-xl font-bold text-slate-900 uppercase tracking-wide">Publications & Presentations</h2>
+            {expandedSections.publications ? <ChevronUp /> : <ChevronDown />}
+          </button>
+          
+          {expandedSections.publications && (
+            <div className="space-y-3 text-sm">
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-2">Conference Presentations</h3>
+                <ol className="space-y-2 ml-4 text-slate-700">
+                  <li>1. Panja, T., et al. (2025). Spatiotemporal Prediction of Pollen Distribution for Genus Acer Using Autoregressive ML Models. <em>U-M Annual Data Science & AI Summit</em></li>
+                  <li>2. Panja, T. (2025). Novel insights into turbulent fluxes and diabatic heating in Hadley Cell dynamics. <em>IEEE MIT URTC</em></li>
+                  <li>3. Panja, T. (2025). Dementia AI: Low-cost mobile app for screening using ML and computer vision. <em>12th Int'l Conf on Neurology</em></li>
+                  <li>4. Panja, T., et al. (2024). Deep learning in tumor microenvironment. <em>Pacific Symposium on Biocomputing</em>. DOI: 10.7490/f1000research.1119682.1</li>
+                </ol>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-2">Invited Speaking</h3>
+                <ul className="space-y-1 ml-4 text-slate-700">
+                  <li>• MIT BWSI National Panel (2024): "You Belong in STEM"</li>
+                  <li>• TEDx Youth Ann Arbor (2024): Microbial Fuel Cells</li>
+                  <li>• TEDx Youth Ann Arbor (2023): AI & Dementia Care</li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </section>
+
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-white py-6 mt-8">
+        <div className="max-w-5xl mx-auto px-6 text-center text-sm">
+          <p>© 2025 Tanay Panja • US Citizen • All rights reserved</p>
         </div>
+      </footer>
     </div>
-
-    <div id="achievements" class="container">
-        <h2 class="section-title">Top Honors & Achievements</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">🏆 National STEM Champion</div>
-                    <div class="card-badge">2024-25</div>
-                </div>
-                <p class="card-text">Congressional Innovation Award - U.S. Dept. of Education (Top 5%)</p>
-                <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html" class="card-link">2025 Press Release →</a>
-                <a href="https://www.nationalstemfestival.com/2024-student-innovators" class="card-link" style="display: block; margin-top: 0.3rem;">2024 Student Innovators →</a>
-                <a href="certificates/Stem Champion Depart of Education.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 Certificate →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">🥇 GENIUS Olympiad Gold</div>
-                    <div class="card-badge">2025</div>
-                </div>
-                <p class="card-text">International Environmental Science Fair - Energy Category</p>
-                <a href="certificates/genius certificate.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">View Certificate →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">🥇 US AI Olympiad Gold</div>
-                    <div class="card-badge">2025</div>
-                </div>
-                <p class="card-text">MIT Round 2 - Top 19 Nationally (Top 5%)</p>
-                <a href="https://www.usaaio.org/_files/ugd/87b792_b15d2e2888514eb0bf975782b0290f5d.pdf" class="card-link">View Awardee List →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">🎵 ISB Semifinalist</div>
-                    <div class="card-badge">2025</div>
-                </div>
-                <p class="card-text">International Society of Bassists - Top 8 USA / Top 16 Worldwide</p>
-                <a href="https://www.isbworldoffice.com/" class="card-link">ISB Website →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">🧬 USABO Semifinalist (2×)</div>
-                    <div class="card-badge">2023-25</div>
-                </div>
-                <p class="card-text">USA Biology Olympiad - Top 250 of 9,700 nationally</p>
-                <a href="certificates/usabo_certificate.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2023 Certificate →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">🧪 USNCO National Finalist</div>
-                    <div class="card-badge">2024</div>
-                </div>
-                <p class="card-text">USA Chemistry Olympiad - 3× Regional Top 3 (2023-25)</p>
-                <a href="certificates/scanned_usnco_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2024 National →</a>
-                <a href="certificates/scanned_usnco_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 Regional 2nd →</a>
-                <a href="certificates/scanned_usnco_Page_3.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 Regional 3rd →</a>
-                <a href="certificates/usnco_2025.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2025 Regional 3rd →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">📐 AIME Qualifier (2×)</div>
-                    <div class="card-badge">2024-25</div>
-                </div>
-                <p class="card-text">American Invitational Mathematics Examination - Honor Roll of Distinction (Top 1%)</p>
-                <a href="certificates/all_amc_certificates_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2025 AIME →</a>
-                <a href="certificates/all_amc_certificates_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2024 AIME →</a>
-                <a href="certificates/aime_2025_score.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2025 Score →</a>
-               
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">🥈 British Biology Olympiad Silver</div>
-                    <div class="card-badge">2024</div>
-                </div>
-                <p class="card-text">Top 10% of 13,000+ participants</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="science-fairs" class="container">
-        <h2 class="section-title">Science Fair Awards</h2>
-        <div class="list-item">
-            <div class="list-item-title">🛰️ NASA Earth System Science Award</div>
-             <a href="certificates/science fair certificates.pdf" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Awards →<
-            <a href="certificates/science fair certificates_Page_2.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
-            <a href="https://www.sefmd.org/Search/ShowDetail.asp?ID=1774&Year=2025" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2025 Results →</a>
-            <a href="https://www.sefmd.org/Search/ShowDetail.asp?ID=2012&Year=2024" class="card-link" style="display: block; margin-top: 0.3rem;">SEFMD 2024 Results →</a>
-        </div>
-        <div class="list-item">
-            <div class="list-item-title">🔬 Sigma Xi Award</div>
-            <div class="list-item-meta">University of Michigan Chapter - 1st Place (2024, 2025)</div>
-            
-        </div>
-
-        <div class="list-item">
-            <div class="list-item-title">⚓ Navy ONR Award</div>
-            <div class="list-item-meta">Office of Naval Research - 1st Place (2025)</div>
-            <a href="certificates/science fair certificates_Page_4.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
-        </div>
-
-        <div class="list-item">
-            <div class="list-item-title">💧 Stockholm Junior Water Prize</div>
-            <div class="list-item-meta">Michigan Regional Winner - National Recommendation (2025)</div>
-            
-        </div>
-
-        <div class="list-item">
-            <div class="list-item-title">🌊 NOAA "Taking the Pulse of the Planet" Award</div>
-            <div class="list-item-meta">National Oceanic and Atmospheric Administration (2025)</div>
-            <a href="certificates/science fair certificates_Page_3.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
-        </div>
-
-        
-
-        <div class="list-item">
-            <div class="list-item-title">💨 Air & Waste Management Association Award</div>
-            <div class="list-item-meta">SEFMD Science Fair (2025)</div>
-            <a href="certificates/science fair certificates_Page_6.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
-        </div>
-
-        <div class="list-item">
-            <div class="list-item-title">🎓 James Doetsch Memorial Scholarship</div>
-            <div class="list-item-meta">$1,000 Scholarship (2024)</div>
-            <a href="certificates/science fair certificates_Page_5.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
-        </div>
-
-        <div class="list-item">
-            <div class="list-item-title">🏆 Science Bowl Champion</div>
-            <div class="list-item-meta">Michigan 1st Place (2023, 2024), National Top 32</div>
-            <a href="certificates/science bowl_Page_1.jpg" class="card-link" oncontextmenu="return false;" ondragstart="return false;">2024 Certificate →</a>
-            <a href="certificates/science bowl_Page_2.jpg" class="card-link" style="display: block; margin-top: 0.3rem;" oncontextmenu="return false;" ondragstart="return false;">2023 Certificate →</a>
-        </div>
-
-        <div class="list-item">
-            <div class="list-item-title">💻 ACSL 1st Place Nationally</div>
-            <div class="list-item-meta">American Computer Science League - Senior Division (2023-24)</div>
-            <a href="certificates/acsl_awards.pdf" class="card-link" oncontextmenu="return false;" ondragstart="return false;">Certificate →</a>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Tanay Panja. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function
+  );
+}
