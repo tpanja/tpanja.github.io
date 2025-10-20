@@ -383,6 +383,46 @@
                     <p class="text-slate-700">Orchestra & Composition Program</p>
                 </div>
 
+
+
+                  
+            <div id="music-content" class="section-content expanded text-sm space-y-3">
+                <div>
+                    <p class="font-semibold text-slate-900 mb-1">Performance Experience</p>
+                    <p class="text-slate-800"><strong>Huron Symphony Orchestra</strong> (2022–Present): Member, Section Leader & Principal Double Bass (2024–Present), Mentorship Coordinator (2025–Present). Mentored younger musicians and led sectionals.</p>
+                </div>
+                
+                <div>
+                    <p class="font-semibold text-slate-900 mb-1">Notable Venues</p>
+                    <p class="text-slate-800">Hill Auditorium (UMich); Spain Tour — Auditorio Nacional de Música (Madrid), L'Auditori Nacional de Barcelona, Valencia UNESCO venues; Canada Tour</p>
+                </div>
+                
+                <div>
+                    <p class="font-semibold text-slate-900 mb-1">Competition Results</p>
+                    <p class="text-slate-800">Michigan State Solo & Ensemble Festival: Multiple Division 1 ratings (98/100)</p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-slate-900 mb-1 text-xs uppercase tracking-wide">Music Awards</h3>
+                    <ul class="space-y-1 ml-2">
+                        <li class="text-slate-800">• <strong>ISB Double Bass Semifinalist</strong> (Top 8 USA, Top 16 Worldwide)</li>
+                        <li class="text-slate-800">• <strong>4× MI All-State Orchestra</strong> (1st Chair 2021-22)</li>
+                        <li class="text-slate-800">• <strong>MSBOA Outstanding Chamber Ensemble</strong></li>
+                        <li class="text-slate-800">• <strong>MSBOA Strings Honors Ensemble</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="pt-2">
+                    <a href="certificates/spring honors.jpg" target="_blank" class="text-blue-700 hover:underline text-xs">Spring Honors Certificate ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-sm p-6">
+            <button onclick="toggleSection('leadership')" class="w-full flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-slate-900 uppercase tracking-wide">Leadership & Service</h2>
+                <span id="leadership-icon">▼</span>
+            </button>
                 <div>
                     <div class="flex justify-between flex-wrap">
                         <p class="font-semibold text-slate-900">Assistant, Family Rental Property Business</p>
@@ -400,3 +440,93 @@
             </button>
             
             <div id="music-content" class="
+ <div id="leadership-content" class="section-content expanded space-y-3 text-sm">
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">GIDAS Research Club–miRcore</p>
+                        <span class="text-slate-600">2023–Present</span>
+                    </div>
+                    <p class="text-slate-700">Chair (2025–26), Vice Chair (2024–25). Led 100+ chapters globally, organized annual conference (400+ projects), raised $10,000+</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">Founder & President, SteamFun4Kids 501(c)(3)</p>
+                        <span class="text-slate-600">2019–Present</span>
+                    </div>
+                    <p class="text-slate-700">200+ STEM workshops, raised $3,100+ for Title I schools, led robotics teams to regional wins</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">National STEM Festival Student Council</p>
+                        <span class="text-slate-600">2024–2025</span>
+                    </div>
+                    <p class="text-slate-700">Presented to 2,300+ attendees, selected to shape festival programming</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">US AI Olympiad Ambassador</p>
+                        <span class="text-slate-600">2025–Present</span>
+                    </div>
+                    <p class="text-slate-700">Conducted AI fundamentals training programs</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">National Science Bowl Team Captain</p>
+                        <span class="text-slate-600">2023–2026</span>
+                    </div>
+                    <p class="text-slate-700">MI Champions (2023, 2024), National Top 32 (2023), Captain (2025, 2026)</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">President, Huron Biology & GIDAS Research Club</p>
+                        <span class="text-slate-600">2024–2025</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">JV Tennis Team Captain</p>
+                        <span class="text-slate-600">2022–Present</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between flex-wrap">
+                        <p class="font-semibold text-slate-900">AYA Mott Advisory Council, UM Medicine</p>
+                        <span class="text-slate-600">2022–Present</span>
+                    </div>
+                    <p class="text-slate-700">Youth perspective on healthcare initiatives</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-white py-6 mt-8">
+        <div class="max-w-5xl mx-auto px-6 text-center text-sm">
+            <p>© 2025 Tanay Panja • US Citizen • All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId + '-content');
+            const icon = document.getElementById(sectionId + '-icon');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.textContent = '▶';
+            } else {
+                content.classList.add('expanded');
+                icon.textContent = '▼';
+            }
+        }
+    </script>
+
+</body>
+</html>
