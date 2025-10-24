@@ -5,21 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tanay Panja - Curriculum Vitae</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Professional font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root { --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+
     .section-content {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
     }
     .section-content.expanded { max-height: 2500px; }
+
     body {
+      font-family: var(--font-body);
       -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
     }
-    a, button, input, textarea {
-      -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text;
-    }
+    a, button, input, textarea { -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; }
+
     html { scroll-behavior: smooth; }
     section { scroll-margin-top: 350px; }
+
+    /* Typographic consistency inside sections */
+    .cv-section h2 { font-size: 1.5rem; line-height: 2rem; }       /* text-2xl */
+    .cv-section h3 { font-size: 1.125rem; line-height: 1.75rem; }  /* text-lg */
+    .cv-section, .cv-section p, .cv-section li, .cv-section a, .cv-section span {
+      font-size: 1rem; line-height: 1.5rem;                        /* text-base */
+    }
   </style>
 </head>
 
@@ -56,6 +68,7 @@
     <nav class="border-t border-slate-200 bg-slate-50">
       <div class="max-w-6xl mx-auto px-6 py-3">
         <div class="flex flex-wrap gap-2 justify-center">
+          <!-- Nav can stay slightly smaller as pills; sections below are unified -->
           <a href="#education" class="px-3 py-1.5 bg-white hover:bg-slate-900 hover:text-white border border-slate-300 rounded-md text-sm font-medium text-slate-700 transition-colors">Education</a>
           <a href="#tests" class="px-3 py-1.5 bg-white hover:bg-slate-900 hover:text-white border border-slate-300 rounded-md text-sm font-medium text-slate-700 transition-colors">Test Scores</a>
           <a href="#awards" class="px-3 py-1.5 bg-white hover:bg-slate-900 hover:text-white border border-slate-300 rounded-md text-sm font-medium text-slate-700 transition-colors">Awards</a>
@@ -71,9 +84,9 @@
 
   <main class="max-w-6xl mx-auto px-6 py-6 space-y-6">
     <!-- Education -->
-    <section id="education" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="education" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('education')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Education</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Education</h2>
         <span id="education-icon">▼</span>
       </button>
 
@@ -124,9 +137,9 @@
     </section>
 
     <!-- Tests -->
-    <section id="tests" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="tests" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('tests')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Test Scores</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Test Scores</h2>
         <span id="tests-icon">▼</span>
       </button>
 
@@ -167,9 +180,9 @@
     </section>
 
     <!-- Awards -->
-    <section id="awards" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="awards" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('awards')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Academic Awards &amp; Recognition</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Academic Awards &amp; Recognition</h2>
         <span id="awards-icon">▼</span>
       </button>
 
@@ -238,9 +251,9 @@
     </section>
 
     <!-- Research -->
-    <section id="research" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="research" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('research')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Research Experience</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Research Experience</h2>
         <span id="research-icon">▼</span>
       </button>
 
@@ -292,9 +305,9 @@
     </section>
 
     <!-- Publications -->
-    <section id="publications" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="publications" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('publications')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Publications &amp; Presentations</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Publications &amp; Presentations</h2>
         <span id="publications-icon">▼</span>
       </button>
 
@@ -321,9 +334,9 @@
     </section>
 
     <!-- Summer -->
-    <section id="summer" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="summer" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('summer')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Summer Activities</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Summer Activities</h2>
         <span id="summer-icon">▼</span>
       </button>
 
@@ -375,40 +388,40 @@
     </section>
 
     <!-- Music -->
-    <section id="music" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="music" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('music')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Music: Double Bass</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Music: Double Bass</h2>
         <span id="music-icon">▼</span>
       </button>
 
       <div id="music-content" class="section-content expanded space-y-3">
         <div>
           <p class="font-semibold text-slate-900 mb-1">Performance Experience</p>
-          <p class="text-slate-800"><strong>Huron Symphony Orchestra</strong> (2022–Present): Member, Section Leader &amp; Principal Double Bass (2024–Present), Mentorship Coordinator (2025–Present). Mentored younger musicians and led sectionals.</p>
+          <p class="text-slate-700"><strong>Huron Symphony Orchestra</strong> (2022–Present): Member, Section Leader &amp; Principal Double Bass (2024–Present), Mentorship Coordinator (2025–Present). Mentored younger musicians and led sectionals.</p>
         </div>
 
         <div>
           <p class="font-semibold text-slate-900 mb-1">Notable Venues</p>
-          <p class="text-slate-800">Hill Auditorium (UMich); Spain Tour — Auditorio Nacional de Música (Madrid), L'Auditori Nacional de Barcelona, Valencia UNESCO venues; Canada Tour</p>
+          <p class="text-slate-700">Hill Auditorium (UMich); Spain Tour — Auditorio Nacional de Música (Madrid), L'Auditori Nacional de Barcelona, Valencia UNESCO venues; Canada Tour</p>
         </div>
 
         <div>
           <p class="font-semibold text-slate-900 mb-1">Competition Results</p>
           <ul class="space-y-1 ml-4 list-disc">
-            <li class="text-slate-800"><strong>2025 International Society of Bassists (ISB) Double Bass Youth Solo Competition Semifinalist</strong> — Top 8 USA &amp; Top 16 Worldwide, ISB Convention, Florida State University College of Music</li>
-            <li class="text-slate-800"><strong>2025 Third Prize, ENKOR International Music Competition, Strings Division</strong>
+            <li class="text-slate-700"><strong>2025 International Society of Bassists (ISB) Double Bass Youth Solo Competition Semifinalist</strong> — Top 8 USA &amp; Top 16 Worldwide, ISB Convention, Florida State University College of Music</li>
+            <li class="text-slate-700"><strong>2025 Third Prize, ENKOR International Music Competition, Strings Division</strong>
               <a href="certificates/Tanay Panja_Enkore strings.pdf" target="_blank" class="text-blue-700 hover:underline ml-2">Certificate ↗</a>
             </li>
-            <li class="text-slate-800"><strong>Michigan State Solo &amp; Ensemble Festival:</strong> Multiple Division 1 ratings (98/100)</li>
+            <li class="text-slate-700"><strong>Michigan State Solo &amp; Ensemble Festival:</strong> Multiple Division 1 ratings (98/100)</li>
           </ul>
         </div>
 
         <div>
           <h3 class="font-bold text-slate-900 mb-1 uppercase tracking-wide">Music Awards</h3>
           <ul class="space-y-1 ml-4 list-disc">
-            <li class="text-slate-800"><strong>4× MI All-State Orchestra</strong> (1st Chair 2021–22)</li>
-            <li class="text-slate-800"><strong>MSBOA Outstanding Chamber Ensemble</strong></li>
-            <li class="text-slate-800"><strong>MSBOA Strings Honors Ensemble</strong></li>
+            <li class="text-slate-700"><strong>4× MI All-State Orchestra</strong> (1st Chair 2021–22)</li>
+            <li class="text-slate-700"><strong>MSBOA Outstanding Chamber Ensemble</strong></li>
+            <li class="text-slate-700"><strong>MSBOA Strings Honors Ensemble</strong></li>
           </ul>
         </div>
 
@@ -419,9 +432,9 @@
     </section>
 
     <!-- Leadership -->
-    <section id="leadership" class="bg-white rounded-lg shadow-sm p-6">
+    <section id="leadership" class="cv-section bg-white rounded-lg shadow-sm p-6">
       <button onclick="toggleSection('leadership')" class="w-full flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">Leadership &amp; Service</h2>
+        <h2 class="font-bold text-slate-900 uppercase tracking-wide">Leadership &amp; Service</h2>
         <span id="leadership-icon">▼</span>
       </button>
 
