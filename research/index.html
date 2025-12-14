@@ -25,8 +25,8 @@
         <div>
           <h1 class="text-3xl font-bold tracking-tight">Research Portfolio</h1>
           <p class="text-slate-600 mt-1 max-w-3xl">
-            Selected projects across environmental systems, AI/ML, and health-focused computing.
-            Each card links to primary artifacts (paper/poster/demo/code) when available.
+            Selected work with primary artifacts (posters, papers, demos) linked when available.
+            Emphasis on climate- and environment-driven systems, with additional projects in applied AI.
           </p>
 
           <div class="mt-3 flex flex-wrap gap-2 text-sm">
@@ -40,7 +40,7 @@
 
         <div class="flex gap-2">
           <a href="#projects" class="px-3 py-2 rounded-md bg-slate-900 text-white text-sm hover:bg-slate-800 transition">Browse Projects</a>
-          <a href="#talks" class="px-3 py-2 rounded-md bg-white border text-sm hover:bg-slate-50 transition">Talks & Posters</a>
+          <a href="#talks" class="px-3 py-2 rounded-md bg-white border text-sm hover:bg-slate-50 transition">Talks & Extras</a>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
         <div class="flex flex-wrap gap-2" id="chips"></div>
 
         <div class="flex gap-2 w-full md:w-auto">
-          <input id="q" type="text" placeholder="Search projects (e.g., dementia, MFC, pollen)…"
+          <input id="q" type="text" placeholder="Search (e.g., pollen, Hadley, wastewater, MIL)…"
                  class="w-full md:w-96 px-3 py-2 rounded-md border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-400" />
           <button id="clear" class="px-3 py-2 rounded-md border bg-white text-sm hover:bg-slate-50">Clear</button>
         </div>
@@ -66,7 +66,7 @@
       <div class="flex items-end justify-between gap-4 flex-wrap">
         <div>
           <h2 class="text-xl font-bold">Projects</h2>
-          <p class="text-slate-600 text-sm mt-1">Curated list (with primary artifacts linked).</p>
+          <p class="text-slate-600 text-sm mt-1">Ordered with environmental and climate work first.</p>
         </div>
         <p class="text-sm text-slate-500" id="count"></p>
       </div>
@@ -74,11 +74,11 @@
       <div class="mt-4 grid gap-4 md:grid-cols-2" id="grid"></div>
     </section>
 
-    <!-- Talks / Posters -->
+    <!-- Talks / Extras -->
     <section id="talks" class="pt-2">
-      <h2 class="text-xl font-bold">Talks & Posters</h2>
+      <h2 class="text-xl font-bold">Talks & Extras</h2>
       <p class="text-slate-600 text-sm mt-1">
-        Selected public links related to projects.
+        Selected public links related to projects (optional viewing).
       </p>
 
       <div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -86,12 +86,12 @@
           <h3 class="font-semibold">TEDx Youth</h3>
           <ul class="mt-2 list-disc ml-5 text-sm text-slate-700 space-y-1">
             <li>
-              Dementia Care through AI & Entrepreneurship (YouTube)
+              Dementia Care through AI & Entrepreneurship
               <a class="underline hover:text-blue-700" target="_blank" rel="noopener"
                  href="https://youtu.be/0jPh_spZXLE?si=3qpyhCLF6Sbgxoyq">Watch</a>
             </li>
             <li>
-              Microbial Fuel Cells (TEDx event page)
+              TEDx event page (Microbial Fuel Cells)
               <a class="underline hover:text-blue-700" target="_blank" rel="noopener"
                  href="https://www.ted.com/tedx/events/50556">Link</a>
             </li>
@@ -101,7 +101,7 @@
         <div class="bg-white rounded-lg shadow-sm p-5 border">
           <h3 class="font-semibold">National STEM Challenge</h3>
           <p class="text-sm text-slate-700 mt-2">
-            Supporting document (PDF).
+            Supporting document (Google Drive).
             <a class="underline hover:text-blue-700" target="_blank" rel="noopener"
                href="https://drive.google.com/file/d/1NFOulOMfLEG1GEEWv1EB-DxUpmxUsfMO/view?usp=drive_link">Open</a>
           </p>
@@ -115,94 +115,172 @@
   </main>
 
   <script>
-    // === Edit here to update the portfolio ===
+    // =========================
+    // EDIT HERE TO UPDATE PROJECTS
+    // =========================
     const PROJECTS = [
+
+      // ===== CLIMATE & ATMOSPHERE (PRIMARY) =====
+      {
+        title: "Time-Dependent Modeling of Hadley Cell Dynamics with Turbulent Fluxes",
+        area: "Climate & Atmospheric Science",
+        period: "Science & Engineering Fair • Manuscript in Progress",
+        tags: ["Climate Modeling", "Atmospheric Dynamics", "Numerical Methods", "Julia"],
+        summary:
+          "Developed a fully time-dependent numerical model to study how eddy momentum flux, turbulent heat flux, and diabatic heating shape the structure, strength, and evolution of the Hadley Cell, with implications for precipitation, extreme weather, and water availability.",
+        highlights: [
+          "Mixed finite-difference–spectral method",
+          "Julia-based implementation for efficient simulation",
+          "Asymmetry-driven shifts in circulation structure",
+          "Connects diabatic heating to hydrologic and climate extremes"
+        ],
+        links: [
+          {
+            label: "Research Poster (Google Drive)",
+            href: "https://drive.google.com/file/d/15_fHzBMmu8ijNbBP8edhATy7vXfCMULc/view?usp=sharing"
+          }
+        ]
+      },
+
+      // ===== ENVIRONMENTAL HEALTH / DATA SCIENCE (PRIMARY) =====
+      {
+        title: "Multi-Scale Autoregressive Forecasting of Airborne Pollen",
+        area: "Environmental Health & Data Science",
+        period: "University of Michigan (SEAS / MIDAS)",
+        tags: ["Machine Learning", "Public Health", "Climate", "Time Series"],
+        summary:
+          "Built a spatiotemporal machine learning framework to forecast maple pollen one month ahead using two decades of National Allergy Bureau data and Daymet climate variables, extending forecast horizons 30× beyond prior work.",
+        highlights: [
+          "LightGBM achieved R² = 0.64 for 1-month forecasts",
+          "91% improvement over persistence baselines",
+          "Separates biological memory from climate forcing",
+          "Interactive Streamlit visualization with kriging"
+        ],
+        links: [
+          {
+            label: "Award-Winning Poster (Google Drive)",
+            href: "https://drive.google.com/file/d/1U3NVyUfhPbBP9qnHRRnQ-uXA8YC_Hhex/view?usp=sharing"
+          }
+        ]
+      },
+
+      // ===== ENVIRONMENTAL ENGINEERING (PRIMARY) =====
+      {
+        title: "AI-Controlled Microbial Fuel Cell for Wastewater Treatment",
+        area: "Environmental Engineering",
+        period: "Science & Engineering Fair • National Awards",
+        tags: ["Wastewater", "Energy", "IoT", "Reinforcement Learning"],
+        summary:
+          "Designed and built a dual-chamber microbial fuel cell with real-time sensing and AI-controlled aeration to optimize voltage output while maintaining anaerobic conditions, demonstrating a scalable pathway toward energy-positive wastewater treatment.",
+        highlights: [
+          "Dual-chamber MFC with controlled aeration",
+          "pH, voltage, and environmental sensing",
+          "ML-based aeration optimization policy",
+          "National STEM Champion, GENIUS Olympiad Gold, NASA Award"
+        ],
+        links: [
+          {
+            label: "Poster (Google Drive)",
+            href: "https://drive.google.com/file/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/view?usp=sharing"
+          },
+          {
+            label: "Presentation (Slides)",
+            href: "https://docs.google.com/presentation/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/preview"
+          }
+        ]
+      },
+
+      // ===== BIOMEDICAL AI (SECONDARY) =====
+      {
+        title: "Dynamically Ranking Urothelial Cells by Malignancy Using Attention-Based MIL",
+        area: "Biomedical AI",
+        period: "Dartmouth Hitchcock Medical Center (EDIT)",
+        tags: ["Deep Learning", "Pathology", "Multiple Instance Learning"],
+        summary:
+          "Applied attention-based multiple instance learning to rank urothelial cells by malignancy relevance, improving diagnostic accuracy and interpretability under weak supervision.",
+        highlights: [
+          "79% accuracy, AUROC = 0.76",
+          "Attention-based weak supervision framework",
+          "Addresses labeling scarcity in cytopathology"
+        ],
+        links: [
+          {
+            label: "Conference Poster (Google Drive)",
+            href: "https://drive.google.com/file/d/1h2yvQy483khxZDSYDgAPU7YIUDv3iax0/view?usp=sharing"
+          }
+        ]
+      },
+
+      {
+        title: "Multimodal Deep Learning for Colorectal Cancer Survival Analysis",
+        area: "Biomedical AI",
+        period: "Dartmouth Hitchcock Medical Center (EDIT)",
+        tags: ["Multimodal Learning", "Cancer Prognostics", "WSI", "Methylation"],
+        summary:
+          "Developed a multimodal deep learning framework integrating whole-slide imaging, DNA methylation, and immune deconvolution features to improve colorectal cancer survival prediction.",
+        highlights: [
+          "Multimodal model outperformed strong unimodal baselines",
+          "Graph-based WSI encoding + multi-input fusion",
+          "Motivated by clinical decision support needs"
+        ],
+        links: [
+          {
+            label: "Conference Poster (Google Drive)",
+            href: "https://drive.google.com/file/d/1U3NVyUfhPbBP9qnHRRnQ-uXA8YC_Hhex/view?usp=sharing"
+          }
+        ]
+      },
+
+      // ===== OPTIONAL OLDER / SUPPORTING WORK =====
       {
         title: "Dementia AI: Mobile Clock Drawing Test Screening (Computer Vision + ML)",
         area: "Health AI",
         period: "Science & Engineering Fair (SEFMD) • 2023",
         tags: ["Health AI", "Computer Vision", "Mobile", "ML"],
         summary:
-          "Developed an on-device iOS app to score the Clock Drawing Test with privacy-preserving inference. Trained models on a public dataset and evaluated robustness across lighting conditions.",
+          "Built an iOS prototype to automate scoring of the Clock Drawing Test using ML and computer vision, focusing on low-cost screening workflows.",
         highlights: [
-          "On-device inference (privacy-first)",
-          "Multinomial logistic regression baseline + model comparisons",
-          "SEFMD artifacts (presentation + quad chart)"
+          "On-device inference concept (privacy-first)",
+          "Model comparisons against strong baselines",
+          "Artifacts available via SEFMD"
         ],
         links: [
-          { label: "Demo Video", href: "https://www.youtube.com/watch?v=sbh9gAL29us" },
           { label: "SEFMD Presentation (PDF)", href: "https://www.sefmd.org/archiveUploads/2023/2161/2161_02.pdf" },
           { label: "Quad Chart (PDF)", href: "https://www.sefmd.org/archiveUploads/2023/2161/2161_07.pdf" }
         ]
-      },
-      {
-        title: "AI-IoT Energy Forecasting & Environmental Monitoring for Microbial Fuel Cells",
-        area: "Environmental Systems",
-        period: "Science & Engineering Fair (SEFMD) • 2022",
-        tags: ["Environmental Systems", "IoT", "Time Series", "MFC"],
-        summary:
-          "Built a low-cost IoT monitoring stack for MFC voltage + environmental sensors and used ARIMA-based forecasting to predict energy generation, with cloud logging and mobile viewing.",
-        highlights: [
-          "Arduino + Firebase logging pipeline",
-          "ARIMA forecasting for MFC voltage",
-          "SEFMD presentation artifact available"
-        ],
-        links: [
-          { label: "Demo Video", href: "https://www.youtube.com/watch?v=NjRKE49Z5vs" },
-          { label: "SEFMD Presentation (PDF)", href: "https://www.sefmd.org/archiveUploads/2022/2516/2516_02.pdf" }
-        ]
-      },
-      {
-        title: "Raspberry Pi Access Control with Real-Time Face Recognition",
-        area: "Edge ML",
-        period: "Science & Engineering Fair (SEFMD) • 2021",
-        tags: ["Edge ML", "Computer Vision", "Raspberry Pi"],
-        summary:
-          "Designed a low-cost access-control prototype using OpenCV Haar cascades and evaluated face-recognition accuracy under mask/no-mask and distance conditions.",
-        highlights: [
-          "Real-time inference on Raspberry Pi",
-          "Controlled evaluation across distance + mask conditions",
-          "SEFMD presentation artifact available"
-        ],
-        links: [
-          { label: "Demo Video", href: "https://www.youtube.com/watch?v=gsNJsmYGnLc" },
-          { label: "SEFMD Presentation (PDF)", href: "https://www.sefmd.org/ArchiveUploads/2021/1171/1171_02.pdf" }
-        ]
-      },
-      {
-        title: "Cloud-based ML Model for Parkinson’s Detection (Drawing-based)",
-        area: "Health AI",
-        period: "Independent Project",
-        tags: ["Health AI", "ML", "Cloud", "Signals"],
-        summary:
-          "Implemented an ML pipeline for Parkinson’s detection from drawing-related features; hosted code publicly for reproducibility and extension.",
-        highlights: [
-          "End-to-end ML pipeline",
-          "Public code release"
-        ],
-        links: [
-          { label: "GitHub Repo", href: "https://github.com/tpanja/Parkinson-ML" },
-          { label: "YouTube", href: "https://www.youtube.com/watch?v=07z4a84lI_Y" }
-        ]
-      },
-      {
-        title: "IoT-based AI Aeration Control for MFC Energy Generation & Wastewater Treatment",
-        area: "Environmental Systems",
-        period: "Science & Engineering Fair • 2024",
-        tags: ["Environmental Systems", "Reinforcement Learning", "IoT", "Wastewater"],
-        summary:
-          "Developed an IoT aeration-control system for microbial fuel cells and applied RL to optimize aeration timing for improved voltage output and reduced aeration time.",
-        highlights: [
-          "Sensor logging (pH, voltage, humidity, temperature)",
-          "RL-based aeration optimization",
-          "Focus on efficiency trade-offs in wastewater treatment"
-        ],
-        links: []
       }
+
     ];
 
-    // === UI logic (no need to edit) ===
-    const TAGS = ["All", "Environmental Systems", "Health AI", "Edge ML", "IoT", "Computer Vision", "Reinforcement Learning", "Time Series", "Mobile", "Cloud", "ML"];
+    // =========================
+    // UI Logic (no need to edit)
+    // =========================
+    const TAGS = [
+      "All",
+      "Climate & Atmospheric Science",
+      "Environmental Health & Data Science",
+      "Environmental Engineering",
+      "Biomedical AI",
+      "Health AI",
+      "Climate Modeling",
+      "Atmospheric Dynamics",
+      "Numerical Methods",
+      "Julia",
+      "Machine Learning",
+      "Public Health",
+      "Climate",
+      "Time Series",
+      "Wastewater",
+      "Energy",
+      "IoT",
+      "Reinforcement Learning",
+      "Deep Learning",
+      "Pathology",
+      "Multiple Instance Learning",
+      "Computer Vision",
+      "Mobile",
+      "ML"
+    ];
 
     const chipsEl = document.getElementById("chips");
     const gridEl = document.getElementById("grid");
@@ -236,7 +314,10 @@
     function filtered() {
       const query = (qEl.value || "").trim();
       return PROJECTS.filter(p => {
-        const tagOk = (active === "All") || (p.tags || []).includes(active) || p.area === active;
+        const tagOk =
+          (active === "All") ||
+          (p.area === active) ||
+          (p.tags || []).includes(active);
         const qOk = !query || matches(p, query);
         return tagOk && qOk;
       });
@@ -257,15 +338,15 @@
         </div>
       `;
 
-      const summary = document.createElement("p");
-      summary.className = "text-sm text-slate-700";
-      summary.textContent = p.summary;
-
       const tagRow = document.createElement("div");
       tagRow.className = "flex flex-wrap gap-2";
       tagRow.innerHTML = (p.tags || []).map(t =>
         `<span class="text-xs px-2 py-1 rounded-full bg-gray-50 border text-slate-700">${t}</span>`
       ).join("");
+
+      const summary = document.createElement("p");
+      summary.className = "text-sm text-slate-700";
+      summary.textContent = p.summary;
 
       const hl = document.createElement("ul");
       hl.className = "list-disc ml-5 text-sm text-slate-700 space-y-1";
@@ -315,4 +396,3 @@
   </script>
 </body>
 </html>
-
