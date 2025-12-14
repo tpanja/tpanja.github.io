@@ -1,239 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research Portfolio | Tanay Panja</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont; }
-    .chip { border: 1px solid rgb(226 232 240); }
-    .chip.active { background: rgb(15 23 42); color: white; border-color: rgb(15 23 42); }
-  </style>
-</head>
-
-<body class="bg-gray-50 text-slate-800">
-
-<header class="bg-white border-b-4 border-slate-900 shadow-sm sticky top-0 z-40">
-  <div class="max-w-6xl mx-auto px-4 py-4">
-    <h1 class="text-3xl font-bold tracking-tight">Research Portfolio</h1>
-    <p class="text-slate-600 mt-1 max-w-3xl">
-      Climate- and environment-focused research using quantitative modeling and machine learning,
-      with additional work in biomedical AI and public-facing scientific communication.
+<!-- Talks & Public Recognition -->
+<section class="mt-12 space-y-4">
+  <div>
+    <h2 class="text-xl font-bold">Talks, Awards & Public Recognition</h2>
+    <p class="text-slate-600 text-sm mt-1">
+      Public-facing talks, national competitions, and international recognition.
     </p>
-
-    <div class="mt-3 flex flex-wrap gap-2 text-sm">
-      <a href="/" class="underline hover:text-blue-700">← CV</a>
-      <span class="text-slate-400">•</span>
-      <a href="https://github.com/tpanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">GitHub</a>
-      <span class="text-slate-400">•</span>
-      <a href="https://linkedin.com/in/tanaypanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">LinkedIn</a>
-    </div>
   </div>
 
-  <div class="border-t border-slate-200 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-      <div class="flex flex-wrap gap-2" id="chips"></div>
-      <div class="flex gap-2 w-full md:w-auto">
-        <input id="q" type="text" placeholder="Search (pollen, Hadley, wastewater, TEDx)…"
-               class="w-full md:w-96 px-3 py-2 rounded-md border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-400" />
-        <button id="clear" class="px-3 py-2 rounded-md border bg-white text-sm hover:bg-slate-50">Clear</button>
-      </div>
-    </div>
-  </div>
-</header>
+  <div class="grid gap-4 md:grid-cols-2">
 
-<main class="max-w-6xl mx-auto px-4 py-6 space-y-12">
-
-  <!-- PROJECTS -->
-  <section>
-    <div class="flex items-end justify-between gap-4 flex-wrap">
-      <h2 class="text-xl font-bold">Projects</h2>
-      <p class="text-sm text-slate-500" id="count"></p>
-    </div>
-
-    <div class="grid gap-4 md:grid-cols-2 mt-4" id="grid"></div>
-  </section>
-
-  <!-- TALKS & RECOGNITION -->
-  <section>
-    <h2 class="text-xl font-bold mb-4">Talks, Awards & Public Recognition</h2>
-
-    <div class="grid gap-4 md:grid-cols-2">
-
-      <!-- TEDx Youth -->
-      <article class="bg-white rounded-lg shadow-sm border p-5">
-        <h3 class="text-lg font-semibold">TEDx Youth – Dementia AI</h3>
-        <p class="text-sm text-slate-700 mt-2">
-          TEDx Youth talk on automating the Clock Drawing Test using AI
-          for accessible dementia screening.
-        </p>
-
-        <div class="mt-4 aspect-video rounded-lg overflow-hidden border">
-          <iframe
-            src="https://www.youtube.com/embed/0jPh_spZXLE"
-            title="TEDx Youth – Dementia AI"
-            allowfullscreen
-            class="w-full h-full"></iframe>
-        </div>
-
-        <a href="https://youtu.be/0jPh_spZXLE"
+    <!-- TEDx -->
+    <article class="bg-white rounded-lg shadow-sm border p-5">
+      <h3 class="text-lg font-semibold">TEDx Youth Speaker</h3>
+      <p class="text-sm text-slate-700 mt-2">
+        Delivered invited TEDx Youth talks on applied AI, microbial fuel cells,
+        and technology-driven environmental systems.
+      </p>
+      <div class="mt-3 flex flex-wrap gap-3 text-sm">
+        <a href="https://www.youtube.com/watch?v=dpl4xWXOIuI"
            target="_blank" rel="noopener"
-           class="underline hover:text-blue-700 text-sm mt-3 inline-block">
-           Watch on YouTube ↗
+           class="underline hover:text-blue-700">
+           TEDx Youth Talk (YouTube)
         </a>
-      </article>
+        <a href="https://www.youtube.com/@tanaypanja5080/videos"
+           target="_blank" rel="noopener"
+           class="underline hover:text-blue-700">
+           Speaker Channel
+        </a>
+      </div>
+    </article>
 
-      <!-- National STEM Challenge -->
-      <article class="bg-white rounded-lg shadow-sm border p-5">
-        <h3 class="text-lg font-semibold">National STEM Challenge Champion</h3>
-        <p class="text-sm text-slate-700 mt-2">
-          National recognition for environmental innovation and real-world impact.
-        </p>
-        <div class="mt-3 flex flex-wrap gap-3 text-sm">
-          <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-first-ever-national-stem-champions-302059984.html"
-             target="_blank" class="underline hover:text-blue-700">2024 Announcement</a>
-          <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html"
-             target="_blank" class="underline hover:text-blue-700">2025 Announcement</a>
-        </div>
-      </article>
+    <!-- National STEM Challenge -->
+    <article class="bg-white rounded-lg shadow-sm border p-5">
+      <h3 class="text-lg font-semibold">National STEM Challenge Champion</h3>
+      <p class="text-sm text-slate-700 mt-2">
+        Recognized nationally for environmental innovation and real-world impact
+        in the National STEM Challenge.
+      </p>
+      <div class="mt-3 flex flex-wrap gap-3 text-sm">
+        <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-first-ever-national-stem-champions-302059984.html"
+           target="_blank" rel="noopener"
+           class="underline hover:text-blue-700">
+           2024 Announcement
+        </a>
+        <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html"
+           target="_blank" rel="noopener"
+           class="underline hover:text-blue-700">
+           2025 Announcement
+        </a>
+      </div>
+    </article>
 
-      <!-- GENIUS Olympiad -->
-      <article class="bg-white rounded-lg shadow-sm border p-5">
-        <h3 class="text-lg font-semibold">GENIUS Olympiad — Gold Award</h3>
-        <p class="text-sm text-slate-700 mt-2">
-          International Gold Award for environmental systems research
-          at the GENIUS Olympiad.
-        </p>
-      </article>
-
-    </div>
-  </section>
-
-  <footer class="text-center text-xs text-slate-500 py-6">
-    © 2025 Tanay Panja • Built on GitHub Pages
-  </footer>
-
-</main>
-
-<script>
-const PROJECTS = [
-  {
-    title: "Novel Insights into Turbulent Fluxes and Diabatic Heating in Hadley Cell Dynamics",
-    area: "Climate & Atmospheric Science",
-    period: "Science & Engineering Fair • MIT IEEE Explore 2025",
-    tags: ["Climate Modeling", "Atmospheric Dynamics", "Julia"],
-    summary:
-      "Time-dependent modeling of Hadley circulation to study how turbulent fluxes and diabatic heating govern structure and evolution.",
-    highlights: [
-      "Time-dependent numerical model",
-      "Turbulent flux and diabatic heating analysis",
-      "Hydrologic implications"
-    ],
-    links: [
-      { label: "Research Poster", href: "https://drive.google.com/file/d/1kGGJj5Fh-OF3dUpUqj_hiEub_WUU7MEU/view?usp=sharing" }
-    ]
-  },
-
-  {
-    title: "Acer (Maple) Pollen Forecasting with Machine Learning",
-    area: "Environmental Health & Data Science",
-    period: "University of Michigan (SEAS / MIDAS)",
-    tags: ["Machine Learning", "Public Health", "Climate"],
-    summary:
-      "Spatiotemporal forecasting of airborne maple pollen using long-term station and climate data.",
-    highlights: [
-      "Month-ahead exposure forecasting",
-      "Climate–health linkage",
-      "Award-winning poster"
-    ],
-    links: [
-      { label: "Poster", href: "https://drive.google.com/file/d/1U3NVyUfhPbBP9qnHRRnQ-uXA8YC_Hhex/view?usp=sharing" }
-    ]
-  },
-
-  {
-    title: "AI-Controlled Microbial Fuel Cell for Wastewater Treatment",
-    area: "Environmental Engineering",
-    period: "National STEM Champion • GENIUS Gold",
-    tags: ["Wastewater", "Energy", "IoT"],
-    summary:
-      "Designed an AI-controlled microbial fuel cell optimizing aeration and voltage output.",
-    highlights: [
-      "Energy-positive wastewater concept",
-      "Real-time sensing and control",
-      "National recognition"
-    ],
-    links: [
-      { label: "Slides", href: "https://docs.google.com/presentation/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/preview" }
-    ]
-  },
-
-  {
-    title: "Attention-Based MIL for Urothelial Cell Malignancy Ranking",
-    area: "Biomedical AI",
-    period: "Dartmouth Hitchcock (EDIT)",
-    tags: ["Deep Learning", "Pathology"],
-    summary:
-      "Attention-based multiple instance learning for weakly supervised cancer cell ranking.",
-    highlights: [
-      "Weak supervision",
-      "Interpretability via attention",
-      "Conference poster"
-    ],
-    links: [
-      { label: "Poster", href: "https://drive.google.com/file/d/1h2yvQy483khxZDSYDgAPU7YIUDv3iax0/view?usp=sharing" }
-    ]
-  }
-];
-
-const TAGS = ["All","Climate & Atmospheric Science","Environmental Health & Data Science","Environmental Engineering","Biomedical AI"];
-
-const chipsEl = document.getElementById("chips");
-const gridEl = document.getElementById("grid");
-const countEl = document.getElementById("count");
-const qEl = document.getElementById("q");
-const clearEl = document.getElementById("clear");
-
-let active = "All";
-
-function render() {
-  const q = qEl.value.toLowerCase();
-  const items = PROJECTS.filter(p =>
-    (active === "All" || p.area === active) &&
-    (p.title + p.summary).toLowerCase().includes(q)
-  );
-  gridEl.innerHTML = "";
-  items.forEach(p => {
-    const d = document.createElement("div");
-    d.className = "bg-white p-5 rounded-lg shadow-sm border";
-    d.innerHTML = `
-      <h3 class="font-semibold text-lg">${p.title}</h3>
-      <p class="text-sm text-slate-600">${p.period}</p>
-      <p class="text-sm mt-2">${p.summary}</p>
-      <ul class="list-disc ml-5 text-sm mt-2">${p.highlights.map(h=>`<li>${h}</li>`).join("")}</ul>
-      <div class="mt-3 text-sm">${p.links.map(l=>`<a class="underline mr-3" target="_blank" href="${l.href}">${l.label}</a>`).join("")}</div>
-    `;
-    gridEl.appendChild(d);
-  });
-  countEl.textContent = `${items.length} project${items.length!==1?"s":""}`;
-}
-
-TAGS.forEach(t=>{
-  const b=document.createElement("button");
-  b.textContent=t;
-  b.className="chip px-3 py-1 rounded-full text-xs bg-white";
-  b.onclick=()=>{active=t;render();};
-  chipsEl.appendChild(b);
-});
-
-render();
-qEl.oninput = render;
-clearEl.onclick = () => { qEl.value=""; active="All"; render(); };
-</script>
-
-</body>
-</html>
+    <!-- GENIUS Olympiad -->
+    <article class="bg-white rounded-lg shadow-sm border p-5">
+      <h3 class="text-lg font-semibold">GENIUS Olympiad — Gold Award</h3>
+      <p class="text-sm text-slate-700 mt-2">
+        International recognition (Gold) for environmental systems research
+        at the GENIUS Olympiad.
+      </p>
+      <div class="mt-3 flex flex-wrap gap-3 text-sm">
+        <span class="text-xs text-slate-500">
+         
