@@ -1,278 +1,279 @@
-<!DOCTYPE html>
+l<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research Portfolio | Tanay Panja</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Research Portfolio | Tanay Panja</title>
 
-  <!-- Tailwind (needed because you use Tailwind classes everywhere) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script> add ted talks and national stem chalalnege and genous olympuiad
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    .chip { border: 1px solid rgb(226 232 240); }
-    .chip.active { background: rgb(15 23 42); color: white; border-color: rgb(15 23 42); }
-  </style>
+<style>
+body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont; }
+.chip { border: 1px solid rgb(226 232 240); }
+.chip.active { background: rgb(15 23 42); color: white; border-color: rgb(15 23 42); }
+</style>
 </head>
 
 <body class="bg-gray-50 text-slate-800">
 
 <header class="bg-white border-b-4 border-slate-900 shadow-sm sticky top-0 z-40">
-  <div class="max-w-6xl mx-auto px-4 py-4">
-    <h1 class="text-3xl font-bold tracking-tight">Research Portfolio</h1>
-    <p class="text-slate-600 mt-1 max-w-3xl">
-      Climate- and environment-focused research using quantitative modeling and machine learning,
-      with additional work in biomedical AI.
-    </p>
+<div class="max-w-6xl mx-auto px-4 py-4">
+<h1 class="text-3xl font-bold tracking-tight">Research Portfolio</h1>
+<p class="text-slate-600 mt-1 max-w-3xl">
+Climate- and environment-focused research using quantitative modeling and machine learning,
+with additional work in biomedical AI.
+</p>
 
-    <div class="mt-3 flex flex-wrap gap-2 text-sm">
-      <a href="/" class="underline hover:text-blue-700">← CV</a>
-      <span class="text-slate-400">•</span>
-      <a href="https://github.com/tpanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">GitHub</a>
-      <span class="text-slate-400">•</span>
-      <a href="https://linkedin.com/in/tanaypanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">LinkedIn</a>
-    </div>
-  </div>
+<div class="mt-3 flex flex-wrap gap-2 text-sm">
+<a href="/" class="underline hover:text-blue-700">← CV</a>
+<span class="text-slate-400">•</span>
+<a href="https://github.com/tpanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">GitHub</a>
+<span class="text-slate-400">•</span>
+<a href="https://linkedin.com/in/tanaypanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">LinkedIn</a>
+</div>
+</div>
 
-  <div class="border-t border-slate-200 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-      <div class="flex flex-wrap gap-2" id="chips"></div>
-      <div class="flex gap-2 w-full md:w-auto">
-        <input id="q" type="text" placeholder="Search (pollen, Hadley, wastewater, multimodal)…"
-               class="w-full md:w-96 px-3 py-2 rounded-md border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-400" />
-        <button id="clear" class="px-3 py-2 rounded-md border bg-white text-sm hover:bg-slate-50">Clear</button>
-      </div>
-    </div>
-  </div>
+<div class="border-t border-slate-200 bg-slate-50">
+<div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+<div class="flex flex-wrap gap-2" id="chips"></div>
+<div class="flex gap-2 w-full md:w-auto">
+<input id="q" type="text" placeholder="Search (pollen, Hadley, wastewater, multimodal)…"
+class="w-full md:w-96 px-3 py-2 rounded-md border bg-white text-sm focus:outline-none focus:ring-2 focus:ring-slate-400" />
+<button id="clear" class="px-3 py-2 rounded-md border bg-white text-sm hover:bg-slate-50">Clear</button>
+</div>
+</div>
+</div>
 </header>
 
 <main class="max-w-6xl mx-auto px-4 py-6 space-y-6">
-  <div class="flex items-end justify-between gap-4 flex-wrap">
-    <div>
-      <h2 class="text-xl font-bold">Projects</h2>
-    </div>
-    <p class="text-sm text-slate-500" id="count"></p>
-  </div>
+<div class="flex items-end justify-between gap-4 flex-wrap">
+<div>
+<h2 class="text-xl font-bold">Projects</h2>
 
-  <div class="grid gap-4 md:grid-cols-2" id="grid"></div>
+</div>
+<p class="text-sm text-slate-500" id="count"></p>
+</div>
 
-  <footer class="text-center text-xs text-slate-500 py-8">
-    © 2025 Tanay Panja • Built on GitHub Pages
-  </footer>
+<div class="grid gap-4 md:grid-cols-2" id="grid"></div>
+
+<footer class="text-center text-xs text-slate-500 py-8">
+© 2025 Tanay Panja • Built on GitHub Pages
+</footer>
 </main>
 
 <script>
-  // =========================
-  // PROJECTS
-  // =========================
-  const PROJECTS = [
+// =========================
+// PROJECTS (with your Drive/Slides links)
+// =========================
+const PROJECTS = [
 
-    // ===== CLIMATE / ATMOSPHERE (PRIMARY) =====
-    {
-      title: "Novel Insights into Turbulent Fluxes and Diabatic Heating in Hadley Cell Dynamics",
-      area: "Climate & Atmospheric Science",
-      period: "Science & Engineering Fair • National Awards • Published in MIT IEEE Xplore (2025)",
-      tags: ["Climate Modeling", "Atmospheric Dynamics", "Julia"],
-      summary:
-        "Time-dependent modeling of Hadley circulation to study how turbulent fluxes and diabatic heating govern structure and evolution, with implications for precipitation and water availability.",
-      highlights: [
-        "Time-dependent numerical model",
-        "Focus on turbulent flux + diabatic heating terms",
-        "Connects circulation to hydrologic impacts"
-      ],
-      links: [
-        {
-          label: "Research Poster (Google Drive)",
-          href: "https://drive.google.com/file/d/1kGGJj5Fh-OF3dUpUqj_hiEub_WUU7MEU/view?usp=sharing"
-        }
-      ]
-    },
+// ===== CLIMATE / ATMOSPHERE (PRIMARY) =====
+{
+title: "Novel Insights into Turbulent Fluxes and Diabatic Heating in Hadley Cell Dynamics",
+area: "Climate & Atmospheric Science",
+period: "Science & Engineering Fair • National Awards • Published in MIT IEEE Explore 2025 ",
+tags: ["Climate Modeling", "Atmospheric Dynamics", "Julia"],
+summary:
+"Time-dependent modeling of Hadley circulation to study how turbulent fluxes and diabatic heating govern structure and evolution, with implications for precipitation and water availability.",
+highlights: [
+"Time-dependent numerical model",
+"Focus on turbulent flux + diabatic heating terms",
+"Connects circulation to hydrologic impacts"
+],
+links: [
+{
+label: "Research Poster (Google Drive)",
+href: "https://drive.google.com/file/d/1kGGJj5Fh-OF3dUpUqj_hiEub_WUU7MEU/view?usp=sharing"
+}
+]
+},
 
-    // ===== ENVIRONMENTAL HEALTH / POLLEN (PRIMARY) =====
-    {
-      title: "Acer (Maple) Pollen Forecasting with Machine Learning",
-      area: "Environmental Health & Data Science",
-      period: "University of Michigan (SEAS / MIDAS)",
-      tags: ["Machine Learning", "Public Health", "Climate", "Time Series"],
-      summary:
-        "Spatiotemporal forecasting of airborne maple pollen using long-term station data and climate drivers, supporting exposure-aware public health insights.",
-      highlights: [
-        "Month-ahead forecasting focus",
-        "Links climate variability to exposure risk",
-        "Presented at U-M Annual Data Science & AI Summit"
-      ],
-      links: [
-        {
-          label: "Poster (Google Drive)",
-          href: "https://drive.google.com/file/d/1h2yvQy483khxZDSYDgAPU7YIUDv3iax0/view?usp=sharing"
-        }
-      ]
-    },
+// ===== ENVIRONMENTAL HEALTH / POLLEN (PRIMARY) =====
+{
+title: "Acer (Maple) Pollen Forecasting with Machine Learning",
+area: "Environment Science & Data Science",
+period: "University of Michigan (SEAS / MIDAS)",
+tags: ["Machine Learning", "Public Health", "Climate", "Time Series"],
+summary:
+"Spatiotemporal forecasting of airborne maple pollen using long-term station data and climate drivers, supporting exposure-aware public health insights.",
+highlights: [
+"Month-ahead forecasting focus",
+"Links climate variability to exposure risk",
+        "Poster + artifact links for review"
+        "Presented at U-M Annual Data Science &amp; AI Summit"
+],
+links: [
+{
+label: "Poster (Google Drive)",
+href: "https://drive.google.com/file/d/1h2yvQy483khxZDSYDgAPU7YIUDv3iax0/view?usp=sharing"
+}
+]
+},
 
-    // ===== ENVIRONMENTAL ENGINEERING (PRIMARY) =====
-    {
-      title: "AI-Controlled Microbial Fuel Cell for Wastewater Treatment",
-      area: "Environmental Engineering",
-      period: "Science & Engineering Fair • National Awards",
-      tags: ["Wastewater", "Energy", "IoT", "Optimization"],
-      summary:
-        "Designed a microbial fuel cell system with sensing + control to optimize performance and aeration strategy, demonstrating scalable energy-positive wastewater treatment concepts.",
-      highlights: [
-        "MFC design + real-time sensing",
-        "Control strategy to optimize operating conditions",
+// ===== ENVIRONMENTAL ENGINEERING (PRIMARY) =====
+{
+title: "AI-Controlled Microbial Fuel Cell for Wastewater Treatment",
+area: "Environmental Engineering",
+period: "Science & Engineering Fair • National Awards",
+tags: ["Wastewater", "Energy", "IoT", "Optimization"],
+summary:
+"Designed a microbial fuel cell system with sensing + control to optimize performance and aeration strategy, demonstrating scalable energy-positive wastewater treatment concepts.",
+highlights: [
+"MFC design + real-time sensing",
+"Control strategy to optimize operating conditions",
         "Poster/Slides prepared for dissemination"
-      ],
-      links: [
-        {
-          label: "Poster / Slides (Preview)",
-          href: "https://docs.google.com/presentation/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/preview"
-        }
-      ]
-    },
+        "Poster/Slides prepared for dissemination "
+],
+links: [
+{
+label: "Poster / Slides (Preview)",
+href: "https://docs.google.com/presentation/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/preview"
+},
 
-    // ===== BIOMEDICAL AI (SECONDARY) =====
-    {
-      title: "Attention-Based MIL for Urothelial Cell Malignancy Ranking",
-      area: "Biomedical AI",
-      period: "Dartmouth Hitchcock (EDIT)",
-      tags: ["Deep Learning", "Pathology", "Multiple Instance Learning"],
-      summary:
-        "Applied attention-based multiple instance learning to rank urothelial cells by malignancy relevance under weak supervision, with interpretable attention signals.",
-      highlights: [
-        "Weak supervision for pathology tasks",
-        "Attention for interpretability",
-        "Poster available"
-      ],
-      links: [
-        {
-          label: "Conference Poster (Google Drive)",
-          href: "https://drive.google.com/file/d/15_fHzBMmu8ijNbBP8edhATy7vXfCMULc/view?usp=sharing"
-        }
-      ]
-    },
+]
+},
 
-    {
-      title: "Multimodal Deep Learning for Colorectal Cancer Survival Analysis",
-      area: "Biomedical AI",
-      period: "Dartmouth Hitchcock (EDIT)",
-      tags: ["Multimodal Learning", "Cancer Prognostics"],
-      summary:
-        "Developed a multimodal deep learning framework combining imaging-derived and molecular/immune features for survival prediction.",
-      highlights: [
-        "Multimodal fusion for prognosis",
-        "Clinical motivation",
-        "Poster available"
-      ],
-      links: [
-        {
-          label: "Conference Poster (Google Drive)",
-          href: "https://drive.google.com/file/d/1U3NVyUfhPbBP9qnHRRnQ-uXA8YC_Hhex/view?usp=sharing"
-        }
-      ]
-    }
-  ];
+// ===== BIOMEDICAL AI (SECONDARY) =====
+{
+title: "Attention-Based MIL for Urothelial Cell Malignancy Ranking",
+area: "Biomedical AI",
+period: "Dartmouth Hitchcock (EDIT)",
+tags: ["Deep Learning", "Pathology", "Multiple Instance Learning"],
+summary:
+"Applied attention-based multiple instance learning to rank urothelial cells by malignancy relevance under weak supervision, with interpretable attention signals.",
+highlights: [
+"Weak supervision for pathology tasks",
+"Attention for interpretability",
+"Poster available"
+],
+links: [
+{
+label: "Conference Poster (Google Drive)",
+href: "https://drive.google.com/file/d/1h2yvQy483khxZDSYDgAPU7YIUDv3iax0/view?usp=sharing"
+}
+]
+},
 
-  // =========================
-  // UI Logic (filters + search)
-  // =========================
-  const TAGS = [
-    "All",
-    "Climate & Atmospheric Science",
-    "Environmental Health & Data Science",
-    "Environmental Engineering",
-    "Biomedical AI",
-    "Climate Modeling",
-    "Machine Learning",
-    "Public Health",
-    "Wastewater",
-    "Pathology",
-    "Multimodal Learning"
-  ];
+{
+title: "Multimodal Deep Learning for Colorectal Cancer Survival Analysis",
+area: "Biomedical AI",
+period: "Dartmouth Hitchcock (EDIT)",
+tags: ["Multimodal Learning", "Cancer Prognostics"],
+summary:
+"Developed a multimodal deep learning framework combining imaging-derived and molecular/immune features for survival prediction.",
+highlights: [
+"Multimodal fusion for prognosis",
+"Clinical motivation",
+"Poster available"
+],
+links: [
+{
+label: "Conference Poster (Google Drive)",
+href: "https://drive.google.com/file/d/1U3NVyUfhPbBP9qnHRRnQ-uXA8YC_Hhex/view?usp=sharing"
+}
+]
+}
+];
 
-  const chipsEl = document.getElementById("chips");
-  const gridEl = document.getElementById("grid");
-  const countEl = document.getElementById("count");
-  const qEl = document.getElementById("q");
-  const clearEl = document.getElementById("clear");
+// =========================
+// UI Logic (filters + search)
+// =========================
+const TAGS = [
+"All",
+"Climate & Atmospheric Science",
+"Environmental Health & Data Science",
+"Environmental Engineering",
+"Biomedical AI",
+"Climate Modeling",
+"Machine Learning",
+"Public Health",
+"Wastewater",
+"Pathology",
+"Multimodal Learning"
+];
 
-  let active = "All";
+const chipsEl = document.getElementById("chips");
+const gridEl = document.getElementById("grid");
+const countEl = document.getElementById("count");
+const qEl = document.getElementById("q");
+const clearEl = document.getElementById("clear");
 
-  function makeChip(label) {
-    const b = document.createElement("button");
-    b.className = "chip px-3 py-1.5 rounded-full text-xs bg-white hover:bg-slate-100 transition";
-    b.type = "button";
-    b.textContent = label;
-    b.onclick = () => { active = label; render(); highlightChips(); };
-    return b;
-  }
+let active = "All";
 
-  function highlightChips() {
-    [...chipsEl.children].forEach(ch => ch.classList.toggle("active", ch.textContent === active));
-  }
+function makeChip(label) {
+const b = document.createElement("button");
+b.className = "chip px-3 py-1.5 rounded-full text-xs bg-white hover:bg-slate-100 transition";
+b.textContent = label;
+b.onclick = () => { active = label; render(); highlightChips(); };
+return b;
+}
 
-  function matches(p, query) {
-    const hay = [
-      p.title, p.area, p.period, p.summary,
-      ...(p.tags || []),
-      ...(p.highlights || [])
-    ].join(" ").toLowerCase();
-    return hay.includes(query.toLowerCase());
-  }
+function highlightChips() {
+[...chipsEl.children].forEach(ch => ch.classList.toggle("active", ch.textContent === active));
+}
 
-  function filtered() {
-    const query = (qEl.value || "").trim();
-    return PROJECTS.filter(p => {
-      const tagOk = (active === "All") || (p.area === active) || (p.tags || []).includes(active);
-      const qOk = !query || matches(p, query);
-      return tagOk && qOk;
-    });
-  }
+function matches(p, query) {
+const hay = [
+p.title, p.area, p.period, p.summary,
+...(p.tags || []),
+...(p.highlights || [])
+].join(" ").toLowerCase();
+return hay.includes(query.toLowerCase());
+}
 
-  function card(p) {
-    const wrap = document.createElement("article");
-    wrap.className = "bg-white rounded-lg shadow-sm border p-5 flex flex-col gap-3";
+function filtered() {
+const query = (qEl.value || "").trim();
+return PROJECTS.filter(p => {
+const tagOk = (active === "All") || (p.area === active) || (p.tags || []).includes(active);
+const qOk = !query || matches(p, query);
+return tagOk && qOk;
+});
+}
 
-    wrap.innerHTML = `
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="text-lg font-semibold leading-snug">${p.title}</h3>
-          <p class="text-sm text-slate-600 mt-1">${p.period}</p>
-        </div>
-        <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700 whitespace-nowrap">${p.area}</span>
-      </div>
+function card(p) {
+const wrap = document.createElement("article");
+wrap.className = "bg-white rounded-lg shadow-sm border p-5 flex flex-col gap-3";
 
-      <div class="flex flex-wrap gap-2">
-        ${(p.tags || []).map(t => `<span class="text-xs px-2 py-1 rounded-full bg-gray-50 border text-slate-700">${t}</span>`).join("")}
-      </div>
+wrap.innerHTML = `
+     <div class="flex items-start justify-between gap-3">
+       <div>
+         <h3 class="text-lg font-semibold leading-snug">${p.title}</h3>
+         <p class="text-sm text-slate-600 mt-1">${p.period}</p>
+       </div>
+       <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700 whitespace-nowrap">${p.area}</span>
+     </div>
 
-      <p class="text-sm text-slate-700">${p.summary}</p>
+     <div class="flex flex-wrap gap-2">
+       ${(p.tags || []).map(t => `<span class="text-xs px-2 py-1 rounded-full bg-gray-50 border text-slate-700">${t}</span>`).join("")}
+     </div>
 
-      <ul class="list-disc ml-5 text-sm text-slate-700 space-y-1">
-        ${(p.highlights || []).map(h => `<li>${h}</li>`).join("")}
-      </ul>
+     <p class="text-sm text-slate-700">${p.summary}</p>
 
-      <div class="flex flex-wrap gap-3 text-sm">
-        ${(p.links || []).map(l => `<a href="${l.href}" target="_blank" rel="noopener" class="underline hover:text-blue-700">${l.label}</a>`).join("")}
-      </div>
-    `;
-    return wrap;
-  }
+     <ul class="list-disc ml-5 text-sm text-slate-700 space-y-1">
+       ${(p.highlights || []).map(h => `<li>${h}</li>`).join("")}
+     </ul>
 
-  function render() {
-    const items = filtered();
-    gridEl.innerHTML = "";
-    items.forEach(p => gridEl.appendChild(card(p)));
-    countEl.textContent = `${items.length} project${items.length === 1 ? "" : "s"} shown`;
-  }
+     <div class="flex flex-wrap gap-3 text-sm">
+       ${(p.links || []).map(l => `<a href="${l.href}" target="_blank" rel="noopener" class="underline hover:text-blue-700">${l.label}</a>`).join("")}
+     </div>
+   `;
+return wrap;
+}
 
-  TAGS.forEach(t => chipsEl.appendChild(makeChip(t)));
-  highlightChips();
-  render();
+function render() {
+const items = filtered();
+gridEl.innerHTML = "";
+items.forEach(p => gridEl.appendChild(card(p)));
+countEl.textContent = `${items.length} project${items.length === 1 ? "" : "s"} shown`;
+}
 
-  qEl.addEventListener("input", render);
-  clearEl.addEventListener("click", () => { qEl.value = ""; active = "All"; highlightChips(); render(); });
+TAGS.forEach(t => chipsEl.appendChild(makeChip(t)));
+highlightChips();
+render();
+
+qEl.addEventListener("input", render);
+clearEl.addEventListener("click", () => { qEl.value = ""; active = "All"; highlightChips(); render(); });
 </script>
 
 </body>
