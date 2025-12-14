@@ -31,8 +31,6 @@
       <a href="https://github.com/tpanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">GitHub</a>
       <span class="text-slate-400">•</span>
       <a href="https://linkedin.com/in/tanaypanja" target="_blank" rel="noopener" class="underline hover:text-blue-700">LinkedIn</a>
-      <span class="text-slate-400">•</span>
-      <a href="https://www.youtube.com/@tanaypanja5080/videos" target="_blank" rel="noopener" class="underline hover:text-blue-700">YouTube</a>
     </div>
   </div>
 
@@ -66,64 +64,27 @@
 
     <div class="grid gap-4 md:grid-cols-2">
 
-      <!-- TEDx Youth Talk 1 -->
+      <!-- TEDx Youth -->
       <article class="bg-white rounded-lg shadow-sm border p-5">
         <h3 class="text-lg font-semibold">TEDx Youth – Dementia AI</h3>
         <p class="text-sm text-slate-700 mt-2">
-          TEDx Youth talk on automating the Clock Drawing Test using AI for accessible dementia screening.
+          TEDx Youth talk on automating the Clock Drawing Test using AI
+          for accessible dementia screening.
         </p>
 
         <div class="mt-4 aspect-video rounded-lg overflow-hidden border">
           <iframe
             src="https://www.youtube.com/embed/0jPh_spZXLE"
             title="TEDx Youth – Dementia AI"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             class="w-full h-full"></iframe>
         </div>
 
-        <div class="mt-3 flex flex-wrap gap-3 text-sm">
-          <a href="https://youtu.be/0jPh_spZXLE?si=3qpyhCLF6Sbgxoyq"
-             target="_blank" rel="noopener"
-             class="underline hover:text-blue-700">
-             Watch on YouTube ↗
-          </a>
-          <a href="https://www.youtube.com/@tanaypanja5080/videos"
-             target="_blank" rel="noopener"
-             class="underline hover:text-blue-700">
-             Speaker Channel ↗
-          </a>
-        </div>
-      </article>
-
-      <!-- TEDx Youth Talk 2 (added) -->
-      <article class="bg-white rounded-lg shadow-sm border p-5">
-        <h3 class="text-lg font-semibold">TEDx Youth Talk</h3>
-        <p class="text-sm text-slate-700 mt-2">
-          Public-facing talk showcasing applied research and real-world impact.
-        </p>
-
-        <div class="mt-4 aspect-video rounded-lg overflow-hidden border">
-          <iframe
-            src="https://www.youtube.com/embed/sbh9gAL29us"
-            title="TEDx Youth Talk"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="w-full h-full"></iframe>
-        </div>
-
-        <div class="mt-3 flex flex-wrap gap-3 text-sm">
-          <a href="https://youtu.be/sbh9gAL29us?si=UUmdkgbMNuSc5Qcw"
-             target="_blank" rel="noopener"
-             class="underline hover:text-blue-700">
-             Watch on YouTube ↗
-          </a>
-          <a href="https://www.youtube.com/@tanaypanja5080/videos"
-             target="_blank" rel="noopener"
-             class="underline hover:text-blue-700">
-             Speaker Channel ↗
-          </a>
-        </div>
+        <a href="https://youtu.be/0jPh_spZXLE"
+           target="_blank" rel="noopener"
+           class="underline hover:text-blue-700 text-sm mt-3 inline-block">
+           Watch on YouTube ↗
+        </a>
       </article>
 
       <!-- National STEM Challenge -->
@@ -134,9 +95,9 @@
         </p>
         <div class="mt-3 flex flex-wrap gap-3 text-sm">
           <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-first-ever-national-stem-champions-302059984.html"
-             target="_blank" rel="noopener" class="underline hover:text-blue-700">2024 Announcement</a>
+             target="_blank" class="underline hover:text-blue-700">2024 Announcement</a>
           <a href="https://www.prnewswire.com/news-releases/explr-announces-top-student-innovators-named-national-stem-champions-302335311.html"
-             target="_blank" rel="noopener" class="underline hover:text-blue-700">2025 Announcement</a>
+             target="_blank" class="underline hover:text-blue-700">2025 Announcement</a>
         </div>
       </article>
 
@@ -144,7 +105,8 @@
       <article class="bg-white rounded-lg shadow-sm border p-5">
         <h3 class="text-lg font-semibold">GENIUS Olympiad — Gold Award</h3>
         <p class="text-sm text-slate-700 mt-2">
-          International Gold Award for environmental systems research at the GENIUS Olympiad.
+          International Gold Award for environmental systems research
+          at the GENIUS Olympiad.
         </p>
       </article>
 
@@ -206,8 +168,7 @@ const PROJECTS = [
       "National recognition"
     ],
     links: [
-      { label: "Slides", href: "https://docs.google.com/presentation/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/preview" },
-      { label: "TEDx Youth Talk (YouTube)", href: "https://youtu.be/sbh9gAL29us?si=UUmdkgbMNuSc5Qcw" }
+      { label: "Slides", href: "https://docs.google.com/presentation/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/preview" }
     ]
   },
 
@@ -243,69 +204,35 @@ function render() {
   const q = qEl.value.toLowerCase();
   const items = PROJECTS.filter(p =>
     (active === "All" || p.area === active) &&
-    (p.title + " " + p.summary + " " + (p.tags || []).join(" ")).toLowerCase().includes(q)
+    (p.title + p.summary).toLowerCase().includes(q)
   );
-
   gridEl.innerHTML = "";
   items.forEach(p => {
     const d = document.createElement("div");
     d.className = "bg-white p-5 rounded-lg shadow-sm border";
-
     d.innerHTML = `
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="font-semibold text-lg leading-snug">${p.title}</h3>
-          <p class="text-sm text-slate-600">${p.period}</p>
-        </div>
-        <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700 whitespace-nowrap">${p.area}</span>
-      </div>
-
-      <div class="flex flex-wrap gap-2 mt-3">
-        ${(p.tags || []).map(t => `<span class="text-xs px-2 py-1 rounded-full bg-gray-50 border text-slate-700">${t}</span>`).join("")}
-      </div>
-
-      <p class="text-sm mt-3 text-slate-700">${p.summary}</p>
-
-      <ul class="list-disc ml-5 text-sm mt-3 text-slate-700 space-y-1">
-        ${(p.highlights || []).map(h=>`<li>${h}</li>`).join("")}
-      </ul>
-
-      <div class="mt-3 text-sm flex flex-wrap gap-3">
-        ${(p.links || []).map(l=>`<a class="underline hover:text-blue-700" target="_blank" rel="noopener" href="${l.href}">${l.label} ↗</a>`).join("")}
-      </div>
+      <h3 class="font-semibold text-lg">${p.title}</h3>
+      <p class="text-sm text-slate-600">${p.period}</p>
+      <p class="text-sm mt-2">${p.summary}</p>
+      <ul class="list-disc ml-5 text-sm mt-2">${p.highlights.map(h=>`<li>${h}</li>`).join("")}</ul>
+      <div class="mt-3 text-sm">${p.links.map(l=>`<a class="underline mr-3" target="_blank" href="${l.href}">${l.label}</a>`).join("")}</div>
     `;
     gridEl.appendChild(d);
   });
-
-  countEl.textContent = `${items.length} project${items.length!==1?"s":""} shown`;
+  countEl.textContent = `${items.length} project${items.length!==1?"s":""}`;
 }
 
-function buildChips() {
-  chipsEl.innerHTML = "";
-  TAGS.forEach(t=>{
-    const b=document.createElement("button");
-    b.textContent=t;
-    b.className="chip px-3 py-1 rounded-full text-xs bg-white hover:bg-slate-100 transition";
-    b.onclick=()=>{active=t;highlight();render();};
-    chipsEl.appendChild(b);
-  });
-  highlight();
-}
-
-function highlight() {
-  [...chipsEl.children].forEach(ch => ch.classList.toggle("active", ch.textContent === active));
-}
-
-buildChips();
-render();
-
-qEl.addEventListener("input", render);
-clearEl.addEventListener("click", () => {
-  qEl.value = "";
-  active = "All";
-  highlight();
-  render();
+TAGS.forEach(t=>{
+  const b=document.createElement("button");
+  b.textContent=t;
+  b.className="chip px-3 py-1 rounded-full text-xs bg-white";
+  b.onclick=()=>{active=t;render();};
+  chipsEl.appendChild(b);
 });
+
+render();
+qEl.oninput = render;
+clearEl.onclick = () => { qEl.value=""; active="All"; render(); };
 </script>
 
 </body>
