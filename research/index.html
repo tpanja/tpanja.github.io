@@ -64,11 +64,9 @@
 
   <!-- Talks & Recognition -->
   <section class="space-y-4">
-    <div class="flex items-end justify-between gap-4 flex-wrap">
-      <div>
-        <h2 class="text-xl font-bold">Talks & Recognition</h2>
-        <p class="text-sm text-slate-600 mt-1">Selected speaking + major competitions/awards.</p>
-      </div>
+    <div>
+      <h2 class="text-xl font-bold">Talks & Recognition</h2>
+      <p class="text-sm text-slate-600 mt-1">Selected speaking + major competitions/awards.</p>
     </div>
     <div class="grid gap-4 md:grid-cols-3" id="extras"></div>
   </section>
@@ -98,46 +96,44 @@
       links: [
         {
           label: "Research Poster (Google Drive)",
-          href: "https://drive.google.com/file/d/1kGGJj5Fh-OF3dUpUqj_hiEub_WUU7MEU/view?usp=sharing"
+          href: "https://drive.google.com/file/d/1kGGJj5Fh-OF3dUpUqj_hiEub_WUU7MEU/view"
         }
       ]
     },
-
     {
       title: "Acer (Maple) Pollen Forecasting with Machine Learning",
       area: "Environmental Health & Data Science",
       period: "University of Michigan (SEAS / MIDAS)",
       tags: ["Machine Learning", "Public Health", "Climate", "Time Series"],
       summary:
-        "Spatiotemporal forecasting of airborne maple pollen using long-term station data and climate drivers, supporting exposure-aware public health insights.",
+        "Spatiotemporal forecasting of airborne maple pollen using long-term station data and climate drivers.",
       highlights: [
-        "Month-ahead forecasting focus",
-        "Links climate variability to exposure risk",
-        "Presented at U-M Annual Data Science & AI Summit"
+        "Month-ahead forecasting",
+        "Climate–exposure linkage",
+        "U-M Data Science & AI Summit"
       ],
       links: [
         {
           label: "Poster (Google Drive)",
-          href: "https://drive.google.com/file/d/1h2yvQy483khxZDSYDgAPU7YIUDv3iax0/view?usp=sharing"
+          href: "https://drive.google.com/file/d/1h2yvQy483khxZDSYDgAPU7YIUDv3iax0/view"
         }
       ]
     },
-
     {
       title: "AI-Controlled Microbial Fuel Cell for Wastewater Treatment",
       area: "Environmental Engineering",
       period: "Science & Engineering Fair • National Awards",
       tags: ["Wastewater", "Energy", "IoT", "Optimization"],
       summary:
-        "Designed a microbial fuel cell system with sensing + control to optimize performance and aeration strategy, demonstrating scalable energy-positive wastewater treatment concepts.",
+        "Designed a microbial fuel cell system with sensing and control to optimize aeration and performance.",
       highlights: [
-        "MFC design + real-time sensing",
-        "Control strategy to optimize operating conditions",
-        "Poster/Slides prepared for dissemination"
+        "Real-time sensing + control",
+        "Energy-positive wastewater concept",
+        "Scalable environmental engineering"
       ],
       links: [
         {
-          label: "Poster / Slides (Preview)",
+          label: "Poster / Slides",
           href: "https://docs.google.com/presentation/d/1Zvl5ir8ia60k-jQR7TYlaws2qRgMIDYf/preview"
         }
       ]
@@ -145,53 +141,43 @@
   ];
 
   // =========================
-  // TALKS & RECOGNITION (NEW)
+  // TALKS & RECOGNITION
   // =========================
   const EXTRAS = [
     {
       title: "TEDx Youth Talk",
       type: "Talk",
       tags: ["Speaking", "Impact"],
-      summary: "TEDx Youth talk sharing real-world youth innovation and research-to-impact work.",
-      links: [
-        // Replace with your TEDx video link if you have it
-        // { label: "Watch", href: "https://..." }
-      ]
+      summary: "TEDx Youth talk on youth-led research and translating ideas into impact.",
+      links: []
     },
     {
-      title: "National STEM Challenge / Festival",
+      title: "National STEM Festival",
       type: "National Recognition",
       tags: ["STEM", "Leadership"],
-      summary: "National recognition + student council leadership shaping outreach and participant experience.",
-      links: [
-        // Add official page link if you want
-      ]
+      summary: "National recognition and student council leadership shaping festival outreach.",
+      links: []
     },
     {
       title: "Genius Olympiad",
       type: "International Competition",
       tags: ["Sustainability", "Awards"],
-      summary: "Award-winning sustainability research showcased at an international-level competition.",
-      links: [
-        // Add project link if you want
-      ]
+      summary: "International sustainability research competition recognition.",
+      links: []
     }
   ];
 
-  // =========================
-  // FILTER CHIPS
-  // =========================
   const TAGS = [
     "All",
     "Climate & Atmospheric Science",
     "Environmental Health & Data Science",
     "Environmental Engineering",
-    "National Recognition",
-    "International Competition",
     "Climate Modeling",
     "Machine Learning",
     "Wastewater",
     "Sustainability",
+    "National Recognition",
+    "International Competition"
   ];
 
   const chipsEl = document.getElementById("chips");
@@ -205,114 +191,63 @@
 
   function makeChip(label) {
     const b = document.createElement("button");
-    b.type = "button";
-    b.className = "chip px-3 py-1.5 rounded-full text-xs bg-white hover:bg-slate-100 transition";
+    b.className = "chip px-3 py-1.5 rounded-full text-xs bg-white hover:bg-slate-100";
     b.textContent = label;
     b.onclick = () => { active = label; render(); highlightChips(); };
     return b;
   }
 
   function highlightChips() {
-    [...chipsEl.children].forEach(ch => ch.classList.toggle("active", ch.textContent === active));
+    [...chipsEl.children].forEach(c =>
+      c.classList.toggle("active", c.textContent === active)
+    );
   }
 
-  function matchesText(obj, query) {
-    const hay = [
-      obj.title, obj.area, obj.period, obj.type, obj.summary,
-      ...(obj.tags || []),
-      ...(obj.highlights || [])
-    ].filter(Boolean).join(" ").toLowerCase();
-    return hay.includes(query.toLowerCase());
+  function matchesText(obj, q) {
+    return Object.values(obj).flat().join(" ").toLowerCase().includes(q.toLowerCase());
   }
 
-  function filteredProjects() {
-    const query = (qEl.value || "").trim();
-    return PROJECTS.filter(p => {
-      const tagOk = (active === "All") || (p.area === active) || (p.tags || []).includes(active);
-      const qOk = !query || matchesText(p, query);
-      return tagOk && qOk;
-    });
-  }
-
-  function filteredExtras() {
-    const query = (qEl.value || "").trim();
-    return EXTRAS.filter(e => {
-      const tagOk = (active === "All") || (e.type === active) || (e.tags || []).includes(active);
-      const qOk = !query || matchesText(e, query);
-      return tagOk && qOk;
-    });
+  function filtered(arr, key) {
+    const q = qEl.value.trim();
+    return arr.filter(o =>
+      (active === "All" || o.area === active || o.type === active || (o.tags || []).includes(active)) &&
+      (!q || matchesText(o, q))
+    );
   }
 
   function cardProject(p) {
-    const wrap = document.createElement("article");
-    wrap.className = "bg-white rounded-lg shadow-sm border p-5 flex flex-col gap-3";
-
-    wrap.innerHTML = `
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="text-lg font-semibold leading-snug">${p.title}</h3>
-          <p class="text-sm text-slate-600 mt-1">${p.period}</p>
-        </div>
-        <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700 whitespace-nowrap">${p.area}</span>
-      </div>
-
-      <div class="flex flex-wrap gap-2">
-        ${(p.tags || []).map(t => `<span class="text-xs px-2 py-1 rounded-full bg-gray-50 border text-slate-700">${t}</span>`).join("")}
-      </div>
-
-      <p class="text-sm text-slate-700">${p.summary}</p>
-
-      <ul class="list-disc ml-5 text-sm text-slate-700 space-y-1">
-        ${(p.highlights || []).map(h => `<li>${h}</li>`).join("")}
-      </ul>
-
-      <div class="flex flex-wrap gap-3 text-sm">
-        ${(p.links || []).map(l => `<a href="${l.href}" target="_blank" rel="noopener" class="underline hover:text-blue-700">${l.label}</a>`).join("")}
-      </div>
+    const a = document.createElement("article");
+    a.className = "bg-white rounded-lg shadow-sm border p-5 space-y-3";
+    a.innerHTML = `
+      <h3 class="text-lg font-semibold">${p.title}</h3>
+      <p class="text-sm text-slate-600">${p.period}</p>
+      <p class="text-sm">${p.summary}</p>
+      <ul class="list-disc ml-5 text-sm">${p.highlights.map(h => `<li>${h}</li>`).join("")}</ul>
+      ${p.links.map(l => `<a class="underline text-sm" href="${l.href}" target="_blank">${l.label}</a>`).join("")}
     `;
-    return wrap;
+    return a;
   }
 
   function cardExtra(e) {
-    const wrap = document.createElement("article");
-    wrap.className = "bg-white rounded-lg shadow-sm border p-5 flex flex-col gap-3";
-
-    wrap.innerHTML = `
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <h3 class="text-base font-semibold leading-snug">${e.title}</h3>
-          <p class="text-xs text-slate-600 mt-1">${e.type}</p>
-        </div>
-        <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700 whitespace-nowrap">Highlight</span>
-      </div>
-
-      <div class="flex flex-wrap gap-2">
-        ${(e.tags || []).map(t => `<span class="text-xs px-2 py-1 rounded-full bg-gray-50 border text-slate-700">${t}</span>`).join("")}
-      </div>
-
-      <p class="text-sm text-slate-700">${e.summary}</p>
-
-      <div class="flex flex-wrap gap-3 text-sm">
-        ${(e.links || []).length
-          ? (e.links || []).map(l => `<a href="${l.href}" target="_blank" rel="noopener" class="underline hover:text-blue-700">${l.label}</a>`).join("")
-          
-        }
-      </div>
+    const a = document.createElement("article");
+    a.className = "bg-white rounded-lg shadow-sm border p-5 space-y-3";
+    a.innerHTML = `
+      <h3 class="font-semibold">${e.title}</h3>
+      <p class="text-xs text-slate-500">${e.type}</p>
+      <p class="text-sm">${e.summary}</p>
     `;
-    return wrap;
+    return a;
   }
 
   function render() {
-    // Projects
-    const items = filteredProjects();
+    const ps = filtered(PROJECTS);
     gridEl.innerHTML = "";
-    items.forEach(p => gridEl.appendChild(cardProject(p)));
-    countEl.textContent = `${items.length} project${items.length === 1 ? "" : "s"} shown`;
+    ps.forEach(p => gridEl.appendChild(cardProject(p)));
+    countEl.textContent = `${ps.length} project${ps.length !== 1 ? "s" : ""}`;
 
-    // Extras
-    const extras = filteredExtras();
+    const es = filtered(EXTRAS);
     extrasEl.innerHTML = "";
-    extras.forEach(e => extrasEl.appendChild(cardExtra(e)));
+    es.forEach(e => extrasEl.appendChild(cardExtra(e)));
   }
 
   TAGS.forEach(t => chipsEl.appendChild(makeChip(t)));
@@ -320,7 +255,7 @@
   render();
 
   qEl.addEventListener("input", render);
-  clearEl.addEventListener("click", () => { qEl.value = ""; active = "All"; highlightChips(); render(); });
+  clearEl.onclick = () => { qEl.value = ""; active = "All"; highlightChips(); render(); };
 </script>
 
 </body>
